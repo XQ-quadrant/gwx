@@ -1,13 +1,15 @@
 <?php
 namespace frontend\controllers;
 
+use common\models\Userinfo;
 use Yii;
-use common\models\LoginForm;
+use frontend\models\LoginForm;
 use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
 use yii\base\InvalidParamException;
+use yii\helpers\Url;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
@@ -18,6 +20,7 @@ use yii\filters\AccessControl;
  */
 class SiteController extends Controller
 {
+    public $layout = 'home.php';
     /**
      * @inheritdoc
      */
@@ -62,6 +65,7 @@ class SiteController extends Controller
                 'class' => 'yii\captcha\CaptchaAction',
                 'fixedVerifyCode' => YII_ENV_TEST ? 'testme' : null,
             ],
+
         ];
     }
 
@@ -151,9 +155,31 @@ class SiteController extends Controller
         $model = new SignupForm();
         if ($model->load(Yii::$app->request->post())) {
             if ($user = $model->signup()) {
-                if (Yii::$app->getUser()->login($user)) {
+               // echo "ccc";die();
+                /*if ($model->sendEmail()) {
+                    Yii::$app->session->setFlash('验证邮件已发送', '查看你的邮箱确认验证邮件.');
+
                     return $this->goHome();
+                } else {
+                    Yii::$app->session->setFlash('error', 'Sorry, we are unable to reset password for email provided.');
+                }*/
+                $userInfo = new Userinfo();
+                //$userInfo->name=$user->username;
+                $userInfo->user_id=$user->id;
+                $userInfo->email=$user->email;
+                //$userInfo->email=$user->email;
+                if($userInfo->save()){
+                    if (Yii::$app->getUser()->login($user)) {
+                        //return $this->goHome();
+                        return Yii::$app->getResponse()->redirect(Url::to('@web/useradmin/customer/create'));
+                    }
                 }
+
+
+            }else{
+                //echo "c啥啥啥cc";die();
+                Yii::$app->session->setFlash('error', 'Sorr注册失败ided.');
+
             }
         }
 

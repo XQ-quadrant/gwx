@@ -5,7 +5,7 @@ Default theme
 Reset and overrides  
 ***/
 body {
-  background-color: #DCE8E5 !important;
+  background-color: #3d3d3d !important;
 }
 /***
 Page header
@@ -13,7 +13,7 @@ Page header
 .header .navbar-inner {
   filter: none !important;
   background-image: none !important;
-  background-color: rgba(11, 58, 63, 0.87) !important;
+  background-color: #212121 !important;
 }
 .header .btn-navbar {
   background-color: #212121 !important;
@@ -29,11 +29,11 @@ Page header
 Page sidebar
 ***/
 .page-sidebar {
-  background-color: #DCE8E5;
+  background-color: #3d3d3d;
 }
 ul.page-sidebar-menu > li > a {
-  border-top: 1px solid #f5f5f5 !important;
-  color: #305069 !important;
+  border-top: 1px solid #5c5c5c !important;
+  color: #ffffff !important;
 }
 ul.page-sidebar-menu > li:last-child > a {
   border-bottom: 1px solid transparent !important;
@@ -44,10 +44,10 @@ ul.page-sidebar-menu > li a i {
 ul.page-sidebar-menu > li.open > a,
 ul.page-sidebar-menu > li > a:hover,
 ul.page-sidebar-menu > li:hover > a {
-  background: #1ADCC1;
+  background: #303030;
 }
 ul.page-sidebar-menu > li.active > a {
-  background: #1ADCC1 !important;
+  background: #e02222 !important;
   border-top-color: transparent !important;
   color: #ffffff;
 }
@@ -74,7 +74,7 @@ ul.page-sidebar-menu > li > ul.sub-menu li.open > a {
 }
 /* font color for all sub menu links*/
 ul.page-sidebar-menu li > ul.sub-menu > li > a {
-  color: #0B6B7D;
+  color: #bdbdbd;
 }
 /* menu arrows */
 ul.page-sidebar-menu > li > a .arrow:before,
@@ -107,7 +107,7 @@ ul.page-sidebar-menu > li.active > a .arrow.open:before {
   color: #7d7d7d !important;
 }
 .page-sidebar .sidebar-search input {
-  background-color: #DCE8E5 !important;
+  background-color: #3d3d3d !important;
   color: #bfbfbf !important;
 }
 .page-sidebar .sidebar-search .input-box {
@@ -125,14 +125,14 @@ Sidebar toggler
 }
 /* search box bg color on expanded */
 .page-sidebar-closed .page-sidebar .sidebar-search.open {
-  background-color: #DCE8E5 !important;
+  background-color: #3d3d3d !important;
 }
 .page-sidebar-closed .page-sidebar .sidebar-search.open .remove {
   background-image: url("../image/sidebar-search-close.png");
 }
 /* sub menu bg color on hover menu item */
 .page-sidebar-closed ul.page-sidebar-menu > li:hover .sub-menu {
-  background-color: #DCE8E5;
+  background-color: #3d3d3d;
 }
 /***
 Horizontal Menu(new in v1.2)
@@ -244,7 +244,7 @@ Gritter Notifications
     background-color: #2e2e2e !important;
   }
   .page-boxed .page-container {
-    background-color: #DCE8E5;
+    background-color: #3d3d3d;
     border-left: 1px solid #5e5e5e;
     border-bottom: 1px solid #5e5e5e;
   }

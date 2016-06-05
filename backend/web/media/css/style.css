@@ -338,7 +338,7 @@ Header and header elements.
 
 .header .brand {
   display: inline-block;
-  margin-top: -3px;
+  margin-top: -1px;
   margin-right: 0;
   padding-left: 0;
   padding-right: 0;
@@ -346,8 +346,7 @@ Header and header elements.
 }
 
 .header .brand img {
-  margin-left: 18px;
-  height: 37px
+  margin-left: 20px;
 }
 
 .header .btn-navbar {
@@ -372,7 +371,7 @@ Header and header elements.
   border: 0px;
   padding: 0px; 
   box-shadow: none;
-  height: 50px;
+  height: 42px; 
 }
 
 .header .nav {
@@ -467,7 +466,7 @@ Page container
 }
 
 .page-header-fixed .page-container {
-  margin-top: 50px;
+  margin-top: 42px;  
 }
 
 /***
@@ -1567,11 +1566,11 @@ Box portlet
 }
 
 .portlet.box.green .portlet-title {
-  background-color: #1ADCC1;
+  background-color: #35aa47;
 } 
 
 .portlet.box.green {  
-   border: 1px solid #1ADCC1;
+   border: 1px solid #77e588;
    border-top: 0;
 }
 
@@ -2807,7 +2806,7 @@ Custom tabs
 }
     
 .tabs-left.tabbable-custom .nav-tabs > li { 
-  margin-right: 0; border-left: 2px solid transparent; margin-top: none;
+  margin-right: 0; border-left: 2px solid transparent; margin-top: none; 
 }
 
 .tabs-left.tabbable-custom .nav-tabs > li.active { 
@@ -4672,8 +4671,7 @@ Horezantal Menu(new in v1.2)
 
 .header .hor-menu ul.nav li a {
   font-size: 14px;
-  padding: 15px 18px;
-  color: #f1f1f1;
+  padding: 11px 18px; 
 }
 
 .ie8 .header .hor-menu a.dropdown-toggle {

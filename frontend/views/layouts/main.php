@@ -9,8 +9,9 @@ use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use frontend\assets\AppAsset;
 use common\widgets\Alert;
+use frontend\assets\MetronicAsset;
 
-AppAsset::register($this);
+MetronicAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -28,32 +29,64 @@ AppAsset::register($this);
 <div class="wrap">
     <?php
     NavBar::begin([
-        'brandLabel' => 'My Company',
+        'brandLabel' => Yii::t('common','Yii China'),//'My Company',
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar-inverse navbar-fixed-top',
         ],
     ]);
-    $menuItems = [
-        ['label' => 'Home', 'url' => ['/site/index']],
-        ['label' => 'About', 'url' => ['/site/about']],
-        ['label' => 'Contact', 'url' => ['/site/contact']],
+    $menuItemsCenter = [
+        ['label' => '租房', 'url' => ['/site/index']],
+        ['label' => '关于', 'url' => ['/site/about']],
+        ['label' => '联系我们', 'url' => ['/site/contact']],
+        ['label' => '拼组', 'url' => ['/site/contact']],
+        ['label' => '帮助', 'url' => ['/site/contact']],
+        ['label' => '帮助', 'url' => ['/site/contact']],
     ];
     if (Yii::$app->user->isGuest) {
-        $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
-        $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
+        $menuItems[] = ['label' => '注册', 'url' => ['/site/signup']];
+        $menuItems[] = ['label' => '登录', 'url' => ['/site/login']];
     } else {
-        $menuItems[] = '<li>'
+        $menuItems[] =[
+            'label'=>Yii::$app->user->identity->username,
+            'items'=>[
+                ['label'=>'<i class="icon-screenshot"></i> 个人中心','url'=>'/site/logout','linkOptions'=>['data-method'=>'post']],
+/*                ['label'=>'<i class="icon-signout"></i> 退出','url'=>'/site/logout','linkOptions'=>['data-method'=>'post']],*/
+                ['label'=>'<li><a><i class="icon-signout"></i>'
+                    . Html::beginForm(['/site/logout'], 'post',['style'=>'display:inline'])
+                    . Html::input(
+                        'submit',
+                        '','退出 ',
+                        ['class' => '','style'=>'border:none;background:none;cursor:pointer;']
+                    )
+                    . Html::endForm()
+                    .'</a></li>']
+            ]
+        ];
+        /* '<li><a class="avatar dropdown-toggle" data-toggle="dropdown">cc</a>'.
+            '<ul class="dropdown-menu">
+            <li>ahha</li>
+            <li>ahha</li>'
+            .'<li>'
+
+
             . Html::beginForm(['/site/logout'], 'post')
             . Html::submitButton(
-                'Logout (' . Yii::$app->user->identity->username . ')',
+                '退出 (' . Yii::$app->user->identity->username . ')',
                 ['class' => 'btn btn-link']
             )
             . Html::endForm()
-            . '</li>';
+            .'</li></ul>'
+            . '</li>';*/
     }
     echo Nav::widget([
+        'options' => ['class' => 'navbar-nav center'],
+        'encodeLabels' => false,
+        'items' => $menuItemsCenter,
+    ]);
+    echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
+        'encodeLabels' => false,
         'items' => $menuItems,
     ]);
     NavBar::end();

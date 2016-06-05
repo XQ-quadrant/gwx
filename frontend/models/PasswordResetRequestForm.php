@@ -28,7 +28,16 @@ class PasswordResetRequestForm extends Model
             ],
         ];
     }
-
+    public function attributeLabels()
+    {
+        return [
+            'username' => '用户名',
+            'password'=> '密码',
+            'email' => '邮箱',
+            'repassword' => '确认密码',
+            'verifyCode' => '验证码'
+        ];
+    }
     /**
      * Sends an email with a link, for resetting the password.
      *
@@ -60,9 +69,10 @@ class PasswordResetRequestForm extends Model
                 ['html' => 'passwordResetToken-html', 'text' => 'passwordResetToken-text'],
                 ['user' => $user]
             )
-            ->setFrom([\Yii::$app->params['supportEmail'] => \Yii::$app->name . ' robot'])
+           // ->setFrom([\Yii::$app->params['supportEmail'] => ' robot'])
+            ->setFrom(['quadrantone@163.com' => '宿宿网'])
             ->setTo($this->email)
-            ->setSubject('Password reset for ' . \Yii::$app->name)
+            ->setSubject(' 重置密码 宿宿网' )
             ->send();
     }
 }

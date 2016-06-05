@@ -5,7 +5,7 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace backend\assets;
+namespace frontend\assets;
 
 use yii\web\AssetBundle;
 
@@ -18,7 +18,7 @@ class MetronicAsset extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
-        'media/css/site.css',
+        'css/site.css',
        "media/css/bootstrap.min.css",
 
 	"media/css/bootstrap-responsive.min.css",
