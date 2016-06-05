@@ -1,0 +1,27 @@
+@CHARSET "UTF-8" ;
+
+.form-search select{
+    height: 34px ;
+    line-height: 34px ;
+    margin-right:5px;
+}
+
+.summary {
+    margin-top:5px;
+}
+.pagination {
+    margin-top:0px;
+}
+.help-block, .help-inline {
+    color: #e02222 !important;
+}
+.room-label{
+    padding-right: 2em;
+}
+#room-content{
+    overflow: hidden;
+}
+#room-facility label{
+    display: inline-block;
+    margin: 8px 10px 0;
+}
