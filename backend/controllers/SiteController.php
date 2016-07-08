@@ -12,26 +12,28 @@ use yii\filters\VerbFilter;
  */
 class SiteController extends Controller
 {
+    public $layout = 'main_nav';
+
     /**
      * @inheritdoc
      */
     public function behaviors()
     {
         return [
-            'access' => [
+            /*'access' => [
                 'class' => AccessControl::className(),
                 'rules' => [
                     [
-                        'actions' => ['login', 'error'],
+                        'actions' => ['login', 'error','index'],
                         'allow' => true,
                     ],
                     [
-                        'actions' => ['logout', 'index'],
+                        'actions' => ['logout',],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
                 ],
-            ],
+            ],*/
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
@@ -55,7 +57,7 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
-        $name ="";
+        //$name ="";
         return $this->render('index',[]);
     }
 

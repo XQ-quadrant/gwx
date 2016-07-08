@@ -15,11 +15,12 @@ use yii\widgets\ActiveForm;
         'method' => 'get',
     ]); ?>
 
-    <?= $form->field($model, 'id') ?>
 
-    <?= $form->field($model, 'title') ?>
 
-    <?= $form->field($model, 'breviary') ?>
+    <?php // $form->field($model, 'title') ?>
+    <?php  echo $form->field($model, 'cate') ?>
+
+    <?php // echo$form->field($model, 'breviary') ?>
 
     <?= $form->field($model, 'content') ?>
 
@@ -32,6 +33,14 @@ use yii\widgets\ActiveForm;
     <?php // echo $form->field($model, 'views') ?>
 
     <?php // echo $form->field($model, 'status') ?>
+
+    <?php // echo $form->field($model, 'level') ?>
+
+    <?php // echo $form->field($model, 'create_at') ?>
+
+    <?php // echo $form->field($model, 'pic') ?>
+
+    <?php // echo $form->field($model, 'create_by') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>

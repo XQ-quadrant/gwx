@@ -14,17 +14,48 @@ use yii\filters\VerbFilter;
  */
 class DocumentController extends Controller
 {
+    //public $layout = 'main_nav.php';
+
+    public function actions()
+    {
+        return [
+            'upload'=>[
+                'class' => 'common\widgets\file_upload\UploadAction',     //这里扩展地址别写错
+                'config' => [
+                    'imagePathFormat' => "/images/upload/{yyyy}{mm}{dd}/{time}{rand:6}",
+                ]
+            ]
+        ];
+    }
+
+    /**
+     * @inheritdoc
+     */
     public function behaviors()
     {
         return [
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
-                    'delete' => ['post'],
+                    'delete' => ['POST'],
                 ],
             ],
         ];
     }
+    /*public function beforeAction($action)
+    {
+        if (!parent::beforeAction($action)) {
+            return false;
+        }
+
+        $controller = Yii::$app->controller->id;
+        $action = Yii::$app->controller->action->id;
+        $permissionName = $controller.'/'.$action;
+        if(!\Yii::$app->user->can($permissionName) && Yii::$app->getErrorHandler()->exception === null){
+            throw new \yii\web\UnauthorizedHttpException('对不起，您现在还没获此操作的权限');
+        }
+        return true;
+    }*/
 
     /**
      * Lists all Document models.
@@ -41,6 +72,17 @@ class DocumentController extends Controller
         ]);
     }
 
+    public function actionList($cate)
+    {
+        $this->layout = 'main.php';
+        $searchModel = new DocumentSearch(['cate'=>$cate]);
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+        return $this->render('list', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
+    }
     /**
      * Displays a single Document model.
      * @param integer $id
@@ -48,6 +90,7 @@ class DocumentController extends Controller
      */
     public function actionView($id)
     {
+        $this->layout = 'main_nav.php';
         return $this->render('view', [
             'model' => $this->findModel($id),
         ]);

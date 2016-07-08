@@ -15,3 +15,7 @@
 .help-block, .help-inline {
     color: #e02222 !important;
 }
+
+table input{
+    width: auto;
+}

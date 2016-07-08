@@ -18,8 +18,8 @@ class DocumentSearch extends Document
     public function rules()
     {
         return [
-            [['id', 'cate', 'views', 'status'], 'integer'],
-            [['title', 'breviary', 'content', 'author', 'type'], 'safe'],
+            [['id', 'cate', 'status', 'level', 'create_by'], 'integer'],
+            [['title', 'breviary', 'content', 'author', 'view', 'create_at', 'pic'], 'safe'],
         ];
     }
 
@@ -43,6 +43,8 @@ class DocumentSearch extends Document
     {
         $query = Document::find();
 
+        // add conditions that should always apply here
+
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
         ]);
@@ -55,18 +57,22 @@ class DocumentSearch extends Document
             return $dataProvider;
         }
 
+        // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
             'cate' => $this->cate,
-            'views' => $this->views,
             'status' => $this->status,
+            'level' => $this->level,
+            'create_at' => $this->create_at,
+            'create_by' => $this->create_by,
         ]);
 
         $query->andFilterWhere(['like', 'title', $this->title])
             ->andFilterWhere(['like', 'breviary', $this->breviary])
             ->andFilterWhere(['like', 'content', $this->content])
             ->andFilterWhere(['like', 'author', $this->author])
-            ->andFilterWhere(['like', 'type', $this->type]);
+            ->andFilterWhere(['like', 'view', $this->view])
+            ->andFilterWhere(['like', 'pic', $this->pic]);
 
         return $dataProvider;
     }

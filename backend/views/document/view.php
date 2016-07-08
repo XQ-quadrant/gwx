@@ -11,33 +11,56 @@ $this->params['breadcrumbs'][] = ['label' => 'Documents', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="document-view">
+<div class="row">
+   <!-- <div class="col-md-3">
+    </div>-->
+    <div class="col-md-9">
+        <div class="panel panel-default ">
 
-    <h1><?= Html::encode($this->title) ?></h1>
 
-    <p>
-        <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->id], [
-            'class' => 'btn btn-danger',
-            'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
-                'method' => 'post',
-            ],
-        ]) ?>
-    </p>
+            <div class="panel-body ">
 
-    <?= DetailView::widget([
-        'model' => $model,
-        'attributes' => [
-            'id',
-            'title',
-            'breviary:ntext',
-            'content:ntext',
-            'author',
-            'cate',
-            'type',
-            'views',
-            'status',
-        ],
-    ]) ?>
+                <div class="col-md-12 padding-l-0">
+                    <h3 class="title"><?= $model->title ?></h3>
+                    <div class="author clearfix author-right">
+                        <!--<img src="img/profileimg4.png" alt="img">-->
+                        <span class="name"><b<?= $model->author ?></b> </span>
+                        <span class="from"><b>1 days ago</b> <?= $model->create_at ?></span>
+                    </div>
+                    <hr>
+                    <?= htmlspecialchars_decode($model->content) ?>
+
+
+                </div>
+
+            </div>
+            <div class="panel-footer"></div>
+
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="panel panel-default ">
+
+
+
+            <div class="panel-body ">
+                <h5>相关</h5>
+                <dl>
+                    <dt>Donec lobortis justo at aliquet</dt>
+                    <dd>Sed tincidunt pharetra ante, tempus imperdiet elit sodales id. Donec lobortis justo at aliquet luctus. Praesent interdum massa sed ex efficitur, vitae dignissim ante pharetra</dd>
+                    <dt>Tempus imperdiet elit</dt>
+                    <dd>Sed tincidunt pharetra ante, tempus imperdiet elit sodales id. Donec lobortis justo at aliquet luctus. Praesent interdum massa sed ex efficitur, vitae dignissim ante pharetra</dd>
+                </dl>
+
+
+            </div>
+
+        </div>
+        </div>
+
+</div>
+
+
+
 
 </div>

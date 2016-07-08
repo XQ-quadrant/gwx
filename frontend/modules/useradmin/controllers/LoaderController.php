@@ -86,10 +86,10 @@ public function actionTest(){
     public function actionCreate()
     {
         $model = new Loader();
-        $model->user_id = Yii::$app->user->identity->id;
+        $model->user_id = 1;//Yii::$app->user->identity->id;
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            $user = User::findOne(Yii::$app->user->identity->id);
+            $user = User::findOne(1);
             $user->status = User::STATUS_LOADER;
             $user->save();
 

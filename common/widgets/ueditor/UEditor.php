@@ -30,7 +30,7 @@ class UEditor extends InputWidget
         $this->id = $this->hasModel() ? Html::getInputId($this->model, $this->attribute) : $this->id;
         $this->_options = [
             'serverUrl' => Url::to(['upload']),
-            'initialFrameWidth' => '60%',
+            'initialFrameWidth' => '75%',
             'initialFrameHeight' => '400',
             'lang' => (strtolower(Yii::$app->language) == 'en-us') ? 'en' : 'zh-cn',
             //'style'=>'    overflow: hidden;',

@@ -9,6 +9,9 @@ use yii\grid\GridView;
 
 $this->title = 'Documents';
 $this->params['breadcrumbs'][] = $this->title;
+$this->params['cate'] = Yii::$app->request->get('DocumentSearch')['cate'];
+$this->params['search'] = $this->render('_search', ['model' => $searchModel]);
+
 ?>
 <div class="document-index">
 
@@ -16,16 +19,15 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Document', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('新增', ['create','cate'=>$this->params['cate']], ['class' => 'btn btn-success']) ?>
     </p>
-
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
+            //'id',
             'title',
             //'breviary:ntext',
             //'content:ntext',
@@ -33,10 +35,13 @@ $this->params['breadcrumbs'][] = $this->title;
              'cate',
             // 'type',
             // 'views',
-             'status',
+            // 'status',
+             'level',
+             'create_at',
+            // 'pic:ntext',
+            // 'create_by',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>
-
 </div>
