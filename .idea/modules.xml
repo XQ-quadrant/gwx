@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/gwx.iml" filepath="$PROJECT_DIR$/.idea/gwx.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/ncx.iml" filepath="$PROJECT_DIR$/.idea/ncx.iml" />
     </modules>
   </component>
 </project>

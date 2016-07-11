@@ -16,7 +16,7 @@ namespace yii\bootstrap;
  */
 class Widget extends \yii\base\Widget
 {
-    use BootstrapWidgetTrait;
+    //use BootstrapWidgetTrait;
 
     /**
      * @var array the HTML attributes for the widget container tag.

@@ -121,4 +121,22 @@ return array (
       '@dmstr' => $vendorDir . '/dmstr/yii2-adminlte-asset',
     ),
   ),
+  'iisns/yii2-assets-compress' => 
+  array (
+    'name' => 'iisns/yii2-assets-compress',
+    'version' => '1.0.0.0',
+    'alias' => 
+    array (
+      '@iisns/assets' => $vendorDir . '/iisns/yii2-assets-compress',
+    ),
+  ),
+  'iisns/yii2-webuploader' => 
+  array (
+    'name' => 'iisns/yii2-webuploader',
+    'version' => '1.0.0.0',
+    'alias' => 
+    array (
+      '@iisns/webuploader' => $vendorDir . '/iisns/yii2-webuploader',
+    ),
+  ),
 );

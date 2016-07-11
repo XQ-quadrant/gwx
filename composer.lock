@@ -4,21 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "07f6ac91171c016c629c51517f4e0aa0",
-    "content-hash": "dc54495d2c07ba95343e3f83ee021a3a",
+    "hash": "fa65584b17c088fd0144754f16fc4a4b",
+    "content-hash": "c04e1199371a6def9523b760b21ce275",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
-            "version": "v2.3.3",
+            "version": "v2.3.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/almasaeed2010/AdminLTE.git",
-                "reference": "8db979795044412a2e2b4e9659788c23cb59fcd3"
+                "reference": "0ab2eb7f382e79810ebf3032ce766a02af2b0f3b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/almasaeed2010/AdminLTE/8db979795044412a2e2b4e9659788c23cb59fcd3.zip",
-                "reference": "8db979795044412a2e2b4e9659788c23cb59fcd3",
+                "url": "https://packagist.phpcomposer.com/files/almasaeed2010/AdminLTE/0ab2eb7f382e79810ebf3032ce766a02af2b0f3b.zip",
+                "reference": "0ab2eb7f382e79810ebf3032ce766a02af2b0f3b",
                 "shasum": ""
             },
             "type": "library",
@@ -45,7 +45,7 @@
                 "theme",
                 "web"
             ],
-            "time": "2016-03-24 14:31:41"
+            "time": "2016-07-03 15:21:22"
         },
         {
             "name": "bower-asset/bootstrap",
@@ -525,6 +525,95 @@
             "time": "2015-08-05 01:03:42"
         },
         {
+            "name": "iisns/yii2-assets-compress",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/iisns/yii2-assets-compress.git",
+                "reference": "37009a8b0f4b3bcdd417b223db0d3fb6e9c26034"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://packagist.phpcomposer.com/files/iisns/yii2-assets-compress/37009a8b0f4b3bcdd417b223db0d3fb6e9c26034.zip",
+                "reference": "37009a8b0f4b3bcdd417b223db0d3fb6e9c26034",
+                "shasum": ""
+            },
+            "require": {
+                "mrclay/minify": "*",
+                "natxet/cssmin": "*",
+                "tedivm/jshrink": "*",
+                "yiisoft/yii2": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "iisns\\assets\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Shiyang",
+                    "email": "dr@shiyang.me"
+                }
+            ],
+            "description": "This solution enables you to dynamically combine js and css files to optimize the html page.",
+            "keywords": [
+                "JS",
+                "assets",
+                "compress",
+                "css",
+                "iisns",
+                "yii2"
+            ],
+            "time": "2016-02-12 14:59:50"
+        },
+        {
+            "name": "iisns/yii2-webuploader",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/iisns/yii2-webuploader.git",
+                "reference": "b7d282aaf43f1fda098787db6fa4c9dba917169a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://packagist.phpcomposer.com/files/iisns/yii2-webuploader/b7d282aaf43f1fda098787db6fa4c9dba917169a.zip",
+                "reference": "b7d282aaf43f1fda098787db6fa4c9dba917169a",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "iisns\\webuploader\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Shiyang",
+                    "email": "dr@shiyang.me"
+                }
+            ],
+            "description": "WebUploader是一个简单的以Html5为主，Flash为辅的现代文件上传组件。在现代的浏览器里面能充分发挥html5的优势，同时又不摒弃主流IE浏览器，延用原来的Flash运行时。两套运行时，同样的调用方式，可供用户任意选用。WebUploader采用大文件分片并发上传，极大的提高了文件上传效率。",
+            "keywords": [
+                "iisns",
+                "upload",
+                "webuploader",
+                "yii2"
+            ],
+            "time": "2016-02-13 11:19:26"
+        },
+        {
             "name": "mdmsoft/yii2-admin",
             "version": "2.7",
             "source": {
@@ -581,6 +670,98 @@
                 "yii"
             ],
             "time": "2016-05-20 23:38:13"
+        },
+        {
+            "name": "mrclay/minify",
+            "version": "2.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mrclay/minify.git",
+                "reference": "f4cb31135d288f951bb0af1f23a03d4c00ba9446"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://packagist.phpcomposer.com/files/mrclay/minify/f4cb31135d288f951bb0af1f23a03d4c00ba9446.zip",
+                "reference": "f4cb31135d288f951bb0af1f23a03d4c00ba9446",
+                "shasum": ""
+            },
+            "require": {
+                "ext-pcre": "*",
+                "php": ">=5.2.1"
+            },
+            "require-dev": {
+                "tubalmartin/cssmin": "~2.4.8"
+            },
+            "suggest": {
+                "tubalmartin/cssmin": "Support minify with CSSMin (YUI PHP port)"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "min/lib/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Stephen Clay",
+                    "email": "steve@mrclay.org",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Minify is a PHP5 app that helps you follow several rules for client-side performance. It combines multiple CSS or Javascript files, removes unnecessary whitespace and comments, and serves them with gzip encoding and optimal client-side cache headers",
+            "homepage": "http://code.google.com/p/minify/",
+            "time": "2016-03-08 11:49:57"
+        },
+        {
+            "name": "natxet/CssMin",
+            "version": "v3.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/natxet/CssMin.git",
+                "reference": "92de3fe3ccb4f8298d31952490ef7d5395855c39"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://packagist.phpcomposer.com/files/natxet/CssMin/92de3fe3ccb4f8298d31952490ef7d5395855c39.zip",
+                "reference": "92de3fe3ccb4f8298d31952490ef7d5395855c39",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.0-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Joe Scylla",
+                    "email": "joe.scylla@gmail.com",
+                    "homepage": "https://profiles.google.com/joe.scylla"
+                }
+            ],
+            "description": "Minifying CSS",
+            "homepage": "http://code.google.com/p/cssmin/",
+            "keywords": [
+                "css",
+                "minify"
+            ],
+            "time": "2015-09-25 11:13:11"
         },
         {
             "name": "rmrevin/yii2-fontawesome",
@@ -685,6 +866,52 @@
                 "mailer"
             ],
             "time": "2016-05-01 08:45:47"
+        },
+        {
+            "name": "tedivm/jshrink",
+            "version": "v1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tedious/JShrink.git",
+                "reference": "688527a2e854d7935f24f24c7d5eb1b604742bf9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://packagist.phpcomposer.com/files/tedious/JShrink/688527a2e854d7935f24f24c7d5eb1b604742bf9.zip",
+                "reference": "688527a2e854d7935f24f24c7d5eb1b604742bf9",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "fabpot/php-cs-fixer": "0.4.0",
+                "phpunit/phpunit": "4.0.*",
+                "satooshi/php-coveralls": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "JShrink": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Robert Hafner",
+                    "email": "tedivm@tedivm.com"
+                }
+            ],
+            "description": "Javascript Minifier built in PHP",
+            "homepage": "http://github.com/tedious/JShrink",
+            "keywords": [
+                "javascript",
+                "minifier"
+            ],
+            "time": "2015-07-04 07:35:09"
         },
         {
             "name": "yiisoft/yii2",

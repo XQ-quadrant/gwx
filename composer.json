@@ -20,7 +20,9 @@
         "yiisoft/yii2-swiftmailer": "*",
         "dektrium/yii2-user": "0.9.*@dev",
         "mdmsoft/yii2-admin": "~2.0",
-        "dmstr/yii2-adminlte-asset": "2.*"
+        "dmstr/yii2-adminlte-asset": "^2.3",
+        "iisns/yii2-assets-compress": "^1.0",
+        "iisns/yii2-webuploader": "^1.0"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",
