@@ -98,7 +98,7 @@ body {
 .content-wrapper,
 .right-side {
   min-height: 100%;
-  background-color: rgb(243, 243, 243);
+  background-color: #f0f2f4;
   z-index: 800;
 }
 .main-footer {
@@ -169,7 +169,7 @@ h6,
 }
 /* General Links */
 a {
-  color: #0066AB;
+  color: #2b5471;
 }
 a:hover,
 a:active,
@@ -331,7 +331,7 @@ a:focus {
   margin-top: 0;
   margin-bottom: 0;
   font-size: 12px;
-  padding: 7px 5px;
+  padding: 7px 20px;
   /* position: absolute; */
   /* top: 15px; */
   /* right: 10px; */
@@ -2613,6 +2613,11 @@ a:focus {
 }
 .products-list .product-title {
   font-weight: 600;
+  width: 80%;
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .products-list .product-description {
   display: block;
@@ -4822,7 +4827,7 @@ table.text-center th {
 .attachment-block {
   border: 1px solid #ffffff;
   padding: 5px;
-  margin-bottom: 10px;
+  margin-bottom: 16px;
   background: #ffffff;
 }
 .attachment-block .attachment-img {

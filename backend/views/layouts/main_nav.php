@@ -43,9 +43,18 @@ if (Yii::$app->controller->action->id === 'login') {
         <div class="breadcrumb_banner" style="">
             <div id="breadcrumb_wrapper">
                 <div class="container">
+                    <img src="/adminlte/dist/img/gray_logo.png"  style="width: 78px;float: left;padding: 0 1em;"/>
+                    <a href="<?= Yii::$app->homeUrl?>" style="display: inline-block;">
+                        <h5 style="display: flex">西南交通大学</h5>
+                    <h3  style="display: flex">信号与信息处理实验室</h3></a>
 
-                    <a href="<?= Yii::$app->homeUrl?>"><h5 style=" ">西南交通大学</h5>
-                    <h3  >信号与信息处理实验室</h3></a>
+                    <form class="navbar-form navbar-right" role="search" style="float: right;display: inline-block">
+                        <div class="form-group">
+
+                            <input type="text" class="form-control" id="navbar-search-input" placeholder="搜索">
+                        </div>
+                    </form>
+                    <a href="#" style="float: right;    margin:18px 1em 0 0;padding-right: 1em;font-size: 0.7em;border-right: 1px solid #ccc">to English</a>
 
                     <div class="clearfix"></div>
                 </div>

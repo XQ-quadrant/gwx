@@ -78,4 +78,8 @@ class Cate extends \yii\db\ActiveRecord
     {
         return $this->hasMany(Aindex::className(), ['cate' => 'id']);
     }
+    public static function getCateName($id)
+    {
+        return self::findOne(['id'=>$id]);
+    }
 }

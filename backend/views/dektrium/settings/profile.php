@@ -53,8 +53,9 @@ $this->params['breadcrumbs'][] = $this->title;
 
                 <?= $form->field($model, 'location') ?>
 
-                <?= $form->field($model, 'gravatar_email')->hint(\yii\helpers\Html::a(Yii::t('user', 'Change your avatar at Gravatar.com'), 'http://gravatar.com')) ?>
-
+                <?= $form->field($model, 'gravatar_email')->widget('common\widgets\icon_upload\IconUpload', [
+                    'config' => []
+                ]) ?>
                 <?= $form->field($model, 'bio')->textarea() ?>
 
                 <div class="form-group">

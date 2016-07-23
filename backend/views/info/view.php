@@ -24,12 +24,11 @@ $this->params['breadcrumbs'][] = $this->title;
                     <h3 class="title"><?= $model->title ?></h3>
                     <div class="author clearfix author-right">
                         <!--<img src="img/profileimg4.png" alt="img">-->
-                        <span class="name"><b<?= $model->author ?></b> </span>
-                        <span class="from"><b>1 days ago</b> <?= $model->create_at ?></span>
+                        <span class="name">作者： <?= $model->author ?></span>
+                        <span class="from">日期： <?= Yii::$app->formatter->asDate($model->create_at) ?></span>
                     </div>
                     <hr>
                     <?= htmlspecialchars_decode($model->content) ?>
-
 
                 </div>
 
@@ -49,7 +48,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 </div>
             </div>
             <div  class="box-body no-padding">
-                    <?=\backend\widgets\catalog\CatalogWidget::widget(['pre_cate'=>28])?>
+                    <?=\backend\widgets\catalog\CatalogWidget::widget(['pre_cate'=>$pre_cate])?>
             </div>
             <!-- /.box-body -->
         </div>

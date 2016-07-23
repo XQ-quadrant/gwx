@@ -16,13 +16,15 @@ class InfoController extends \yii\web\Controller
         //return $this->render('index');
     }*/
 
-    public function actionIndex($id=42)
+    public function actionIndex($id=42,$precate=18)
     {
         $cate= \Yii::$app->getRequest()->get('cate');
         //$this->layout = 'main_nav.php';
+        //echo $cate;die();
+        $model = $this->findModel($id);
         return $this->render('view', [
-            'model' => $this->findModel($id),
-            'catalog' => $this->findByCate($cate),
+            'model' => $model,
+            'pre_cate' => $model->cate,
         ]);
     }
 

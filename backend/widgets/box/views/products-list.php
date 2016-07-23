@@ -27,10 +27,11 @@ use yii\helpers\Url;
                     <img src="<?=$m->pic?>" alt="Product Image">
                 </div>
                 <div class="product-info">
-                    <a href="<?=Url::to(['/'.$model->tableName().'/view/','id'=>$m->id])?>" class="product-title">Samsung TV
-                        <span class="label label-warning pull-right">$1800</span></a>
+                    <a href="<?=Url::to(['/'.$model->tableName().'/view/','id'=>$m->id])?>" class="product-title">
+                        <?=$m->title?>
+                        <!--<span class=" pull-left">800</span>--></a>
                         <span class="product-description">
-                          <?=$m->title?>
+                          <?=$m->breviary?>
                         </span>
                 </div>
             </li>
@@ -41,7 +42,7 @@ use yii\helpers\Url;
 
     </div>
     <div class="box-footer text-center">
-        <a href="javascript:void(0)" class="uppercase"> 更 多 </a>
+        <a href="<?=$url?>" class="uppercase"> 更 多 </a>
     </div>
     <!-- /.box-body -->
 </div>

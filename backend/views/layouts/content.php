@@ -42,7 +42,7 @@ use dmstr\widgets\Alert;
     <div class="pull-right hidden-xs">
         <b>版本</b> beta 0.8
     </div>
-    <strong>Copyright &copy; 2016-2017 <a href="http://almsaeedstudio.com">归锋工作室</a></strong> 技术支持
+    <strong>Copyright &copy; 2016-2017 <a href="http://.com">归锋工作室</a></strong> 技术支持
 </footer>
 
 <!-- Control Sidebar -->

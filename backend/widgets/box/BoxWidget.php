@@ -20,6 +20,7 @@ class BoxWidget extends Widget
     public $where ;
     public $liNum = 10;
     public $pic;
+    public $type;
     public $title;
     public $url;
 
@@ -29,7 +30,10 @@ class BoxWidget extends Widget
      */
     public function init(){
         parent::init();
+    }
 
+
+    public function run(){
         if ($this->model === null) {
             $this->model = new Document();
             $this->activeRecord = $this->model
@@ -49,13 +53,23 @@ class BoxWidget extends Widget
                 ->where($this->where)
                 ->orderBy(['level' => SORT_DESC])->limit($this->liNum)->all();
         }
-
-    }
-
-
-    public function run(){
         //$room =
-        if(!isset($this->pic)){
+        $renderArray = [
+            'model'=>$this->model,
+            'ac'=>$this->activeRecord,
+            'css'=>$this->css,
+            'title'=>$this->title,
+            'url'=>$this->url,
+            'cate'=>$this->cate,
+        ];
+        switch($this->type){
+            case 'pic': return $this->render('listPic',$renderArray);break;
+
+            case 'products-list':return $this->render('products-list',$renderArray);break;
+
+            default:  return $this->render('index',$renderArray);
+        }
+        /*if(!isset($this->pic)){
             return $this->render('index',['model'=>$this->model,'ac'=>$this->activeRecord,'css'=>$this->css,'title'=>$this->title]);
 
         }else{
@@ -67,6 +81,6 @@ class BoxWidget extends Widget
                 'url'=>$this->url,
             ]);
 
-        }
+        }*/
     }
 }

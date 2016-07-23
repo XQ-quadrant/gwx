@@ -2,6 +2,7 @@
 use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\helpers\Url;
+use backend\widgets\category\CategoryWidget;
 /* @var $this \yii\web\View */
 /* @var $content string */
 
@@ -29,15 +30,21 @@ use yii\helpers\Url;
 
             ];
         }else{*/
-            $menuItemsCenter = [
-                ['label' => '首页', 'url' => ['/site/index']],
+
+
+        $menu = new CategoryWidget(['precate_name'=>'document']);
+        $menuItemsCenter = $menu->getCate();
+        //var_dump($menuItemsCenter);die();
+           /* $menuItemsCenter = [
+                ['label' => '首页','url' => ['/site/index']],
                 ['label' => '概况', 'url' => ['/frontend/info']],
                 //['label' => '研究领域', 'url' => ['/site/about']],
-                ['label' => '科研成果', 'url' => ['/site/contact']],
+                ['label' => '科研成果', 'url' => ['/achievement']],
                 ['label' => '研究生风采', 'url' => ['/useradmin/loader/create']],
                 ['label' => '招生', 'url' => ['/help/index']],
                 ['label' => '联系我们', 'url' => ['/site/contact']],
             ];
+        var_dump($menuItemsCenter);die();*/
         //}
 
         echo Nav::widget([
@@ -64,7 +71,7 @@ use yii\helpers\Url;
                             <span class="hidden-xs">注册</span>
                         </a>
                     </li>
-                <? }else{ ?>
+                <?php }else{ ?>
                 <li class="dropdown notifications-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <i class="fa fa-bell-o"></i>

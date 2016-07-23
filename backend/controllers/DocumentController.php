@@ -74,11 +74,12 @@ class DocumentController extends Controller
 
     public function actionList($cate)
     {
-        $this->layout = 'main.php';
+        $this->layout = 'main_nav.php';
         $searchModel = new DocumentSearch(['cate'=>$cate]);
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('list', [
+            'cate'=>$cate,
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);

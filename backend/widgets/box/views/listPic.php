@@ -39,7 +39,7 @@ use yii\helpers\Url;
         <?php endforeach; ?>
     </div>
     <div class="box-footer text-center">
-        <a href="javascript:void(0)" class="uppercase"> 更 多 </a>
+        <a href="<?=$url?>" class="uppercase"> 更 多 </a>
     </div>
     <!-- /.box-body -->
 </div>

@@ -30,13 +30,16 @@ class CatalogWidget extends Widget
      */
     public function init(){
         parent::init();
+    }
 
+
+    public function run(){
         if ($this->model === null) {
             $this->model = new Cate();
             $this->activeRecord = $this->model
                 ->find()
                 ->where(['status'=>Cate::STATUS_AOLLOW ,'pre_cate'=>$this->pre_cate])
-                ->orderBy(['level' => SORT_DESC])
+                ->orderBy(['level' => SORT_ASC])
                 ->limit($this->liNum)
                 ->all();
         }else{
@@ -45,13 +48,8 @@ class CatalogWidget extends Widget
             $this->activeRecord = $this->model
                 ->find()
                 ->where($this->where)
-                ->orderBy(['level' => SORT_DESC])->limit($this->liNum)->all();
+                ->orderBy(['level' => SORT_ASC])->limit($this->liNum)->all();
         }
-
-    }
-
-
-    public function run(){
         //$room =
             return $this->render('index',[
                 'model'=>$this->model,

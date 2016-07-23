@@ -18,7 +18,8 @@ use yii\helpers\Html;
         <div class="navbar-custom-menu">
 
             <ul class="nav navbar-nav">
-        <?php if(Yii::$app->user->isGuest) { ?>
+                <?php //var_dump(Yii::$app->user->isGuest);die(); ?>
+        <?php if(!isset(Yii::$app->user->identity->id)) { ?>
             <li class="">
                 <a href="/user/login" class="dropdown-toggle" data-toggle="dropdown">
                     <span class="hidden-xs">登录</span>
@@ -29,7 +30,7 @@ use yii\helpers\Html;
                     <span class="hidden-xs">注册</span>
                 </a>
             </li>
-                <? }else{ ?>
+                <?php }else{ ?>
 
                 <!-- Messages: style can be found in dropdown.less-->
                 <li class="dropdown messages-menu">
@@ -288,6 +289,7 @@ use yii\helpers\Html;
                     <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
                 </li>
                 <?php } ?>
+
             </ul>
         </div>
     </nav>

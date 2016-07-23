@@ -24,7 +24,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <!-- Profile Image -->
         <div class="box box-primary">
             <div class="box-body box-profile">
-                <?= Html::img($profile->getAvatarUrl(230), [
+                <?= Html::img('/adminlte/dist/img/user2-160x160.jpg', [
                     'class' => 'img-rounded img-responsive profile-user-img img-responsive img-circle',
                     'alt'   => $profile->user->username,
                 ]) ?>
@@ -38,17 +38,17 @@ $this->params['breadcrumbs'][] = $this->title;
 
                 <ul class="list-group list-group-unbordered">
                     <li class="list-group-item">
-                        <b>Followers</b> <a class="pull-right">1,322</a>
+                        报告 <a class="pull-right">5</a>
                     </li>
                     <li class="list-group-item">
-                        <b>Following</b> <a class="pull-right">543</a>
+                        论文 <a class="pull-right">3</a>
                     </li>
                     <li class="list-group-item">
-                        <b>Friends</b> <a class="pull-right">13,287</a>
+                        专利 <a class="pull-right">0</a>
                     </li>
                 </ul>
 
-                <a href="#" class="btn btn-primary btn-block"><b>Follow</b></a>
+                <a href="#" class="btn btn-primary btn-block"><b>关注</b></a>
             </div>
             <!-- /.box-body -->
         </div>
@@ -57,39 +57,36 @@ $this->params['breadcrumbs'][] = $this->title;
         <!-- About Me Box -->
         <div class="box box-primary">
             <div class="box-header with-border">
-                <h3 class="box-title">About Me</h3>
+                <h3 class="box-title">关于</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-                <strong><i class="fa fa-book margin-r-5"></i> Education</strong>
+                <p><i class="fa fa-book margin-r-5"></i> 教育</p>
 
                 <p class="text-muted">
-                    B.S. in Computer Science from the University of Tennessee at Knoxville
+                    西南交通大学，信息科学与技术学院，软件工程
                 </p>
 
                 <hr>
 
-                <strong><i class="fa fa-map-marker margin-r-5"></i> 地区</strong>
+                <p><i class="fa fa-map-marker margin-r-5"></i> 地区</p>
 
                 <p class="text-muted"><?= Html::encode($profile->location) ?></p>
 
                 <hr>
 
-                <strong><i class="fa fa-pencil margin-r-5"></i> 技能</strong>
+                <p><i class="fa fa-pencil margin-r-5"></i> 技能</p>
 
                 <p>
-                    <span class="label label-danger">UI Design</span>
-                    <span class="label label-success">Coding</span>
-                    <span class="label label-info">Javascript</span>
-                    <span class="label label-warning">PHP</span>
-                    <span class="label label-primary">Node.js</span>
+                    <span class="label label-primary">UI设计</span>
+
+                    <span class="label label-primary">Python</span>
+                    <span class="label label-primary">Javascript</span>
+                    <span class="label label-primary">PHP</span>
                 </p>
 
                 <hr>
 
-                <strong><i class="fa fa-file-text-o margin-r-5"></i> Notes</strong>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum enim neque.</p>
             </div>
             <!-- /.box-body -->
         </div>
@@ -99,9 +96,9 @@ $this->params['breadcrumbs'][] = $this->title;
     <div class="col-md-8">
         <div class="nav-tabs-custom">
             <ul class="nav nav-tabs">
-                <li class="active"><a href="#activity" data-toggle="tab">Activity</a></li>
-                <li><a href="#timeline" data-toggle="tab">Timeline</a></li>
-                <li><a href="#settings" data-toggle="tab">Settings</a></li>
+                <li class="active"><a href="#activity" data-toggle="tab">动态</a></li>
+                <li><a href="#timeline" data-toggle="tab">时光轴</a></li>
+                <li><a href="#settings" data-toggle="tab">设置</a></li>
             </ul>
             <div class="tab-content">
                 <div class="active tab-pane" id="activity">
@@ -376,33 +373,4 @@ $this->params['breadcrumbs'][] = $this->title;
     </div>
     <!-- /.col -->
 </div>
-<div class="row">
-    <div class="col-xs-12 col-sm-6 col-md-6">
-        <div class="row">
-            <div class="col-sm-6 col-md-4">
-                <?= Html::img($profile->getAvatarUrl(230), [
-                    'class' => 'img-rounded img-responsive',
-                    'alt'   => $profile->user->username,
-                ]) ?>
-            </div>
-            <div class="col-sm-6 col-md-8">
-                <h4><?= $this->title ?></h4>
-                <ul style="padding: 0; list-style: none outside none;">
-                    <?php if (!empty($profile->location)): ?>
-                        <li><i class="glyphicon glyphicon-map-marker text-muted"></i> <?= Html::encode($profile->location) ?></li>
-                    <?php endif; ?>
-                    <?php if (!empty($profile->website)): ?>
-                        <li><i class="glyphicon glyphicon-globe text-muted"></i> <?= Html::a(Html::encode($profile->website), Html::encode($profile->website)) ?></li>
-                    <?php endif; ?>
-                    <?php if (!empty($profile->public_email)): ?>
-                        <li><i class="glyphicon glyphicon-envelope text-muted"></i> <?= Html::a(Html::encode($profile->public_email), 'mailto:' . Html::encode($profile->public_email)) ?></li>
-                    <?php endif; ?>
-                    <li><i class="glyphicon glyphicon-time text-muted"></i> <?= Yii::t('user', 'Joined on {0, date}', $profile->user->created_at) ?></li>
-                </ul>
-                <?php if (!empty($profile->bio)): ?>
-                    <p><?= Html::encode($profile->bio) ?></p>
-                <?php endif; ?>
-            </div>
-        </div>
-    </div>
-</div>
+

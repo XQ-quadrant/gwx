@@ -31,7 +31,7 @@ $this->registerCss('.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-
                 <!-- /.box-header -->
                 <div class="box-body no-padding">
                     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" style="    padding: 5px;
-    border: 1px solid #B8CEE4;">
+    border: 1px solid #dbe3eb;">
                         <ol class="carousel-indicators">
                             <li data-target="#carousel-example-generic" data-slide-to="0" class=""></li>
                             <li data-target="#carousel-example-generic" data-slide-to="1" class=""></li>
@@ -39,21 +39,22 @@ $this->registerCss('.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-
                         </ol>
                         <div class="carousel-inner">
                             <div class="item">
-                                <img src=" <?= Yii::getAlias('@web/') ?>images/bg_header.jpg" alt="First slide">
 
+                                <img src="/adminlte/dist/img/library.jpg" alt="First slide">
                                 <div class="carousel-caption">
-                                    老牛逼了
+                                    灰雀教务系统
                                 </div>
+
                             </div>
                             <div class="item">
-                                <img src="<?= Yii::getAlias('@web/adminlte/dist/') ?>img/03.jpg" alt="Second slide">
+                                <img src="/adminlte/dist/img/turmp.jpg" alt="Second slide">
 
                                 <div class="carousel-caption">
                                     Second Slide
                                 </div>
                             </div>
                             <div class="item active">
-                                <img src="<?= Yii::getAlias('@web/') ?>images/bg_header.jpg" alt="Third slide">
+                                <img src="/adminlte/dist/img/computer.jpg" alt="Third slide">
 
                                 <div class="carousel-caption">
                                     Third Slide
@@ -85,7 +86,7 @@ $this->registerCss('.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-
 
         </div>
         <div class="col-md-5">
-            <?= backend\widgets\box\BoxWidget::widget(['cate' => 29, 'title' => '通知公告', 'liNum' => 7,]) ?>
+            <?= backend\widgets\box\BoxWidget::widget(['cate' => 32, 'title' => '通知公告', 'liNum' => 7,'url' => Url::toRoute(['document/list', 'cate' => 32])]) ?>
 
             <!-- /.nav-tabs-custom -->
         </div>
@@ -93,83 +94,13 @@ $this->registerCss('.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-
 <hr style="    border-top:1px solid #D9E0E6;margin-top: 0px;margin-bottom: 10px;">
     <div class="row">
         <div class="col-md-7">
-            <?= backend\widgets\box\BoxWidget::widget(['cate' => 14, 'pic' => true, 'title' => '实验室动态', 'url' => Url::toRoute(['document/list', 'cate' => 5])]) ?>
+            <?= backend\widgets\box\BoxWidget::widget(['type'=>'pic','cate' => 14, 'pic' => true, 'title' => '实验室动态', 'url' => Url::toRoute(['document/list', 'cate' => 14])]) ?>
 
             <!-- /.nav-tabs-custom -->
         </div>
         <div class="col-md-5">
-            <div class="box box-primary box-widget">
-                <div class="box-header with-border">
-                    <h3 class="box-title">Recently Added Products</h3>
+            <?= backend\widgets\box\BoxWidget::widget(['type'=>'products-list','cate' => 31, 'pic' => true, 'title' => '学术活动', 'url' => Url::toRoute(['document/list', 'cate' => 31])]) ?>
 
-                    <div class="box-tools pull-right">
-                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                        </button>
-                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-                    </div>
-                </div>
-                <!-- /.box-header -->
-                <div class="box-body">
-                    <ul class="products-list product-list-in-box">
-                        <li class="item">
-                            <div class="product-img">
-                                <img src="<?= Yii::getAlias('@web/adminlte/') ?>dist/img/default-50x50.gif" alt="Product Image">
-                            </div>
-                            <div class="product-info">
-                                <a href="javascript:void(0)" class="product-title">Samsung TV
-                                    <span class="label label-warning pull-right">$1800</span></a>
-                        <span class="product-description">
-                          Samsung 32" 1080p 60Hz LED Smart HDTV.
-                        </span>
-                            </div>
-                        </li>
-                        <!-- /.item -->
-                        <li class="item">
-                            <div class="product-img">
-                                <img src="<?= Yii::getAlias('@web/adminlte/') ?>dist/img/default-50x50.gif" alt="Product Image">
-                            </div>
-                            <div class="product-info">
-                                <a href="javascript:void(0)" class="product-title">Bicycle
-                                    <span class="label label-info pull-right">$700</span></a>
-                        <span class="product-description">
-                          26" Mongoose Dolomite Men's 7-speed, Navy Blue.
-                        </span>
-                            </div>
-                        </li>
-                        <!-- /.item -->
-                        <li class="item">
-                            <div class="product-img">
-                                <img src="<?= Yii::getAlias('@web/adminlte/') ?>dist/img/default-50x50.gif" alt="Product Image">
-                            </div>
-                            <div class="product-info">
-                                <a href="javascript:void(0)" class="product-title">Xbox One <span class="label label-danger pull-right">$350</span></a>
-                        <span class="product-description">
-                          Xbox One Console Bundle with Halo Master Chief Collection.
-                        </span>
-                            </div>
-                        </li>
-                        <!-- /.item -->
-                        <li class="item">
-                            <div class="product-img">
-                                <img src="<?= Yii::getAlias('@web/adminlte/') ?>dist/img/default-50x50.gif" alt="Product Image">
-                            </div>
-                            <div class="product-info">
-                                <a href="javascript:void(0)" class="product-title">PlayStation 4
-                                    <span class="label label-success pull-right">$399</span></a>
-                        <span class="product-description">
-                          PlayStation 4 500GB Console (PS4)
-                        </span>
-                            </div>
-                        </li>
-                        <!-- /.item -->
-                    </ul>
-                </div>
-                <!-- /.box-body -->
-                <div class="box-footer text-center">
-                    <a href="javascript:void(0)" class="uppercase"> 更 多 </a>
-                </div>
-                <!-- /.box-footer -->
-            </div>
             <!-- About Me Box -->
 
             <!-- /.box -->
@@ -177,6 +108,9 @@ $this->registerCss('.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-
         <!-- /.col -->
 
 
+
+    </div>
+    <div class="row">
         <div class="col-lg-2">
             <div class="small-box bg-pblue">
                 <div class="inner">
@@ -207,23 +141,8 @@ $this->registerCss('.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-
                 </a>
             </div>
         </div>
-        <div class="col-lg-2">
-        <div class="info-box bg-aqua">
-            <span class="info-box-icon"><i class="fa fa-bookmark-o"></i></span>
-
-            <div class="info-box-content">
-                <span class="info-box-text">专利</span>
-                <span class="info-box-number">41</span>
-
-                <div class="progress">
-                    <div class="progress-bar" style="width: 70%"></div>
-                </div>
-                  <span class="progress-description">
-                    70% Increase in 30 Days
-                  </span>
-            </div>
-            <!-- /.info-box-content -->
-        </div>
+        <div class="col-lg-8" style="height: 100px;overflow: hidden">
+            <img class="img-responsive " src="/adminlte/dist/img/bg_header2.png" alt="Photo">
         </div>
     </div>
 </div>

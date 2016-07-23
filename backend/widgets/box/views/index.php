@@ -34,7 +34,7 @@ use yii\helpers\Url;
 
  </div>
  <div class="box-footer text-center">
-  <a href="javascript:void(0)" class="uppercase">阅读更多</a>
+  <a href="<?=$url?>" class="uppercase">阅读更多</a>
  </div>
  <!-- /.box-body -->
 </div>

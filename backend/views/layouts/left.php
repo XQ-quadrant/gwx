@@ -12,16 +12,16 @@ $callback = function($menu){
     //处理我们的配置
     if ($data) {
 
-        //visible
+        // visible
         isset($data['visible']) && $return['visible'] = $data['visible'];
-        //icon
+        // icon
         isset($data['icon']) && $data['icon'] && $return['icon'] = $data['icon'];
-        //other attribute e.g. class...
+        // other attribute e.g. class...
 
-        if( isset($data['submenu'])){
+        if( isset($data['submenu'])){    //处理二级菜单
             $class = 'backend\\widgets\\category\\'.$data['submenu'];
             $sub = new $class(['precate'=>0,'precate_name'=>'document']);
-            $subitems = $sub->run();
+            $subitems = $sub->getDocumentCate();
             //var_dump($subitems);die();
             $return['items'] = $subitems;
         }
@@ -39,13 +39,14 @@ $callback = function($menu){
 
         <!-- Sidebar user panel -->
         <div class="user-panel">
+
             <div class="pull-left image">
                 <img src="<?= $directoryAsset ?>/img/user2-160x160.jpg" class="img-circle" alt="User Image"/>
             </div>
             <div class="pull-left info">
-                <p><?= Yii::$app->user->identity->username ?></p>
+                <p><a href="/user/<?= Yii::$app->user->identity->id ?>"><?= Yii::$app->user->identity->username ?></a></p>
 
-                <a href="#"><i class="fa fa-circle text-success"></i> 在线</a>
+                <a href="/user/<?= Yii::$app->user->identity->id ?>"><i class="fa fa-circle text-success"></i> 在线</a>
             </div>
         </div>
 
