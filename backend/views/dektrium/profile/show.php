@@ -24,7 +24,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <!-- Profile Image -->
         <div class="box box-primary">
             <div class="box-body box-profile">
-                <?= Html::img('/adminlte/dist/img/user2-160x160.jpg', [
+                <?= Html::img($profile->gravatar_email, [
                     'class' => 'img-rounded img-responsive profile-user-img img-responsive img-circle',
                     'alt'   => $profile->user->username,
                 ]) ?>
@@ -105,20 +105,22 @@ $this->params['breadcrumbs'][] = $this->title;
                     <!-- Post -->
                     <div class="post">
                         <div class="user-block">
-                            <img class="img-circle img-bordered-sm" src="../../dist/img/user1-128x128.jpg" alt="user image">
+                            <img class="img-circle img-bordered-sm" src="/adminlte/dist/img/user1-128x128.jpg" alt="user image">
                         <span class="username">
-                          <a href="#">Jonathan Burke Jr.</a>
+                          <a href="#">文献推荐 </a>
                           <a href="#" class="pull-right btn-box-tool"><i class="fa fa-times"></i></a>
                         </span>
-                            <span class="description">Shared publicly - 7:30 PM today</span>
+                            <span class="description">Dr.Jonathan Burke - 7:30 PM today</span>
                         </div>
                         <!-- /.user-block -->
+                        <p>新书：
+                            《计算机程序的构造和解释 : 原书第2版》、
+                            《算法导论》、
+                            《深入理解计算机系统》、
+                            《MacTalk·人生元编程》、</p>
                         <p>
-                            Lorem ipsum represents a long-held tradition for designers,
-                            typographers and the like. Some people hate it and argue for
-                            its demise, but others ignore the hate as they create awesome
-                            tools to help create filler text for everyone from bacon lovers
-                            to Charlie Sheen fans.
+                            要求：深入理解，随意敷衍
+
                         </p>
                         <ul class="list-inline">
                             <li><a href="#" class="link-black text-sm"><i class="fa fa-share margin-r-5"></i> Share</a></li>
@@ -136,12 +138,12 @@ $this->params['breadcrumbs'][] = $this->title;
                     <!-- Post -->
                     <div class="post clearfix">
                         <div class="user-block">
-                            <img class="img-circle img-bordered-sm" src="../../dist/img/user7-128x128.jpg" alt="User Image">
+                            <img class="img-circle img-bordered-sm" src="/adminlte/dist/img/user7-128x128.jpg" alt="User Image">
                         <span class="username">
-                          <a href="#">Sarah Ross</a>
+                          <a href="#">代码规范3.1（修正）</a>
                           <a href="#" class="pull-right btn-box-tool"><i class="fa fa-times"></i></a>
                         </span>
-                            <span class="description">Sent you a message - 3 days ago</span>
+                            <span class="description">吴一通副教授 - 3 days ago</span>
                         </div>
                         <!-- /.user-block -->
                         <p>
@@ -168,7 +170,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     <!-- Post -->
                     <div class="post">
                         <div class="user-block">
-                            <img class="img-circle img-bordered-sm" src="../../dist/img/user6-128x128.jpg" alt="User Image">
+                            <img class="img-circle img-bordered-sm" src="/adminlte/dist/img/user6-128x128.jpg" alt="User Image">
                         <span class="username">
                           <a href="#">Adam Jones</a>
                           <a href="#" class="pull-right btn-box-tool"><i class="fa fa-times"></i></a>
@@ -178,21 +180,21 @@ $this->params['breadcrumbs'][] = $this->title;
                         <!-- /.user-block -->
                         <div class="row margin-bottom">
                             <div class="col-sm-6">
-                                <img class="img-responsive" src="../../dist/img/photo1.png" alt="Photo">
+                                <img class="img-responsive" src="/adminlte/dist/img/photo1.png" alt="Photo">
                             </div>
                             <!-- /.col -->
                             <div class="col-sm-6">
                                 <div class="row">
                                     <div class="col-sm-6">
-                                        <img class="img-responsive" src="../../dist/img/photo2.png" alt="Photo">
+                                        <img class="img-responsive" src="/adminlte/dist/img/photo2.png" alt="Photo">
                                         <br>
-                                        <img class="img-responsive" src="../../dist/img/photo3.jpg" alt="Photo">
+                                        <img class="img-responsive" src="/adminlte/dist/img/photo3.jpg" alt="Photo">
                                     </div>
                                     <!-- /.col -->
                                     <div class="col-sm-6">
-                                        <img class="img-responsive" src="../../dist/img/photo4.jpg" alt="Photo">
+                                        <img class="img-responsive" src="/adminlte/dist/img/photo4.jpg" alt="Photo">
                                         <br>
-                                        <img class="img-responsive" src="../../dist/img/photo1.png" alt="Photo">
+                                        <img class="img-responsive" src="/adminlte/dist/img/photo1.png" alt="Photo">
                                     </div>
                                     <!-- /.col -->
                                 </div>
@@ -270,9 +272,15 @@ $this->params['breadcrumbs'][] = $this->title;
                                 <h3 class="timeline-header"><a href="#">Jay White</a> commented on your post</h3>
 
                                 <div class="timeline-body">
-                                    Take me to your leader!
-                                    Switzerland is small and neutral!
-                                    We are more like Germany, ambitious and misunderstood!
+                                    《MacTalk·人生元编程》是一本随笔文集，主要内容来自作者的微信公众平台 【MacTalk By 池建强】。
+
+                                    MacTalk 成书主要来自读者的热情邀约，作者重新对文章进行了梳理，对内容进行增补、删减和校对，形成了五大主题共计五十二篇文章，这五个主题包括：Mac、程序员与编程、科技与人文、人物、工具。每篇文章独立成文，读者可利用碎片时间随机阅读。
+
+                                    另外，作者对原来散落在各篇文章中的 Mac 技巧进行了统一的整理和规划，总结了130个Mac使用技巧。如果您是 Mac 用户，绝对不可错过，长知识的同时，还能提高工作效率。
+
+                                    本书非常荣幸的邀请到了冯大辉先生做序，他是微信公众平台 【小道消息】的作者，MacTalk 在写作的过程中得到了冯大辉先生的诸多帮助，在此一并谢过。
+
+                                    池建强，70后程序员，Blogger，微信平台 MacTalk 作者。先后任职洪恩软件和用友集团，从事互联网和企业应用软件研发，目前担任瑞友科技IT应用研究院技术负责人。 热爱技术和编码工作，Apple 和 Google 产品重度用户，分享技术，坚持梦想。
                                 </div>
                                 <div class="timeline-footer">
                                     <a class="btn btn-warning btn-flat btn-xs">View comment</a>

@@ -17,29 +17,31 @@
  		input.attr('from', $(this).attr('id'));
  		input.click();
  	});
- 	$('.file_upload').on('change',function(){
- 		var from=$('#upfile').attr('from');
- 		var thisUrl = $('.'+from).parent().attr('data-url');
-        var thisType = $(this).attr('filetype'),        
- 			maxSize  = 1*1024*1024;
- 		$(this).upload({
- 			url     : thisUrl,
- 			maxSize : maxSize,
- 			img : {
+	var upimg = function(){
+		var from=$('#upfile').attr('from');
+		var thisUrl = $('.'+from).parent().attr('data-url');
+		var thisType = $(this).attr('filetype'),
+				maxSize  = 1*1024*1024;
+		$(this).upload({
+			url     : thisUrl,
+			maxSize : maxSize,
+			img : {
 				img : ['jpg','JPG','jpeg','JPEG','gif','GIF','png','PNG']
 			},
- 			sucFn   : function(json){
- 				var from=$('#upfile').attr('from');
- 				var domainUrl = $('.'+from).attr('domain-url');
- 				json = $.parseJSON(json);
- 				if(json.state == 'SUCCESS'){
- 					$('input[up-id='+ from+']').val(json.url);
- 					$('.'+ from).html($('<img />').attr('src', domainUrl+json.url));
- 				}else{
-                    alert(json.state);
- 				}
- 			}
- 		});
- 	});
+			sucFn   : function(json){
+				var from=$('#upfile').attr('from');
+				var domainUrl = $('.'+from).attr('domain-url');
+				json = $.parseJSON(json);
+				if(json.state == 'SUCCESS'){
+					$('input[up-id='+ from+']').val(json.url);
+					$('.'+ from).html($('<img />').attr('src', domainUrl+json.url));
+				}else{
+					alert(json.state);
+				}
+			}
+		});
+	};
+
+ 	$('.file_upload').on('change',upimg);
 
 })(jQuery)

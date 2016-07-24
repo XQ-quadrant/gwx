@@ -16,7 +16,7 @@ class IconUploadAsset extends AssetBundle
 {
     public $css = [
         'css/style.css',
-        'css/upload.css',
+        //'css/upload.css',
     ];
     
     public $js = [
@@ -25,6 +25,7 @@ class IconUploadAsset extends AssetBundle
         'js/upload-input.js',
         'js/jquery-1.11.1.min.js',
         'js/cropbox.js',
+        'js/init.js',
     ];
     
     public $depends = [

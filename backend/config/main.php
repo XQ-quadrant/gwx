@@ -10,9 +10,11 @@ return [
     'id' => 'app-backend',
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
-    'bootstrap' => ['log'],
+    //'bootstrap' => ['debug'],
+
     'name'=>'GraySparrow',
     'language'=>'zh-CN',
+    //'debug'=>false,
     'components' => [
         'user' => [
             'identityCookie' => [
@@ -138,6 +140,9 @@ return [
             'viewPath'=>'@app/views',
             //'layout' => '@app/views/layouts/main_nav.php',
         ],
+        /*'debug' => [
+            'class' => 'yii\debug\Module',
+        ],*/
         'admin' => [
             'class' => 'mdm\admin\Module',
             'layout' => 'left-menu', // it can be '@path/to/your/layout'.

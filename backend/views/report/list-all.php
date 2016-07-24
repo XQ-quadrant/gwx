@@ -53,8 +53,8 @@ $data = $dataProvider->getModels();
 
                     <div style="float: left">
                         <img class="img-circle" src="/adminlte/dist/img/user1-128x128.jpg" alt="User Image">
-                        <span class="description" style="font-size: 15px;color: #8b8b8b;padding-left: 0.5em">报告人：<?=$list['username']?></span>
-                        <span class="description" style="font-size: 15px;color: #8b8b8b;padding-left: 0.5em">报告时间： <?= Yii::$app->formatter->format($list['start_at'],['datetime','php: Y年m月d日  ah:i'])?></span>
+                        <span class=" report-span" >报告人：<?=$list['username']?></span>
+                        <span class=" report-span" >报告时间： <?= Yii::$app->formatter->format($list['start_at'],['datetime','php: Y年m月d日  ah:i'])?></span>
 
                     </div>
                 </div>

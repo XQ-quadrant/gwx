@@ -29,6 +29,17 @@ class ReportController extends Controller
             ],
         ];
     }
+    public function actions()
+    {
+        return [
+            'upload'=>[
+                'class' => 'common\widgets\icon_upload\UploadAction',     //这里扩展地址别写错
+                'config' => [
+                    'imagePathFormat' => "/images/upload/{yyyy}{mm}{dd}/{time}{rand:6}",
+                ]
+            ]
+        ];
+    }
 
     /**
      * Lists all Report models.

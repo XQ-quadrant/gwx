@@ -242,46 +242,37 @@ use yii\helpers\Html;
 
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <img src="<?= $directoryAsset ?>/img/user2-160x160.jpg" class="user-image" alt="User Image"/>
+                        <img src="<?= Yii::$app->user->identity->profile->gravatar_email ?>" class="user-image" alt="User Image"/>
                         <span class="hidden-xs"><?= Yii::$app->user->identity->username ?></span>
                     </a>
-                    <ul class="dropdown-menu">
-                        <!-- User image -->
-                        <li class="user-header">
-                            <img src="<?= $directoryAsset ?>/img/user2-160x160.jpg" class="img-circle"
-                                 alt="User Image"/>
+                <ul class="dropdown-menu">
 
-                            <p>
-                                <?= Yii::$app->user->identity->username ?> - Web Developer
-                                <small>Member since Nov. 2012</small>
-                            </p>
-                        </li>
-                        <!-- Menu Body -->
-                        <li class="user-body">
-                            <div class="col-xs-4 text-center">
-                                <a href="#">Followers</a>
+                    <!-- User image -->
+
+
+                    <li >
+                        <div class="box box-widget ">
+                            <!-- Add the bg color to the header using any of the bg-* classes -->
+
+                            <div class="box-footer no-padding">
+                                <ul class="nav nav-stacked">
+                                    <li><a href="/user/<?= Yii::$app->user->identity->id ?>">主页 <span class="pull-right badge bg-blue">31</span></a></li>
+                                    <li><a href="#">活动 <span class="pull-right badge bg-aqua">5</span></a></li>
+                                    <li><a href="#">好友 <span class="pull-right badge bg-aqua">5</span></a></li>
+                                    <li><?= Html::a(
+                                            '退出',
+                                            ['/site/logout'],
+                                            ['data-method' => 'post', ]
+                                        ) ?></li>
+                                </ul>
                             </div>
-                            <div class="col-xs-4 text-center">
-                                <a href="#">Sales</a>
-                            </div>
-                            <div class="col-xs-4 text-center">
-                                <a href="#">Friends</a>
-                            </div>
-                        </li>
-                        <!-- Menu Footer-->
-                        <li class="user-footer">
-                            <div class="pull-left">
-                                <a href="#" class="btn btn-default btn-flat">Profile</a>
-                            </div>
-                            <div class="pull-right">
-                                <?= Html::a(
-                                    'Sign out',
-                                    ['/site/logout'],
-                                    ['data-method' => 'post', 'class' => 'btn btn-default btn-flat']
-                                ) ?>
-                            </div>
-                        </li>
-                    </ul>
+                        </div>
+                    </li>
+                    <!-- Menu Body -->
+
+                    <!-- Menu Footer-->
+
+                </ul>
                 </li>
 
                 <!-- User Account: style can be found in dropdown.less -->
