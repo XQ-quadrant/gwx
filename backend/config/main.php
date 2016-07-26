@@ -10,7 +10,7 @@ return [
     'id' => 'app-backend',
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
-    //'bootstrap' => ['debug'],
+    //'bootstrap' => ['log'],
 
     'name'=>'GraySparrow',
     'language'=>'zh-CN',
@@ -30,7 +30,7 @@ return [
                 'path'     => '/',
             ],
         ],
-        'log' => [
+        /*'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
             'targets' => [
                 [
@@ -38,7 +38,7 @@ return [
                     'levels' => ['error', 'warning'],
                 ],
             ],
-        ],
+        ],*/
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],

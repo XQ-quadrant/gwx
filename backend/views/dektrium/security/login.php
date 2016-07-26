@@ -26,7 +26,7 @@ $this->params['breadcrumbs'][] = $this->title;
 <?= $this->render('/_alert', ['module' => Yii::$app->getModule('user')]) ?>
 <div class="login-box">
     <div class="login-logo">
-        <a href="../../index2.html"><b>GL</b>登录</a>
+        <a href="/">灰雀教务</a>
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body">

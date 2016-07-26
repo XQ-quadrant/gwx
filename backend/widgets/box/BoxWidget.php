@@ -7,6 +7,7 @@
  */
 namespace backend\widgets\box;
 
+use backend\widgets\box\assets\BoxAsset;
 use common\models\Document;
 use yii\base\Widget;
 use yii\db\ActiveRecord;
@@ -34,6 +35,7 @@ class BoxWidget extends Widget
 
 
     public function run(){
+        $this->registerClientScript();
         if ($this->model === null) {
             $this->model = new Document();
             $this->activeRecord = $this->model
@@ -82,5 +84,11 @@ class BoxWidget extends Widget
             ]);
 
         }*/
+    }
+    public function registerClientScript()
+    {
+        BoxAsset::register($this->view);
+        //$script = "FormFileUpload.init();";
+        //$this->view->registerJs($script, View::POS_READY);
     }
 }

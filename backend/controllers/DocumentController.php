@@ -2,6 +2,7 @@
 
 namespace backend\controllers;
 
+use common\models\Cate;
 use Yii;
 use common\models\Document;
 use common\models\DocumentSearch;
@@ -92,8 +93,12 @@ class DocumentController extends Controller
     public function actionView($id)
     {
         $this->layout = 'main_nav.php';
+        $model = $this->findModel($id);
+        $cate =Cate::findOne(['id'=>$model->cate]);
+
         return $this->render('view', [
-            'model' => $this->findModel($id),
+            'model' => $model,
+            'cate'=>$cate,
         ]);
     }
 

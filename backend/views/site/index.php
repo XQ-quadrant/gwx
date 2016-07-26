@@ -37,9 +37,8 @@ $this->registerCss('.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-
                             <li data-target="#carousel-example-generic" data-slide-to="1" class=""></li>
                             <li data-target="#carousel-example-generic" data-slide-to="2" class="active"></li>
                         </ol>
-                        <div class="carousel-inner">
+                        <div class="carousel-inner slider-items">
                             <div class="item">
-
                                 <img src="/adminlte/dist/img/library.jpg" alt="First slide">
                                 <div class="carousel-caption">
                                     灰雀教务系统
@@ -85,8 +84,10 @@ $this->registerCss('.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-
             </section>-->
 
         </div>
-        <div class="col-md-5">
-            <?= backend\widgets\box\BoxWidget::widget(['cate' => 32, 'title' => '通知公告', 'liNum' => 7,'url' => Url::toRoute(['document/list', 'cate' => 32])]) ?>
+        <div class="col-md-5" style="    height: 320px;">
+            <?= backend\widgets\box\BoxWidget::widget(['cate' => 32, 'title' => '通知公告', 'liNum' => 7,
+                'url' => Url::toRoute(['document/list', 'cate' => 32]),
+                'css'=>['warper'=>'box-widget index-box','title'=>'with-border','body'=>'box-profile']]) ?>
 
             <!-- /.nav-tabs-custom -->
         </div>

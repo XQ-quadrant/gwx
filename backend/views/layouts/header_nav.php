@@ -12,7 +12,7 @@ use backend\widgets\category\CategoryWidget;
 
 
     <nav class="navbar navbar-static-top" role="navigation">
-        <div class="container">
+        <div class="container" style="padding-right: 15px;padding-left: 15px;">
         <div class="navbar-header">
 
             <a href="<?=Url::home()?>" class="navbar-brand" >信号与信息处理实验室</a>
@@ -63,12 +63,12 @@ use backend\widgets\category\CategoryWidget;
                 <?php if(Yii::$app->user->isGuest) { ?>
                     <li class="">
                         <a href="/user/login" >
-                            <span class="hidden-xs">登录</span>
+                            登录
                         </a>
                     </li>
                     <li class="dropdown user user-menu">
                         <a href="/user/register" >
-                            <span class="hidden-xs">注册</span>
+                            注册
                         </a>
                     </li>
                 <?php }else{ ?>

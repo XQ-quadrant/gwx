@@ -24,9 +24,12 @@ use yii\helpers\Url;
   <ul class="list-group list-group-unbordered">
    <?php foreach ( $ac as $m):?>
    <li class="list-group-item">
-    <a class="box-item" href=" <?=Url::to(['/'.$model->tableName().'/view/','id'=>$m->id])?>">
+    <a class="box-item " href=" <?=Url::to(['/'.$model->tableName().'/view/','id'=>$m->id])?>">
       <?=$m->title?>
+
      </a>
+    <span class="text-muted pull-right"><?=Yii::$app->formatter->asDate($m->create_at,'M/dd')?></span>
+
    </li>
    <?php endforeach; ?>
   </ul>
@@ -34,7 +37,7 @@ use yii\helpers\Url;
 
  </div>
  <div class="box-footer text-center">
-  <a href="<?=$url?>" class="uppercase">阅读更多</a>
+  <a href="<?=$url?>" class="uppercase"> 更 多... </a>
  </div>
  <!-- /.box-body -->
 </div>

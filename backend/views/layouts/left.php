@@ -38,6 +38,7 @@ $callback = function($menu){
     <section class="sidebar">
 
         <!-- Sidebar user panel -->
+        <?php if(!Yii::$app->user->isGuest){ ?>
         <div class="user-panel">
 
             <div class="pull-left image">
@@ -49,7 +50,7 @@ $callback = function($menu){
                 <a href="/user/<?= Yii::$app->user->identity->id ?>"><i class="fa fa-circle text-success"></i> 在线</a>
             </div>
         </div>
-
+<?php } ?>
         <!-- search form -->
         <form action="#" method="get" class="sidebar-form">
             <div class="input-group">
@@ -67,7 +68,7 @@ $callback = function($menu){
                 'options' => ['class' => 'sidebar-menu'],
                 'items' => [
                     ['label' => '基本', 'options' => ['class' => 'header']],
-                    ['label' => 'Login', 'url' => ['site/login'], 'visible' => Yii::$app->user->isGuest],
+                    ['label' => 'Login', 'url' => ['/user/login'], 'visible' => Yii::$app->user->isGuest],
 
 
                 ],

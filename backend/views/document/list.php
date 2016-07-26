@@ -29,7 +29,7 @@ $data = $dataProvider->getModels();
 ?>
 <div class="document-index">
 
-    <div class="row list-index" >
+    <div class="row container list-index" style="">
         <div class="col-lg-9" >
             <div class="box box-widget">
                 <div class="box-header with-border">
@@ -42,7 +42,7 @@ $data = $dataProvider->getModels();
                     <?php foreach ( $data as $list):?>
                         <div class="attachment-block clearfix">
 
-                            <img class="attachment-img" src="<?=$list->pic?>" alt="Attachment Image">
+                            <img class="attachment-img" src="<?=$list->pic?>" alt="">
 
                             <div class="attachment-pushed">
                                 <h4 class="attachment-heading" style="font-size: 15px"><a href="<?=Url::to(['/'.$list->tableName().'/view/','id'=>$list->id])?>"><?=$list->title?></a></h4>
@@ -67,7 +67,17 @@ $data = $dataProvider->getModels();
         </div>
 
         <div class="col-lg-3" >
-            <?=backend\widgets\panel\PanelWidget::widget(['cate'=>14,'title'=>'实验室动态'])?>
+            <div class="panel panel-default ">
+
+
+
+                <div class="panel-body ">
+                    <h5>相关</h5>
+
+
+                </div>
+
+            </div>
         </div>
     </div>
 
