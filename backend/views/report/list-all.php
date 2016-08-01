@@ -45,7 +45,7 @@ $data = $dataProvider->getModels();
         </div>
     </div>
     <?php foreach ( $data as $list):?>
-    <div class="col-md-8 pull-left">
+    <div class="col-md-8 col-xs-12 pull-left">
         <div class="box box-widget border-box">
             <div class="box-header with-border">
                 <div class="user-block">

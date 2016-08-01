@@ -60,19 +60,25 @@ return [
                 ],
             ],
         ],
-        'urlManager' => [
+        /*'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             //'suffix'=>'.html',
             'rules'=>[
             ],
-        ],
+        ],*/
         'authManager' => [
             'class' => 'yii\rbac\DbManager',
             'itemTable' => 'auth_item',
             'assignmentTable' => 'auth_assignment',
             'itemChildTable' => 'auth_item_child',
             "defaultRoles" => ["guest"],
+        ],
+        'request' => [
+            'parsers' => [
+                'application/json' => 'yii\web\JsonParser',
+                'text/json' => 'yii\web\JsonParser',
+            ]
         ],
         /*
         'urlManager' => [
@@ -97,7 +103,8 @@ return [
             "suffix" => "",
             "rules" => [
                 "<controller:\w+>/<id:\d+>"=>"<controller>/view",
-                "<controller:\w+>/<action:\w+>"=>"<controller>/<action>"
+                "<controller:\w+>/<action:\w+>"=>"<controller>/<action>",
+                //['class' => 'yii\rest\UrlRule', 'controller' => 'backend\modules\rest\controllers\UserController'],
             ],
         ],
 
@@ -109,6 +116,8 @@ return [
                 ],
             ],
         ],
+
+
     ],
     'as access' => [
         'class' => 'mdm\admin\components\AccessControl',
@@ -127,6 +136,11 @@ return [
             //在开发完成之后，需要清空这里的配置，转而在系统里面通过RBAC配置权限
         ]*/
     ],
+    /*'request' => [
+        'parsers' => [
+            'application/json' => 'yii\web\JsonParser',
+        ]
+    ],*/
     'modules' => [
         'user' => [
             'class' => 'dektrium\user\Module',
@@ -140,9 +154,17 @@ return [
             'viewPath'=>'@app/views',
             //'layout' => '@app/views/layouts/main_nav.php',
         ],
+        'rest' => [
+            'class' => 'backend\modules\rest\Rest',
+        ],
         /*'debug' => [
             'class' => 'yii\debug\Module',
         ],*/
+        'request' => [
+            'parsers' => [
+                'application/json' => 'yii\web\JsonParser',
+            ]
+        ],
         'admin' => [
             'class' => 'mdm\admin\Module',
             'layout' => 'left-menu', // it can be '@path/to/your/layout'.

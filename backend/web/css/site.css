@@ -72,9 +72,9 @@ a.desc:after {
     content: "\e156";
 }
 
-.grid-view td {
+/*.grid-view td {
     white-space: nowrap;
-}
+}*/
 
 .grid-view .filters input,
 .grid-view .filters select {
