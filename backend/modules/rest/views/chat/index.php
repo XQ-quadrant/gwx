@@ -28,7 +28,8 @@ backend\assets\ChatAsset::register($this);
 <?php $this->beginBody() ?>
 <div class="container">
     <div class="row clearfix">
-        <div class="col-md-6 column"><div class="box box-warning direct-chat direct-chat-warning">
+        <div class="col-md-6 column">
+            <div class="box box-primary direct-chat direct-chat-primary">
                 <div class="box-header with-border">
                     <h3 class="box-title">Direct Chat</h3>
 
@@ -44,9 +45,7 @@ backend\assets\ChatAsset::register($this);
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body">
-                    <!-- Conversations are loaded here -->
-                    <div class="direct-chat-messages">
-                        <!-- Message. Default to the left -->
+                    <div class="direct-chat-messages" id="dialog">
                         <div class="direct-chat-msg">
                             <div class="direct-chat-info clearfix">
                                 <span class="direct-chat-name pull-left">Alexander Pierce</span>
@@ -59,9 +58,7 @@ backend\assets\ChatAsset::register($this);
                             </div>
                             <!-- /.direct-chat-text -->
                         </div>
-                        <!-- /.direct-chat-msg -->
 
-                        <!-- Message to the right -->
                         <div class="direct-chat-msg right">
                             <div class="direct-chat-info clearfix">
                                 <span class="direct-chat-name pull-right">Sarah Bullock</span>
@@ -74,52 +71,18 @@ backend\assets\ChatAsset::register($this);
                             </div>
                             <!-- /.direct-chat-text -->
                         </div>
-                        <!-- /.direct-chat-msg -->
-
-                        <!-- Message. Default to the left -->
-                        <div class="direct-chat-msg">
-                            <div class="direct-chat-info clearfix">
-                                <span class="direct-chat-name pull-left">Alexander Pierce</span>
-                                <span class="direct-chat-timestamp pull-right">23 Jan 5:37 pm</span>
-                            </div>
-                            <!-- /.direct-chat-info -->
-                            <img class="direct-chat-img" src="/adminlte/dist/img/user1-128x128.jpg" alt="message user image"><!-- /.direct-chat-img -->
-                            <div class="direct-chat-text">
-                                Working with AdminLTE on a great new app! Wanna join?
-                            </div>
-                            <!-- /.direct-chat-text -->
-                        </div>
-                        <!-- /.direct-chat-msg -->
-
-                        <!-- Message to the right -->
-                        <div class="direct-chat-msg right">
-                            <div class="direct-chat-info clearfix">
-                                <span class="direct-chat-name pull-right">Sarah Bullock</span>
-                                <span class="direct-chat-timestamp pull-left">23 Jan 6:10 pm</span>
-                            </div>
-                            <!-- /.direct-chat-info -->
-                            <img class="direct-chat-img" src="/adminlte/dist/img/user3-128x128.jpg" alt="message user image"><!-- /.direct-chat-img -->
-                            <div class="direct-chat-text">
-                                I would love to.
-                            </div>
-                            <!-- /.direct-chat-text -->
-                        </div>
-                        <!-- /.direct-chat-msg -->
-
                     </div>
-                    <!--/.direct-chat-messages-->
-
-                    <!-- Contacts are loaded here -->
-
-                    <!-- /.direct-chat-pane -->
                 </div>
-                <!-- /.box-body -->
+
                 <div class="box-footer">
-                    <form action="#" method="post">
+                    <form onsubmit="onSubmit(); return false;">
+                        <select style="margin-bottom:8px" id="client_list">
+                            <option value="all">所有人</option>
+                        </select>
                         <div class="input-group">
-                            <input type="text" name="message" placeholder="Type Message ..." class="form-control">
+                            <input type="text" name="message" id="textarea" placeholder="Type Message ..." class="form-control">
                           <span class="input-group-btn">
-                            <button type="button" class="btn btn-warning btn-flat">Send</button>
+                            <button type="submit" class="btn btn-warning btn-flat">Send</button>
                           </span>
                         </div>
                     </form>
@@ -128,123 +91,25 @@ backend\assets\ChatAsset::register($this);
             </div>
         </div>
         <div class="col-md-3 column ">
-            <div class="chat-contacts" style="position:relative">
-                <ul class="contacts-list">
-                    <li>
-                        <a href="#">
-                            <img class="contacts-list-img" src="/adminlte/dist/img/user1-128x128.jpg" alt="User Image">
 
-                            <div class="contacts-list-info">
-                                <span class="contacts-list-name">
-                                  Count Dracula
-                                  <small class="contacts-list-date pull-right">2/28/2015</small>
-                                </span>
-                                <span class="contacts-list-msg">How have you been? I was...</span>
-                            </div>
-                            <!-- /.contacts-list-info -->
-                        </a>
-                    </li>
-                    <!-- End Contact Item -->
-                    <li>
-                        <a href="#">
-                            <img class="contacts-list-img" src="/adminlte/dist/img/user7-128x128.jpg" alt="User Image">
-
-                            <div class="contacts-list-info">
-                                <span class="contacts-list-name">
-                                  Sarah Doe
-                                  <small class="contacts-list-date pull-right">2/23/2015</small>
-                                </span>
-                                <span class="contacts-list-msg">I will be waiting for...</span>
-                            </div>
-                            <!-- /.contacts-list-info -->
-                        </a>
-                    </li>
-                    <!-- End Contact Item -->
-                    <li>
-                        <a href="#">
-                            <img class="contacts-list-img" src="/adminlte/dist/img/user3-128x128.jpg" alt="User Image">
-
-                            <div class="contacts-list-info">
-                                <span class="contacts-list-name">
-                                  Nadia Jolie
-                                  <small class="contacts-list-date pull-right">2/20/2015</small>
-                                </span>
-                                <span class="contacts-list-msg">I'll call you back at...</span>
-                            </div>
-                            <!-- /.contacts-list-info -->
-                        </a>
-                    </li>
-                    <!-- End Contact Item -->
-                    <li>
-                        <a href="#">
-                            <img class="contacts-list-img" src="/adminlte/dist/img/user5-128x128.jpg" alt="User Image">
-
-                            <div class="contacts-list-info">
-                                <span class="contacts-list-name">
-                                  Nora S. Vans
-                                  <small class="contacts-list-date pull-right">2/10/2015</small>
-                                </span>
-                                <span class="contacts-list-msg">Where is your new...</span>
-                            </div>
-                            <!-- /.contacts-list-info -->
-                        </a>
-                    </li>
-                    <!-- End Contact Item -->
-                    <li>
-                        <a href="#">
-                            <img class="contacts-list-img" src="/adminlte/dist/img/user6-128x128.jpg" alt="User Image">
-
-                            <div class="contacts-list-info">
-                                <span class="contacts-list-name">
-                                  John K.
-                                  <small class="contacts-list-date pull-right">1/27/2015</small>
-                                </span>
-                                <span class="contacts-list-msg">Can I take a look at...</span>
-                            </div>
-                            <!-- /.contacts-list-info -->
-                        </a>
-                    </li>
-                    <!-- End Contact Item -->
-                    <li>
-                        <a href="#">
-                            <img class="contacts-list-img" src="/adminlte/dist/img/user8-128x128.jpg" alt="User Image">
-
-                            <div class="contacts-list-info">
-                                <span class="contacts-list-name">
-                                  Kenneth M.
-                                  <small class="contacts-list-date pull-right">1/4/2015</small>
-                                </span>
-                                <span class="contacts-list-msg">Never mind I found...</span>
-                            </div>
-                            <!-- /.contacts-list-info -->
-                        </a>
-                    </li>
-                    <!-- End Contact Item -->
-                </ul>
-                <!-- /.contatcts-list -->
-            </div>
+<?= backend\widgets\friend\FriendWidget::widget()?>
         </div>
         </div>
         <div class="row clearfix">
         <div class="col-md-6 column">
 
 
-            <div class="thumbnail">
+            <!--<div class="thumbnail">
                 <div class="caption" id="dialog"></div>
-            </div>
-            <form onsubmit="onSubmit(); return false;">
+            </div>-->
+            <!--<form onsubmit="onSubmit(); return false;">
                 <select style="margin-bottom:8px" id="client_list">
                     <option value="all">所有人</option>
                 </select>
                 <textarea class="textarea thumbnail" id="textarea"></textarea>
                 <div class="say-btn"><input type="submit" class="btn btn-default" value="发表" /></div>
-            </form>
-            <div>
-                &nbsp;&nbsp;&nbsp;&nbsp;<b>房间列表:</b>（当前在&nbsp;房间<?php echo isset($_GET['room_id'])&&intval($_GET['room_id'])>0 ? intval($_GET['room_id']):1; ?>）<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;<a href="/?room_id=1">房间1</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/?room_id=2">房间2</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/?room_id=3">房间3</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/?room_id=4">房间4</a>
-                <br><br>
-            </div>
-            <p class="cp">PHP多进程+Websocket(HTML5/Flash)+PHP Socket实时推送技术&nbsp;&nbsp;&nbsp;&nbsp;Powered by <a href="http://www.workerman.net/workerman-chat" target="_blank">workerman-chat</a></p>
+            </form>-->
+
         </div>
         <div class="col-md-3 column">
             <div class="thumbnail">
@@ -284,13 +149,12 @@ backend\assets\ChatAsset::register($this);
     // 连接建立时发送登录信息
     function onopen()
     {
-
         if(!name)
         {
             show_prompt();
         }
         // 登录
-        var login_data = '{"type":"login","client_name":"'+name.replace(/"/g, '\\"')+'","room_id":"<?php echo isset($_GET['room_id']) ? $_GET['room_id'] : 1?>"}';
+        var login_data = '{"type":"login","client_name":"'+name.replace(/"/g, '\\"')+'","room_id":"1"}';
         console.log("websocket握手成功，发送登录数据:"+login_data);
         ws.send(login_data);
     }
@@ -378,10 +242,16 @@ backend\assets\ChatAsset::register($this);
 
     // 发言
     function say(from_client_id, from_client_name, content, time){
-        $("#dialog").append('<div class="speech_item">' +
+       /* $("#dialog").append('<div class="speech_item">' +
             '<img src="http://lorempixel.com/38/38/?'+from_client_id+'" class="user_icon" /> '
             +from_client_name+' <br> '+time+'<div style="clear:both;"></div>' +
-            '<p class="triangle-isosceles top">'+content+'</p> </div>');
+            '<p class="triangle-isosceles top">'+content+'</p> </div>');*/
+        $("#dialog").append(' <div class="direct-chat-msg right"> <div class="direct-chat-info clearfix"> <span class="direct-chat-name pull-right">'
+            +from_client_name+'</span> <span class="direct-chat-timestamp pull-right">'
+            +time+'</span> </div> <img class="direct-chat-img" src="/adminlte/dist/img/user3-128x128.jpg" alt="message user image"> <div class="direct-chat-text">'
+            +content+'</div></div>');
+
+
     }
 
     $(function(){

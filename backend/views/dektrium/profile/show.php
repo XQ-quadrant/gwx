@@ -18,6 +18,7 @@ use yii\helpers\Html;
 
 $this->title = empty($profile->name) ? Html::encode($profile->user->username) : Html::encode($profile->name);
 $this->params['breadcrumbs'][] = $this->title;
+$this->registerJsFile('/adminlte/plugins/social/friend.js',['depends'=>'backend\assets\AdminLteAsset','position'=>\yii\web\View::POS_END]);
 ?>
 <div class="row">
     <div class="col-md-3">
@@ -48,7 +49,8 @@ $this->params['breadcrumbs'][] = $this->title;
                     </li>
                 </ul>
 
-                <a href="#" class="btn btn-primary btn-block"><b>关注</b></a>
+                <a data-user="<?= $id ?>" class="follow btn btn-primary btn-block"><b>关注</b></a>
+
             </div>
             <!-- /.box-body -->
         </div>
@@ -150,8 +152,7 @@ $this->params['breadcrumbs'][] = $this->title;
                             Lorem ipsum represents a long-held tradition for designers,
                             typographers and the like. Some people hate it and argue for
                             its demise, but others ignore the hate as they create awesome
-                            tools to help create filler text for everyone from bacon lovers
-                            to Charlie Sheen fans.
+
                         </p>
 
                         <form class="form-horizontal">
@@ -165,7 +166,31 @@ $this->params['breadcrumbs'][] = $this->title;
                             </div>
                         </form>
                     </div>
-                    <!-- /.post -->
+                    <div class="post clearfix">
+                        <div class="user-block">
+                            <img class="img-circle img-bordered-sm" src="/adminlte/dist/img/user7-128x128.jpg" alt="User Image">
+                        <span class="username">
+                          <a href="#">第二周学习计划（8/13-8/21）</a>
+                          <a href="#" class="pull-right btn-box-tool"><i class="fa fa-times"></i></a>
+                        </span>
+                            <span class="description">邱咪咪 </span>
+                        </div>
+                        <!-- /.user-block -->
+                        <p>  仿真文献： 《算法导论》 第二章p23, 猫狗同笼算法</p>
+                        <p>  精读文献： 《算法导论》 第二章，第三章</p>
+                        <p>  预期成果： xxx，实现阿猫阿狗类算法的熟练使用</p>
+
+                        <form class="form-horizontal">
+                            <div class="form-group margin-bottom-none">
+                                <div class="col-sm-9">
+                                    <input class="form-control input-sm" placeholder="意见。。">
+                                </div>
+                                <div class="col-sm-3">
+                                    <button type="submit" class="btn btn-danger pull-right btn-block btn-sm">评价</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
 
                     <!-- Post -->
                     <div class="post">

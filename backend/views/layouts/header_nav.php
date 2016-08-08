@@ -135,7 +135,7 @@ use backend\widgets\category\CategoryWidget;
                                 <div class="box-footer no-padding">
                                     <ul class="nav nav-stacked">
                                         <li><a href="/user/<?= Yii::$app->user->identity->id ?>">主页 <span class="pull-right badge bg-blue">31</span></a></li>
-                                        <li><a href="#">活动 <span class="pull-right badge bg-aqua">5</span></a></li>
+                                        <li><a href="/rest/chat">私信 <span class="pull-right badge bg-aqua">5</span></a></li>
                                         <li><a href="#">好友 <span class="pull-right badge bg-aqua">5</span></a></li>
                                         <li><?= Html::a(
                                                 '退出',

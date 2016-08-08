@@ -157,6 +157,9 @@ return [
         'rest' => [
             'class' => 'backend\modules\rest\Rest',
         ],
+        'social' => [
+            'class' => 'backend\modules\social\Social',
+        ],
         /*'debug' => [
             'class' => 'yii\debug\Module',
         ],*/

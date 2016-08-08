@@ -21,13 +21,13 @@ use yii\helpers\Html;
                 <?php //var_dump(Yii::$app->user->isGuest);die(); ?>
         <?php if(!isset(Yii::$app->user->identity->id)) { ?>
             <li class="">
-                <a href="/user/login" class="dropdown-toggle" data-toggle="dropdown">
-                    <span class="hidden-xs">登录</span>
+                <a href="/user/login" >
+                    登录
                 </a>
             </li>
             <li class="dropdown user user-menu">
-                <a href="/user/registe" class="dropdown-toggle" data-toggle="dropdown">
-                    <span class="hidden-xs">注册</span>
+                <a href="/user/register" >
+                    注册
                 </a>
             </li>
                 <?php }else{ ?>
@@ -257,7 +257,7 @@ use yii\helpers\Html;
                             <div class="box-footer no-padding">
                                 <ul class="nav nav-stacked">
                                     <li><a href="/user/<?= Yii::$app->user->identity->id ?>">主页 <span class="pull-right badge bg-blue">31</span></a></li>
-                                    <li><a href="#">活动 <span class="pull-right badge bg-aqua">5</span></a></li>
+                                    <li><a href="/rest/chat">私信 <span class="pull-right badge bg-aqua">5</span></a></li>
                                     <li><a href="#">好友 <span class="pull-right badge bg-aqua">5</span></a></li>
                                     <li><?= Html::a(
                                             '退出',
