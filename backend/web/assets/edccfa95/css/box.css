@@ -1,0 +1,13 @@
+.index-box{
+    height: 320px;
+}
+.box-item{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    font-size: 14px;
+}
+.text-muted {
+    color: #a7a7a7;
+}
