@@ -10,7 +10,10 @@ use yii\base\Component;
 
 class chat extends  Component{
     public function login(){
-        $this->trigger('connect');
+
+    $ws = new ws('127.0.0.1',7272);
+        $ws->send();
+        //$this->trigger('connect');
 
     }
 }

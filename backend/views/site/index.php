@@ -71,17 +71,6 @@ $this->registerCss('.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-
                 </div>
 
             </div>
-            <!--<section class="content-header">
-                <h1>
-                    Icons
-                    <small>a set of beautiful icons</small>
-                </h1>
-                <ol class="breadcrumb">
-                    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                    <li><a href="#">UI</a></li>
-                    <li class="active">Icons</li>
-                </ol>
-            </section>-->
 
         </div>
         <div class="col-md-5" style="    height: 320px;">

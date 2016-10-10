@@ -30,7 +30,13 @@ use yii\helpers\Html;
                     注册
                 </a>
             </li>
-                <?php }else{ ?>
+                <?php }else{
+            /*$social = new \vendor\social\chat();
+            $social->login();die();*/
+            $this->registerJsFile('/chat/js/domain.js',['depends'=>'backend\assets\AdminLteAsset','position'=>\yii\web\View::POS_END]);
+
+            ?>
+            <script>var  userid = '<?= Yii::$app->user->identity->id ?>'  ;</script>
 
                 <!-- Messages: style can be found in dropdown.less-->
                 <li class="dropdown messages-menu">

@@ -56,9 +56,7 @@ use backend\widgets\category\CategoryWidget;
         ?>
             </div>
         <div class="navbar-custom-menu">
-
             <ul class="nav navbar-nav">
-
                 <!-- Messages: style can be found in dropdown.less-->
                 <?php if(Yii::$app->user->isGuest) { ?>
                     <li class="">
@@ -71,8 +69,23 @@ use backend\widgets\category\CategoryWidget;
                             注册
                         </a>
                     </li>
-                <?php }else{ ?>
-                <li class="dropdown notifications-menu">
+                <?php }else{
+                    //$social = new \vendor\social\chat();
+                    //$social->login();
+                     //die();
+                    //$name = Yii::$app->user->identity->username ;
+                    //$js = "var name = {$name};";
+
+                    //$this->registerJs($js,['position'=>\yii\web\View::POS_LOAD]);
+
+                    $this->registerJsFile('/chat/js/domain.js',
+                        ['depends'=>'backend\assets\AdminLteAsset',
+                            'position'=>\yii\web\View::POS_END]);
+
+                    ?>
+                    <script>var userid = '<?= Yii::$app->user->identity->id ?>' ;</script>
+
+                    <li class="dropdown notifications-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <i class="fa fa-bell-o"></i>
                         <span class="label label-warning">10</span>

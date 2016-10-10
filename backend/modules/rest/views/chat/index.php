@@ -2,30 +2,14 @@
 use yii\helpers\Html;
 /* @var $this yii\web\View */
 backend\assets\ChatAsset::register($this);
-//$this->registerJsFile('js/domian.js',[]);
-//$domainJs = Js<<<
-
+$this->registerJs('begin_chat()',\yii\web\View::POS_LOAD);
 
 ?>
-<?php $this->beginPage() ?>
-<!DOCTYPE html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <?= Html::csrfMetaTags() ?>
-    <title>聊天</title>
-    <?php $this->head() ?>
-    <script type="text/javascript">
-        //WebSocket = null;
-    </script>
-    <!--<link href="/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/css/style.css" rel="stylesheet">
 
-    <script type="text/javascript" src="/js/swfobject.js"></script>
-    <script type="text/javascript" src="/js/web_socket.js"></script>
-    <script type="text/javascript" src="/js/jquery.min.js"></script>-->
-</head>
-<body onload="connect();">
-<?php $this->beginBody() ?>
+
+
+<!--<body onload="connect();">-->
+
 <div class="container">
     <div class="row clearfix">
         <div class="col-md-6 column">
@@ -92,58 +76,42 @@ backend\assets\ChatAsset::register($this);
         </div>
         <div class="col-md-3 column ">
 
-<?= backend\widgets\friend\FriendWidget::widget()?>
-        </div>
-        </div>
-        <div class="row clearfix">
-        <div class="col-md-6 column">
-
-
-            <!--<div class="thumbnail">
-                <div class="caption" id="dialog"></div>
-            </div>-->
-            <!--<form onsubmit="onSubmit(); return false;">
-                <select style="margin-bottom:8px" id="client_list">
-                    <option value="all">所有人</option>
-                </select>
-                <textarea class="textarea thumbnail" id="textarea"></textarea>
-                <div class="say-btn"><input type="submit" class="btn btn-default" value="发表" /></div>
-            </form>-->
-
-        </div>
-        <div class="col-md-3 column">
+        <?= backend\widgets\friend\FriendWidget::widget()?>
             <div class="thumbnail">
                 <div class="caption" id="userlist"></div>
             </div>
             <a href="http://workerman.net:8383" target="_blank"><img style="width:252px;margin-left:5px;" src="/img/workerman-todpole.png"></a>
-        </div>
-    </div>
-</div>
-<script src="/assets/460c13ac/jquery.js"></script>
-<script type="text/javascript">
 
-    get_user();
+        </div>
+        </div>
+
+</div>
+<!--<script src="/assets/460c13ac/jquery.js"></script>-->
+<!--<script type="text/javascript">
+
+    //get_user();
     if (typeof console == "undefined") {    this.console = { log: function (msg) {  } };}
     WEB_SOCKET_SWF_LOCATION = "/chat/swf/WebSocketMain.swf";
     WEB_SOCKET_DEBUG = true;
-    var ws, name, client_list={},user_data;
+    //var ws, name, client_list={},user_data;
+    //var ws, name, client_list={},user_data;
 
 
     // 连接服务端
     function connect() {
         // 创建websocket
-        ws = new WebSocket("ws://"+document.domain+":7272");
+        //ws = new WebSocket("ws://"+document.domain+":7272");
         // 当socket连接打开时，输入用户名
-        ws.onopen = onopen;
+        //ws.onopen = onopen;
         // 当有消息时根据消息类型显示不同信息
         ws.onmessage = onmessage;
-        ws.onclose = function() {
+        /*ws.onclose = function() {
             console.log("连接关闭，定时重连");
             connect();
         };
         ws.onerror = function() {
             console.log("出现错误");
-        };
+        };*/
     }
 
     // 连接建立时发送登录信息
@@ -260,9 +228,10 @@ backend\assets\ChatAsset::register($this);
             select_client_id = $("#client_list option:selected").attr("value");
         });
     });
-</script>
+</script>-->
 <script type="text/javascript">var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F7b1919221e89d2aa5711e4deb935debd' type='text/javascript'%3E%3C/script%3E"));</script>
-<?php $this->endBody() ?>
-</body>
-<?php $this->endPage() ?>
-</html>
+<?php
+$this->registerJsFile('/chat/js/chat.js',['depends'=>'backend\assets\AdminLteAsset','position'=>\yii\web\View::POS_END]);
+
+?>
+
