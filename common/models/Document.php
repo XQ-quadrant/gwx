@@ -22,7 +22,10 @@ use Yii;
  */
 class Document extends \yii\db\ActiveRecord
 {
-    const STATUS_AOLLOW=1;
+    const STATUS_AOLLOW = 1;
+    const STATUS_deny = 0;
+    /*const STATUS_up=1;
+    const STATUS_up=1;*/
     /**
      * @inheritdoc
      */
@@ -65,5 +68,30 @@ class Document extends \yii\db\ActiveRecord
             'pic' => '封面图',
             'create_by' => '创建者',
         ];
+    }
+    public function cateLabels(){
+
+    }
+
+    public function changeStatus($status){
+        $this->status = $status;
+        return $this->save();
+    }
+
+    public function showStatus(){
+        $status =[];
+
+        switch($this->status){
+            case self::STATUS_AOLLOW:
+                $status['name'] = 'aollow';
+                $status['label'] = 'info';
+                break;
+            case self::STATUS_deny:
+                $status['name'] = 'deny';
+                $status['label'] = 'danger';
+                break;
+        }
+
+        return $status;
     }
 }

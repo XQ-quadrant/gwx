@@ -152,6 +152,14 @@ class DocumentController extends Controller
         return $this->redirect(['index']);
     }
 
+    public function actionStatus($id,$status){
+        //$status = Yii::$app->request->get('status');
+
+         $this->findModel($id)->changeStatus($status);
+        //$this->renderAjax('')
+
+    }
+
     /**
      * Finds the Document model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.

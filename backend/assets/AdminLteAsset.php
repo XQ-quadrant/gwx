@@ -33,7 +33,7 @@ class AdminLteAsset extends BaseAdminLteAsset
      */
     //public $skin = '_all-skins';
     //public $skin = 'skin-blue';
-    public $skin = 'skin-pblue-light';
+    public $skin = 'skin-blue-yellow';
 
     /**
      * @inheritdoc

@@ -12,7 +12,7 @@ return [
     'controllerNamespace' => 'backend\controllers',
     //'bootstrap' => ['log'],
 
-    'name'=>'GraySparrow',
+    'name'=>'国际教育学院',
     'language'=>'zh-CN',
     //'debug'=>false,
     'components' => [

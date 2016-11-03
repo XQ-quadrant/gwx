@@ -19,6 +19,7 @@ dmstr\web\AdminLteAsset::register($this);
     <!DOCTYPE html>
     <html lang="<?= Yii::$app->language ?>">
     <head>
+        <meta name="renderer" content="webkit">
         <meta charset="<?= Yii::$app->charset ?>">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -39,7 +40,7 @@ dmstr\web\AdminLteAsset::register($this);
 
         <!-- Start App Logo -->
         <div class="applogo">
-            <a href="index.html" class="logo">实验室</a>
+            <a href="index.html" class="logo">国际教育学院</a>
         </div>
         <!-- End App Logo -->
 

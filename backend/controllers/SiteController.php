@@ -1,6 +1,7 @@
 <?php
 namespace backend\controllers;
 
+use backend\models\Pic;
 use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
@@ -57,8 +58,8 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
-        //$name ="";
-        return $this->render('index',[]);
+        $pic = Pic::findAll(['status'=>1]);
+        return $this->render('index',['pic'=>$pic,]);
     }
 
     public function actionLogin()

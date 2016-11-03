@@ -19,6 +19,10 @@
 
     margin-bottom: 0px;
 }
+.summary{
+    padding: 0 15px;
+    float: right;
+}
 .title{
     text-align: center;
 }
@@ -49,7 +53,7 @@
 }
 .document-view{
     color: #444444 !important;
-    max-width:1024px;
+    max-width:1040px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -79,7 +83,7 @@
 #breadcrumb_wrapper {
     padding: 25px 0;
 }
-
+/************box******************/
 .box-item{
     width:85%;
     overflow: hidden;
@@ -87,6 +91,13 @@
     text-overflow: ellipsis;
 
     font-size: 14px;
+}
+.box-icon{
+    padding: 0 1em 0 0.4em;
+
+}
+.content{
+    padding: 0px;
 }
 .report-title{
 
@@ -196,7 +207,7 @@
     display: none;
 }
 .breadcrumb_banner{
-    background: url('../img/gray.jpg') no-repeat center;
+   /* background: url('../img/gray.jpg') no-repeat center;*/
     background-color: #399bff;
     background-size: cover;
 }

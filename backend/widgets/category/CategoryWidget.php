@@ -69,7 +69,7 @@ class CategoryWidget extends Widget
         foreach($this->model as $k=>$v){
             $items[] = [
                 'label' =>$v['name'],
-                //'icon' => $v['icon'],
+                'icon' => 'fa',
 
                 'url' =>["/$this->precate_name/index?DocumentSearch%5Bcate%5D=".$v['id']]
             ];

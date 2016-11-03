@@ -10,7 +10,7 @@ use yii\helpers\Url;
 ?>
 <div class="box <?=$css['warper']?>">
     <div class="box-header <?=$css['title']?>">
-        <h4 class="box-title"><?=$title?></h4>
+        <h4 class="box-title"><i class="<?=$css['icon']?>"></i><?=$title?></h4>
         <div class="box-tools pull-right">
             <!--<span data-toggle="tooltip" title="3 New Messages" class="badge bg-light-blue">3</span>-->
             <!--<button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>

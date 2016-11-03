@@ -37,13 +37,67 @@ use dmstr\widgets\Alert;
     </section>
 
 </div>
+<footer id="footer" >
 
-<footer class="main-footer">
+    <div class="footer" style="height: auto;
+    background-color: #efefef;">
+        <div class="container">
+            <div class="row" >
+                <div class="col-md-3 ">
+                    <div class="">
+                        <p class="simplenav">
+                            <a href="/site/index">Home</a> |
+                            <a href="/frontend/info">About</a> |
+                            <a href="">Service</a> |
+                            <a href="">Connect</a> |
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 ">
+                    <div class="">
+
+                        <address >
+                            <ul>
+                                <li>地址：中国四川省峨眉山市西南交通大学</li>
+                                <li>电话： 344563</li>
+                                <li>Email : <a class="mail" href="mailto:mail@example.com">info(at)sseet.com</a></li>
+                            </ul>
+                        </address>
+
+                    </div>
+                </div>
+                <div class="col-md-4 ">
+                    <!--<div class="social text-left">
+
+                        <a href="#"><i class="fa fa-weibo"></i></a>
+
+                        <a href="#"><i class="fa fa-github"></i></a>
+                    </div>
+                    <br>-->
+                    <p class="text-left">
+                        Copyright 2015 西南交通大学 All rights reserved.
+                    </p><p class="text-left">
+                      蜀ICP备05026985号 查号台：+86-28-87600114
+                    </p>
+                    <p class="text-left">
+
+                    </p><p class="text-left">
+                        川公网安备 51010602000061号
+                    </p>
+                </div>
+            </div>
+            <br>
+            <!-- /row of panels -->
+        </div>
+    </div>
+</footer>
+<!--<footer class="main-footer">
     <div class="pull-right hidden-xs">
         <b>版本</b> beta 0.8
     </div>
     <strong>Copyright &copy; 2016-2017 <a href="http://.com">归锋工作室</a></strong> 技术支持
-</footer>
+</footer>-->
 
 <!-- Control Sidebar -->
 <aside class="control-sidebar control-sidebar-dark">
