@@ -2,6 +2,8 @@
 
 namespace backend\modules\frontend\controllers;
 use common\models\Document;
+use yii\web\NotFoundHttpException;
+
 class InfoController extends \yii\web\Controller
 {
     /*public function actionIndex()

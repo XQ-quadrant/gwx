@@ -10,7 +10,6 @@ use common\widgets\ueditor\UEditor;
 /* @var $form yii\widgets\ActiveForm */
 //$cate=Yii::$app->request->get('cate');
 
-$cate= Cate::findOne(Yii::$app->request->get('cate'))? Cate::findOne(Yii::$app->request->get('cate')): Cate::findOne($model->getAttribute('cate'));
 $template = '{label}<div class="col-sm-10">{input}</div>{error}{hint}';
 $label = ['class'=>"col-sm-2 text-c control-label form-label"];
 ?>
@@ -23,7 +22,7 @@ $label = ['class'=>"col-sm-2 text-c control-label form-label"];
 <label  class="col-sm-2 text-c control-label form-label" style="padding-right: 13px !important;font-size: 1.1em">栏目</label>
     <div class="  radio radio-info radio-inline" style="margin-bottom: 10px">
         <input type="radio" id="inlineRadio1" value="option1" name="" checked="" disabled>
-        <label for="inlineRadio1"> <?=$cate['name']?> </label>
+        <label for="inlineRadio1"> <?=$cate->name?> </label>
     </div>
 
    <?= $form->field($model, 'title',[

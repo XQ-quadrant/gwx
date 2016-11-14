@@ -35,6 +35,10 @@ class ComposerStaticInitaed39ad1b5103541f523a8477fafa0f1
         ),
         'k' => 
         array (
+            'kartik\\tree\\' => 12,
+            'kartik\\grid\\' => 12,
+            'kartik\\form\\' => 12,
+            'kartik\\dialog\\' => 14,
             'kartik\\datetime\\' => 16,
             'kartik\\base\\' => 12,
         ),
@@ -45,6 +49,7 @@ class ComposerStaticInitaed39ad1b5103541f523a8477fafa0f1
         ),
         'c' => 
         array (
+            'creocoder\\nestedsets\\' => 21,
             'cebe\\markdown\\' => 14,
         ),
         'F' => 
@@ -102,6 +107,22 @@ class ComposerStaticInitaed39ad1b5103541f523a8477fafa0f1
         array (
             0 => __DIR__ . '/..' . '/mdmsoft/yii2-admin',
         ),
+        'kartik\\tree\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-tree-manager',
+        ),
+        'kartik\\grid\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-grid',
+        ),
+        'kartik\\form\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-activeform',
+        ),
+        'kartik\\dialog\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-dialog',
+        ),
         'kartik\\datetime\\' => 
         array (
             0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-datetimepicker',
@@ -117,6 +138,10 @@ class ComposerStaticInitaed39ad1b5103541f523a8477fafa0f1
         'dektrium\\user\\' => 
         array (
             0 => __DIR__ . '/..' . '/dektrium/yii2-user',
+        ),
+        'creocoder\\nestedsets\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/creocoder/yii2-nested-sets/src',
         ),
         'cebe\\markdown\\' => 
         array (

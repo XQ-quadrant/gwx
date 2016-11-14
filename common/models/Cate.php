@@ -3,6 +3,7 @@
 namespace common\models;
 
 use Yii;
+use yii\db\ActiveRecord;
 
 /**
  * This is the model class for table "cate".
@@ -21,10 +22,11 @@ use Yii;
  *
  * @property Aindex[] $aindices
  */
-class Cate extends \yii\db\ActiveRecord
+class Cate extends  ActiveRecord
 {
 
     const STATUS_AOLLOW = 1;
+    //const STATUS_pic = 3;
     /**
      * @inheritdoc
      */
@@ -39,7 +41,7 @@ class Cate extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['cindex', 'name'], 'required'],
+            [['status', 'name'], 'required'],
             [['create_time'], 'safe'],
             [['model', 'view_index', 'uri'], 'string'],
             [['pre_cate', 'level', 'status'], 'integer'],
@@ -54,16 +56,16 @@ class Cate extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'cindex' => 'Cindex',
-            'name' => 'Name',
-            'create_time' => 'Create Time',
-            'model' => 'Model',
-            'view_index' => 'View Index',
-            'pre_cate' => 'Pre Cate',
-            'level' => 'Level',
-            'status' => 'Status',
-            'uri' => 'Uri',
-            'icon' => 'Icon',
+            'cindex' => Yii::t('model', 'Cindex'),
+            'name' => Yii::t('model','Name'),
+            'create_time' => Yii::t('model','Create Time'),
+            'model' => Yii::t('model','Model'),
+            'view_index' => Yii::t('model','View Index'),
+            'pre_cate' => Yii::t('model','Pre Cate'),
+            'level' => Yii::t('model','Level'),
+            'status' => Yii::t('model','Status'),
+            'uri' => Yii::t('model','Uri'),
+            'icon' => Yii::t('model','Icon'),
         ];
     }
 
@@ -82,4 +84,5 @@ class Cate extends \yii\db\ActiveRecord
     {
         return self::findOne(['id'=>$id]);
     }
+
 }

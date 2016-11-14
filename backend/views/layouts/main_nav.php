@@ -50,7 +50,7 @@ if (Yii::$app->controller->action->id === 'login') {
         <div class="breadcrumb_banner" style="">
             <div id="">
                 <div class="container">
-                    <div class="row" style="    margin-bottom: 1em;">
+                    <div class="row" >
 
                         <a class="col-md-6 normal" href="<?= Yii::$app->homeUrl?>" style="display: inline-block;">
                             <img src="/images/top.gif"  style="width: 100%;float: left;padding: 0 1em;"/>
@@ -58,22 +58,27 @@ if (Yii::$app->controller->action->id === 'login') {
                         </a>
                         <div class="col-md-6 normal">
                             <div class="row">
-                                <div class="col-md-4 pull-right normal">
+                                <div class="col-md-4 pull-right normal" style="padding-left: 0">
                                     <!--<form class="navbar-form navbar-right" role="search" style="float: right;display: inline-block">
                                         <div class="form-group">
 
                                             <input type="text" class="form-control" id="navbar-search-input" placeholder="搜索">
                                         </div>
                                     </form>-->
-                                    <a class="btn btn-block  btn-flat navbar-right" style="color: #fff; margin:0.6em 0.45em 0 0;float: right;display: inline-block;background-color: rgba(255, 255, 255, 0);">在线申请 Apply Now
+                                    <a class="btn btn-block  btn-flat navbar-right" style="
+                                    color: #fff;
+                                     margin:0.6em 0.45em 0 0;
+
+
+                                     background-color: rgba(255, 255, 255, 0);
+                                         text-align: left;"><!--Apply Now!--><?= Yii::t('common','Apply Now') ?>
                                     </a>
-</div><div class="col-md-3 pull-right normal">
-                                    <a href="#" style="
+</div><div class="col-md-3 pull-right normal" style="padding-right: 0">
+                                    <a href="http://www.xq1024.com/" class="btn btn-block  btn-flat navbar-right" style="
                                 color: #9cdaea;
-                                float: right;
-                                margin:0.9em 0.45em 0 0;
-                                padding-right: 1em;
-                                font-size: 1.2em;
+                                text-align: right;
+                                margin:0.6em 0.45em 0 0;
+
                                 border-right: 1px solid #ccc"> English</a>
                                 </div>
 
@@ -85,10 +90,7 @@ if (Yii::$app->controller->action->id === 'login') {
                                      在线申请（Apply Now）
                                 </a>
                                 </div>
-
-
                             </div>-->
-
 
                         </div>
                     </div>

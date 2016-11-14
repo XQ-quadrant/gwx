@@ -57,6 +57,9 @@
     margin-left: auto;
     margin-right: auto;
 }
+.colum-pic{
+    max-width: 200px;
+}
 /*.list-index{
     width: 1024px;
     margin-left: auto !important;
@@ -93,11 +96,72 @@
     font-size: 14px;
 }
 .box-icon{
-    padding: 0 1em 0 0.4em;
+    /*padding: 0 1em 0 0.4em;*/
+    float: left;
+    width: 2em;
+    height: 2em;
+    display: inline-block;
 
+    background-size:100%;
+}
+.index-box {
+    background: #e7efff;
+}
+.index-box .list-group-item{
+    background: #e5ebf8;
+}
+.index-box .products-list .item{
+    background: #e5ebf8;
+}
+.index-box .attachment-block {
+
+    background: rgba(255,255,255,0.19);
+}
+.blue-border{
+    border: 1px solid #97c9fc;
+}
+
+.icon-title{
+    padding:8px 0 0 3px;
+}
+.bgimg-title1{
+    padding:12px 0 12px 3px;
+    background-image: url('/images/tongzhi.jpg');
+    background-size: 100%;
+}
+.bgimg-title2{
+    padding:8px 0 7px 3px;
+    background-image: url('/images/xinwen1.gif');
+    background-size: 100%;
+}
+.bgimg-title3{
+    padding:5px 0 5px 3px;
+    background-image: url('/images/shipin1.gif');
+    background-size: 100%;
+}
+.bicon-laba{
+    background-image: url('/images/icon/gjjy_icon4.png');
+}
+.bicon-news{
+    background-image: url('/images/icon/gjjy_icon3.png');
+}
+.bicon-school{
+    background-image: url('/images/icon/gjjy_icon1.png');
+}
+.index-link address a{
+    font-size: 15px;
+    margin-bottom: 10px;
+    display: inline-block;
+    color: #5683a7;
+}
+.index-link address{
+    margin-bottom: 10px;
 }
 .content{
     padding: 0px;
+}
+.text-white{
+    color: white;
 }
 .report-title{
 
@@ -182,10 +246,10 @@
     .carousel-inner img{
         /*border-top: 1px solid rgba(204, 204, 204, 0.12);
         padding: 1em 1em;*/
-        min-height: 308px;
+        min-height: 342px;
     }
     .slider-items{
-        max-height: 308px;
+        max-height: 342px;
     }
 
 }

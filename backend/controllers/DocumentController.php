@@ -110,6 +110,7 @@ class DocumentController extends Controller
     public function actionCreate()
     {
         $model = new Document();
+        $model->cate = Yii::$app->request->get('cate');
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);

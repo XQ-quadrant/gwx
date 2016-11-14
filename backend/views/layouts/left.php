@@ -20,7 +20,7 @@ $callback = function($menu){
 
         if( isset($data['submenu'])){    //处理二级菜单
             $class = 'backend\\widgets\\category\\'.$data['submenu'];
-            $sub = new $class(['precate'=>0,'precate_name'=>'document']);
+            $sub = new $class(['precate'=>1,'precate_name'=>'document']);
             $subitems = $sub->getDocumentCate();
             //var_dump($subitems);die();
             $return['items'] = $subitems;

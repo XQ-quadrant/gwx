@@ -8,9 +8,9 @@
 use yii\helpers\Url;
 //use Yii;
 ?>
-<div class="box <?=$css['warper']?>">
-    <div class="box-header <?=$css['title']?>">
-        <h4 class="box-title"><i class="<?=$css['icon']?>"></i><?=$title?></h4>
+<div class="box <?=$css['warper']?>"><a href="<?=$url?>" class="uppercase">
+    <div class="box-header <?=$css['header']?>">
+       <h4 class="box-title <?=$css['title']?>"></h4>
         <div class="box-tools pull-right">
             <!--<span data-toggle="tooltip" title="3 New Messages" class="badge bg-light-blue">3</span>-->
             <!--<button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -18,10 +18,10 @@ use yii\helpers\Url;
             <!--<button type="button" class="btn btn-box-tool"  title="" >
                 <i class="fa fa-comments"></i>更多</button>-->
         </div>
-    </div>
+    </div></a>
     <div class="box-body <?=$css['body']?>">
         <?php foreach ( $ac as $m):?>
-        <div class="attachment-block clearfix">
+        <div class="attachment-block ">
 
             <img class="attachment-img" src="<?=$m->pic?>" alt="Attachment Image">
 
@@ -31,15 +31,11 @@ use yii\helpers\Url;
                 <div class="attachment-text">
                     <?=$m->breviary?>
                 </div>
-                <!-- /.attachment-text -->
             </div>
-            <!-- /.attachment-pushed -->
 
         </div>
         <?php endforeach; ?>
     </div>
-    <div class="box-footer text-center">
-        <a href="<?=$url?>" class="uppercase"> 更 多 </a>
-    </div>
+
     <!-- /.box-body -->
 </div>

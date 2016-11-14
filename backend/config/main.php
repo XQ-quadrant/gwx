@@ -58,6 +58,14 @@ return [
                         'power' => 'power.php',
                     ],
                 ],
+                'model*' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    //'basePath' => '/messages',
+                    'fileMap' => [
+                        'model' => 'model.php',
+                        'model/pic' => 'pic.php',
+                    ],
+                ],
             ],
         ],
         /*'urlManager' => [
@@ -190,6 +198,9 @@ return [
                 'route' => null, // 禁用菜单
             ]
         ],
+        'treemanager' =>  [
+            'class' => 'kartik\tree\Module',
+        ]
     ],
     "aliases" => [
         "@mdm/admin" => "@vendor/mdmsoft/yii2-admin",

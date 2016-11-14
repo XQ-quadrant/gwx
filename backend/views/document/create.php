@@ -1,13 +1,15 @@
 <?php
 
 use yii\helpers\Html;
-
+use common\models\Cate;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Document */
+$cate = Cate::findOne(['id'=>Yii::$app->request->get('cate')])? Cate::findOne(['id'=>Yii::$app->request->get('cate')]): Cate::findOne($model->getAttribute('cate'));
 
 $this->title = 'Create Document';
-$this->params['breadcrumbs'][] = ['label' => 'Documents', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => $cate->name,
+    'url' => ['index','DocumentSearch[cate]'=>Yii::$app->request->get('cate')]];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="document-create">
@@ -16,6 +18,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?= $this->render('_form', [
         'model' => $model,
+        'cate' => $cate
     ]) ?>
 
 </div>

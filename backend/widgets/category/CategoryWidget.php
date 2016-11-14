@@ -76,22 +76,51 @@ class CategoryWidget extends Widget
         }
         return $items;
     }
+
     public function getCate(){
         $this->model = Cate::find()
             ->select(['uri','id','name'])
-            ->where(['pre_cate'=>0,'status'=>Cate::$STATUS_AOLLOW,])
+            ->where(['pre_cate'=>1,'status'=>Cate::$STATUS_AOLLOW,])
             ->andWhere(['>=', 'level', 0])
             ->orderBy(['level' => SORT_ASC])
             //->asArray()
             ->all();//new Room();//'Hello World';
         $items=[];
+
+        $sonCate = new Cate();
         foreach($this->model as $k=>$v){
-            $items[] = [
-                'label' =>$v['name'],
+            $item =  [
+                'label' =>$v['name'] ,
                 //'icon' => $v['icon'],
 
-                'url' =>$v['uri']
+                'url' =>$v['uri'],
+                /*'items' => [
+                    ['label' => 'Level 1 - Dropdown A', 'url' => '#'],
+                  ['label' => 'Level 1 - Dropdown B', 'url' => '#'],
+              ],*/
+
             ];
+
+            $sonCate = Cate::findAll(['pre_cate'=>$v->id]);
+            if(isset($sonCate)){
+                $sonitems = [];
+                foreach($sonCate as $k2=>$v2){
+                    $sonitems[] = [
+                        'label' =>$v2['name'] ,
+                        //'icon' => $v['icon'],
+
+                        'url' =>$v2['uri'],
+                    ];
+                }
+                $item['items'] = $sonitems;
+
+            }
+
+            if('/'.\Yii::$app->requestedRoute==$v['uri']){
+                $item['active'] = true;
+            }
+
+            $items[] = $item;
         }
         return $items;
     }

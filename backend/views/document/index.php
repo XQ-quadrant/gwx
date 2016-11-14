@@ -37,7 +37,7 @@ $this->params['search'] = $this->render('_search', ['model' => $searchModel]);
                     <div class="mailbox-controls">
                         <!-- Check all button -->
 
-                        <a type="button" class="btn btn-success" href="<?= \yii\helpers\Url::to(['create','cate'=>$this->params['cate']]) ?>"><i class="fa  fa-edit"></i>
+                        <a type="button" class="btn btn-success" href="<?= \yii\helpers\Url::to(['create','cate'=>$cate->id]) ?>"><i class="fa  fa-edit"></i>
                         新增文章
                         </a>
                         <div class="btn-group">
@@ -91,20 +91,26 @@ $this->params['search'] = $this->render('_search', ['model' => $searchModel]);
                                 "value" => function ($model) {
                                     $status = $model->showStatus();
                                     return '<div class="input-group-btn">
-                  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">'.$status['name'].'
-                    <span class="fa fa-caret-down"></span></button>
-                  <ul class="dropdown-menu">
+                                      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">'.$status['name'].'
+                                        <span class="fa fa-caret-down"></span></button>
+                                      <ul class="dropdown-menu">
 
-                    <li><a href="/document/status?id='.$model->id.'&status=1">aollow</a></li>
-                    <li><a href="/document/status?id='.$model->id.'&status=0">deny</a></li>
-                  </ul>
-               ';
+                                        <li><a href="/document/status?id='.$model->id.'&status=1">aollow</a></li>
+                                        <li><a href="/document/status?id='.$model->id.'&status=0">deny</a></li>
+                                      </ul>
+                                   ';
                                     //return '<a href="/indent/deal?id='.$model->id.'" class="btn btn-xs btn-'.$status['label'].' btn-flat">'.$status['name'].'</span>';
                                     //return $model->status;
                                 }
                             ],
 
-                            ['class' => 'yii\grid\ActionColumn'],
+                            ['class' => 'yii\grid\ActionColumn',
+                                'template' => '
+                            <td >'
+                                    .'<button class="btn  btn-sm btn-xs">{view}</button></td>'
+                                    .'<td ><button class="btn btn-sm btn-info btn-xs">{update}</button></td>'
+                                    .'<td ><button class="btn btn-sm btn-danger btn-xs">{delete}</button>'
+                                    .'</td>',],
                         ],
                     ]); ?>
                 </div>

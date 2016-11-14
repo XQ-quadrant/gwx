@@ -2,7 +2,11 @@
  * Skin: Blue
  * ----------
  */
-.skin-pblue-light .main-header .navbar {
+
+.skin-pblue-light .main-header .navbar{
+  background-color: rgb(58, 135, 246);
+}
+.skin-pblue-light .main-header  .site-index{
   background-color: rgb(0, 171, 145);
   /*-webkit-box-shadow: 1px 2px 2px rgba(167, 192, 208, 0.4);
   -moz-box-shadow: 1px 2px 2px rgba(167, 192, 208, 0.4);
@@ -20,7 +24,7 @@
   /*background-color: #fff;
   color: #333;
   border-bottom: 0 solid transparent;*/
-  border-right: 1px solid #eee;
+  border-right: 1px solid #3a87f6;;
 }
 .navbar-toggle {
   color: #399BFF;
@@ -45,12 +49,26 @@
 /*.skin-blue .main-header .navbar {
   background-color: #ffffff;
 }*/
+.skin-pblue-light .main-header .dropdown-menu a{
+  color: #446fa8 !important;
+  font-size: 14px;
+  margin: 2px 0;
+}
+.skin-pblue-light .navbar-nav .dropdown-menu{
+  background-color: rgba(226, 253, 248, 0.85);
+  border: none;
+}
 .skin-pblue-light .main-header .navbar .nav > li > a {
   color: #ffffff;
   font-size: 15px;
   padding-left: 20px;
   padding-right: 20px;
   /*border-right: 1px solid #eee;*/
+}
+
+
+.skin-pblue-light .box-footer {
+  background-color: #ffffff;
 }
 .skin-pblue-light .main-header .navbar .nav > li > a:hover,
 .skin-pblue-light .main-header .navbar .nav > li > a:active,
@@ -59,8 +77,8 @@
 .skin-pblue-light .main-header .navbar .nav .open > a:hover,
 .skin-pblue-light .main-header .navbar .nav .open > a:focus,
 .skin-pblue-light .main-header .navbar .nav > .active > a {
-  background: rgba(132, 168, 253, 0.18);
-  color: #3472FF;
+  background: rgba(255, 255, 255, 0.47);
+  color: #ffffff;
 }
 .skin-pblue-light .main-header .navbar .sidebar-toggle {
   color: #367fa9;
@@ -71,7 +89,7 @@
   background: rgba(0, 0, 0, 0.1);
 }
 .skin-pblue-light .main-header .navbar .sidebar-toggle {
-  color: #367fa9;
+  color: #99fff6;
 }
 .skin-pblue-light .main-header .navbar .sidebar-toggle:hover {
   background-color: rgba(132, 168, 253, 0.18);
@@ -90,8 +108,8 @@
   }
 }
 .skin-pblue-light .main-header .logo {
-  background-color: #fdfdfd;
-  color: #576777;
+  background-color: rgb(58, 135, 246);
+  color: #ffffff;
   border-bottom: 0 solid transparent;
 }
 .skin-pblue-light .main-header .logo:hover {
@@ -106,7 +124,7 @@
 .skin-pblue-light .wrapper,
 .skin-pblue-light .main-sidebar,
 .skin-pblue-light .left-side {
-  background-color: #f9fafc;
+  background-color: #f0f0f0;
 }
 .skin-pblue-light .report-title a{
   color: #06517c;

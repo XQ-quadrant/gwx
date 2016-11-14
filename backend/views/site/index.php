@@ -28,6 +28,38 @@ position: relative;
 ');
 
 ?>
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel" >
+    <ol class="carousel-indicators">
+        <li data-target="#carousel-example-generic" data-slide-to="0" class=""></li>
+        <li data-target="#carousel-example-generic" data-slide-to="1" class=""></li>
+        <li data-target="#carousel-example-generic" data-slide-to="2" class="active"></li>
+    </ol>
+    <div class="carousel-inner slider-items">
+        <?php foreach($pic as $k=>$v){
+            if($k==0){
+                ?>
+                <div class="item active">
+                    <a href="<?= $v->url?>">
+                        <img src="<?= $v->savepath?>" alt="<?= $v->content?>">
+                    </a>
+                </div>
+            <?php   }else{ ?>
+                <div class="item">
+                    <a href="<?= $v->url?>">
+                        <img src="<?= $v->savepath?>" alt="<?= $v->content?>">
+                    </a>
+                </div>
+            <?php }
+        }?>
+
+    </div>
+    <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+        <span class="fa fa-angle-left"></span>
+    </a>
+    <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+        <span class="fa fa-angle-right"></span>
+    </a>
+</div>
 
 <!-- Start Presentation -->
 <div class="container" style="padding-left: 0px;padding-right: 0px">
@@ -37,34 +69,6 @@ position: relative;
 
                 <!-- /.box-header -->
                 <div class="box-body no-padding">
-                    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" >
-                        <ol class="carousel-indicators">
-                            <li data-target="#carousel-example-generic" data-slide-to="0" class=""></li>
-                            <li data-target="#carousel-example-generic" data-slide-to="1" class=""></li>
-                            <li data-target="#carousel-example-generic" data-slide-to="2" class="active"></li>
-                        </ol>
-                        <div class="carousel-inner slider-items">
-                            <?php foreach($pic as $k=>$v){
-                                if($k==0){
-                                    ?>
-                                    <div class="item active">
-                                        <img src="<?= $v->savepath?>" alt="<?= $v->content?>">
-                                    </div>
-                                <?php   }else{ ?>
-                                    <div class="item">
-                                        <img src="<?= $v->savepath?>" alt="<?= $v->content?>">
-                                    </div>
-                                <?php }
-                            }?>
-
-                        </div>
-                        <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-                            <span class="fa fa-angle-left"></span>
-                        </a>
-                        <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-                            <span class="fa fa-angle-right"></span>
-                        </a>
-                    </div>
 
                 </div>
 
@@ -78,7 +82,7 @@ position: relative;
         <div class="col-md-4" style="    height: 320px;">
             <?= backend\widgets\box\BoxWidget::widget(['cate' => 32, 'title' => '通知公告', 'liNum' => 7,
                 'url' => Url::toRoute(['document/list', 'cate' => 32]),
-                'css'=>['warper'=>'box-widget index-box','title'=>'with-border','body'=>'box-profile','icon'=>'fa fa-bullhorn box-icon']]) ?>
+                'css'=>['warper'=>'box-widget index-box blue-border','header'=>'with-border bgimg-title1','title'=>'','body'=>'box-profile',]]) ?>
 
             <!-- /.nav-tabs-custom -->
         </div>
@@ -86,13 +90,17 @@ position: relative;
             <?= backend\widgets\box\BoxWidget::widget([
                 'type'=>'pic','cate' => 14, 'pic' => true, 'title' => '新闻中心',
                 'url' => Url::toRoute(['document/list', 'cate' => 14]),
-                'css'=>['warper'=>'box-widget index-box','title'=>'with-border','body'=>'box-profile','icon'=>'fa fa-calendar-o box-icon'],
+                'css'=>['warper'=>'box-widget index-box ','header'=>'with-border bgimg-title2','title'=>'bgimg-title2','body'=>'box-profile blue-border',],
             ]) ?>
 
             <!-- /.nav-tabs-custom -->
         </div>
         <div class="col-md-3 wbox">
-            <?= backend\widgets\box\BoxWidget::widget(['type'=>'products-list','cate' => 31, 'pic' => true, 'title' => '专题', 'url' => Url::toRoute(['document/list', 'cate' => 31])]) ?>
+            <?= backend\widgets\box\BoxWidget::widget(['type'=>'products-list','cate' => 31, 'pic' => true,
+                'title' => '专题',
+                'url' => Url::toRoute(['document/list', 'cate' => 31]),
+                'css'=>['warper'=>'box-widget index-box','header'=>'with-border bgimg-title3','title'=>'icon-title','body'=>'box-profile blue-border','icon'=>'box-icon bicon-school'],
+            ]) ?>
 
             <!-- About Me Box -->
 
@@ -105,47 +113,51 @@ position: relative;
     </div>
     <div class="row">
 
+<?php foreach($pic_bottom as $v) { ?>
         <div class="col-lg-3">
-            <img class="img-responsive " src="/images/guanggao_x1.jpg" alt="Photo">
-
-        </div><div class="col-lg-3">
-            <img class="img-responsive " src="/images/guanggao_x2.jpg" alt="Photo">
-
-        </div><div class="col-lg-3">
-            <img class="img-responsive " src="/images/guanggao_x3.jpg" alt="Photo">
-
-        </div><div class="col-lg-3">
-            <img class="img-responsive " src="/images/guanggao_x4.jpg" alt="Photo">
-
+            <a href="<?= $v->url ?>">
+            <img class="img-responsive " src="<?= $v->savepath ?>" alt="Photo"></a>
         </div>
-        </div><div class="row">
+<?php } ?>
+        </div>
+    <div class="row">
         <div class="col-md-12">
             <div class="box" style="background-image: url('/adminlte/dist/img/bg_header2.png');background-size:100%;" >
-                <div class="box-header" style="padding: 3px 15px 0px">
+                <div class="box-header" >
                     <h3 class="box-title">相关链接</h3>
                 </div>
 
-                <div class="box-body no-padding">
-                    <table class="table table-condensed">
-                        <tbody>
-                        <tr>
-                            <td></td>
-                            <td><a>交大官网</a></td>
-                            <td><a>外语学院</a></td>
-                            <td><a>工程管理学院	</a></td>
-                            <td><a>外语学院		</a></td>
+                <div class="box-body no-padding index-link">
+                    <div class="row normal">
 
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td><a>交大官网</a></td>
-                            <td><a>外语学院</a></td>
-                            <td><a>工程管理学院	</a></td>
-                            <td><a>外语学院		</a></td>
+                                <?php for($i=0; $i<count($link_bottom); $i++){ ?>
+                        <div class="col-sm-3 normal">
+                            <address>
 
-                        </tr>
+                                <a href="http://www.swjtu.edu.cn/"><?= $link_bottom[$i]->name?></a><br>
 
-                        </tbody></table>
+                            </address>
+                        </div>
+                                <?php } ?>
+
+                        <!--
+                        <div class="col-sm-4 normal">
+
+                            <address>
+                                <a href="http://www.yanghua.net/">扬华素质网</a><br>
+                                <a href="http://sfl.swjtu.edu.cn/">外语学院</a>
+                            </address>
+                        </div>
+
+                        <div class="col-sm-4 normal">
+                            <address>
+                            <a href="http://civil.swjtu.edu.cn/civil/index.html">土木工程学院</a><br>
+                            <a href="http://civil.swjtu.edu.cn/civil/index.html">土木工程学院</a><br>
+                                </address>
+                        </div>
+                         -->
+                    </div>
+
                 </div>
                 <!-- /.box-body -->
             </div>

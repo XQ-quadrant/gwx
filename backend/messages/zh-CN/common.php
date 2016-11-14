@@ -12,8 +12,13 @@ return [
     'Content'=>'内容',
     'Start At'=>'报告时间',
     'Pic' => '配图',
-    'Create' => '发布',
+    'Create' => '生成',
+    'Update' => '更新',
     'Reports' =>'报告',
     'Create Report'=>'发布报告',
     'Achievements'=>'科研成果',
+
+    'Name'=>'名称',
+    'Apply Now'=>'在线申请',
+    /********** ********/
 ];

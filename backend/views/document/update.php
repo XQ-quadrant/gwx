@@ -1,14 +1,17 @@
 <?php
 
 use yii\helpers\Html;
-
+use common\models\Cate;
 /* @var $this yii\web\View */
 /* @var $model common\models\Document */
 
-$this->title = 'Update Document: ' . $model->title;
-$this->params['breadcrumbs'][] = ['label' => 'Documents', 'url' => ['index']];
+$cate = Cate::findOne(['id'=>Yii::$app->request->get('cate')])? Cate::findOne(['id'=>Yii::$app->request->get('cate')]): Cate::findOne($model->getAttribute('cate'));
+
+$this->title = '编辑 ' . $model->title;
+$this->params['breadcrumbs'][] = ['label' => $cate->name,
+    'url' => ['index','DocumentSearch[cate]'=>$cate->id]];
 $this->params['breadcrumbs'][] = ['label' => $model->title, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->params['breadcrumbs'][] = '编辑';
 ?>
 <div class="document-update">
 
@@ -16,6 +19,7 @@ $this->params['breadcrumbs'][] = 'Update';
 
     <?= $this->render('_form', [
         'model' => $model,
+        'cate'=>$cate
     ]) ?>
 
 </div>

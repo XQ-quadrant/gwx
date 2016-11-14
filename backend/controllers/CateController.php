@@ -31,15 +31,65 @@ class CateController extends Controller
      * Lists all Cate models.
      * @return mixed
      */
-    public function actionIndex()
+    public function actionIndex($pre_cate =1)
     {
-        $searchModel = new CateSearch();
+        $searchModel = new CateSearch(['pre_cate'=>$pre_cate]);
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+
+        /* jstree版 生产树
+         * function catetree($pre_cate = 0){
+            $cates = Cate::findAll(['pre_cate'=>$pre_cate]);
+            $html = '';
+            if(!empty($cates)){
+                $html = '<ul >';
+                foreach($cates as $v2){
+                    $html.= '<li class="jstree-open">'.$v2->name;
+                    $html.= catetree($v2->id);
+                    $html.= '</li>';
+                }
+                $html.=  '</ul>';
+            }
+            return $html;
+        }*/
+
+
 
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
+    }
+    public function actionTree($pre_cate){
+
+        function catetree($pre_cate = 1){
+            $cate = new Cate();
+            $cates = $cate->find()->where(['pre_cate'=>$pre_cate,'status'=>1])->orderBy(['level'=>SORT_ASC])->all();
+            // $cates = Cate::findAll(['pre_cate'=>$pre_cate,'status'=>1]);
+            $html = [];
+            if(!empty($cates)){
+                foreach($cates as $v2){
+
+                    $next['text']= $v2->name;
+                    $next['href'] = 'update?id='.$v2->id;
+
+                    /*$next['tags'] = ['<a href="/site">cc</a>'];*/
+                    $node = catetree($v2->id);
+                    if(!empty($node)){
+                        $next['nodes'] = $node;
+                    }
+                   // $node= [];
+                    $html[] = $next;
+                    unset($next);
+                }
+
+            }
+            return $html;
+        }
+
+        $catetree = json_encode(catetree($pre_cate));
+        //var_dump($catetree);die();
+        return $this->renderAjax('tree',['catetree'=>$catetree]);
     }
 
     /**
@@ -59,9 +109,9 @@ class CateController extends Controller
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
-    public function actionCreate()
+    public function actionCreate($pre_cate = null)
     {
-        $model = new Cate();
+        $model = new Cate(['pre_cate'=>$pre_cate]);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -119,4 +169,7 @@ class CateController extends Controller
             throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
+
+
+
 }

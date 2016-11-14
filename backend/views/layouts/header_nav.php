@@ -11,7 +11,7 @@ use backend\widgets\category\CategoryWidget;
 <header class="main-header">
 
 
-    <nav class="navbar navbar-static-top" role="navigation">
+    <nav class="navbar navbar-static-top site-index" role="navigation">
         <div class="container" style="padding-right: 15px;padding-left: 15px;">
         <div class="navbar-header">
 
@@ -21,7 +21,7 @@ use backend\widgets\category\CategoryWidget;
             </button>
         </div>
 
-        <div class="collapse navbar-collapse pull-left" id="navbar-collapse" style="    margin-left: -17px;">
+        <div class="collapse navbar-collapse pull-left" id="navbar-collapse" style="margin-left: -17px;">
         <?php
         /*if(Yii::$app->user->isGuest) {
             $menuItemsCenter = [
