@@ -10,9 +10,12 @@ use yii\helpers\Url;
 ?>
 <div class="box <?=$css['warper']?>"><a href="<?=$url?>" class="uppercase">
     <div class="box-header <?=$css['header']?>">
-       <h4 class="box-title <?=$css['title']?>"></h4>
+        <i class="<?=$css['icon']?>"></i>
+
+        <h3 class="box-title <?=$css['title']?> text-white"><?=$title?> </h3>
+        <div class="list-news-bg"></div>
         <div class="box-tools pull-right">
-            <!--<span data-toggle="tooltip" title="3 New Messages" class="badge bg-light-blue">3</span>-->
+            <span data-toggle="tooltip"  class="badge  index-box-more" >更多</span>
             <!--<button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
             </button>-->
             <!--<button type="button" class="btn btn-box-tool"  title="" >

@@ -15,5 +15,5 @@ return [
     'Url'=>'链接',
     'Status'=>'状态',
     'Icon'=>'图标',
-    'Cindex'=>'对照',
+    'Cindex'=>'备注',
 ];

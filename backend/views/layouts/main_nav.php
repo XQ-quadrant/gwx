@@ -1,15 +1,16 @@
 <?php
 use yii\helpers\Html;
 use yii\helpers\Url;
+
 /* @var $this \yii\web\View */
 /* @var $content string */
 
 
-if (Yii::$app->controller->action->id === 'login') { 
-/**
- * Do not use this code in your template. Remove it. 
- * Instead, use the code  $this->layout = '//main-login'; in your controller.
- */
+if (Yii::$app->controller->action->id === 'login') {
+    /**
+     * Do not use this code in your template. Remove it.
+     * Instead, use the code  $this->layout = '//main-login'; in your controller.
+     */
     echo $this->render(
         'main-login',
         ['content' => $content]
@@ -46,43 +47,45 @@ if (Yii::$app->controller->action->id === 'login') {
     </head>
     <body class="hold-transition skin-pblue-light layout-top-nav">
     <?php $this->beginBody() ?>
-    <div class="wrapper" >
+    <div class="wrapper">
         <div class="breadcrumb_banner" style="">
             <div id="">
                 <div class="container">
-                    <div class="row" >
-
-                        <a class="col-md-6 normal" href="<?= Yii::$app->homeUrl?>" style="display: inline-block;">
-                            <img src="/images/top.gif"  style="width: 100%;float: left;padding: 0 1em;"/>
+                    <div class="row">
+                        <a class="col-md-6 normal" href="<?= Yii::$app->homeUrl ?>" style="display: inline-block;">
+                            <img src="/images/top.gif" style="width: 106%;float: left;padding: 0 1em;"/>
 
                         </a>
+
                         <div class="col-md-6 normal">
                             <div class="row">
-                                <div class="col-md-4 pull-right normal" style="padding-left: 0">
-                                    <!--<form class="navbar-form navbar-right" role="search" style="float: right;display: inline-block">
+                                <div class="col-md-2 pull-right normal" style="padding-left: 0">
+
+                                    <a class="btn btn-block  btn-flat navbar-right index-top-tip2" ><!--Apply Now!--><?= Yii::t('common', 'Apply Now') ?>
+                                    </a>
+                                    <form class="navbar-form navbar-right" role="search" style="float: right;display: inline-block;margin-right: -10px;    margin-top: 20px;">
                                         <div class="form-group">
 
-                                            <input type="text" class="form-control" id="navbar-search-input" placeholder="搜索">
+                                            <input type="text" class="form-control" id="navbar-search-input" placeholder="搜索" style="width: 142px;    height: 27px;    background-color: rgba(119, 249, 255, 0.33);color:#fff">
                                         </div>
-                                    </form>-->
-                                    <a class="btn btn-block  btn-flat navbar-right" style="
-                                    color: #fff;
-                                     margin:0.6em 0.45em 0 0;
-
-
-                                     background-color: rgba(255, 255, 255, 0);
-                                         text-align: left;"><!--Apply Now!--><?= Yii::t('common','Apply Now') ?>
-                                    </a>
-</div><div class="col-md-3 pull-right normal" style="padding-right: 0">
-                                    <a href="http://www.xq1024.com/" class="btn btn-block  btn-flat navbar-right" style="
-                                color: #9cdaea;
-                                text-align: right;
-                                margin:0.6em 0.45em 0 0;
-
-                                border-right: 1px solid #ccc"> English</a>
+                                    </form>
+                                </div>
+                                <div class="col-md-2 pull-right normal" style="padding-right: 0">
+                                    <a href="http://www.xq1024.com/" class="btn btn-block  btn-flat navbar-right index-top-tip"> English</a>
                                 </div>
 
                             </div>
+                            <!--<div class="row">
+                                <div class="col-md-1 pull-right normal" style="padding-left: 0"></div>
+                                <div class="col-md-5  pull-right normal" style="padding-right: 0">
+                                    <form class="navbar-form navbar-right" role="search" style="float: right;display: inline-block;margin-right: -10px;">
+                                        <div class="form-group">
+
+                                            <input type="text" class="form-control" id="navbar-search-input" placeholder="搜索" style="width: auto;    height: 27px;    background-color: rgba(119, 249, 255, 0.33);color:#fff">
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>-->
                             <!--<div class="row">
                                 <div class="col-md-1 pull-right"></div>
                                 <div class="col-md-5 pull-right">

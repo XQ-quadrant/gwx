@@ -31,7 +31,6 @@ use backend\widgets\category\CategoryWidget;
             ];
         }else{*/
 
-
         $menu = new CategoryWidget(['precate_name'=>'document']);
         $menuItemsCenter = $menu->getCate();
 
@@ -47,12 +46,12 @@ use backend\widgets\category\CategoryWidget;
         <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">
                 <!-- Messages: style can be found in dropdown.less-->
-                <form class="navbar-form navbar-right" role="search" style="float: right;display: inline-block">
+                <!--<form class="navbar-form navbar-right" role="search" style="float: right;display: inline-block">
                     <div class="form-group">
 
                         <input type="text" class="form-control" id="navbar-search-input" placeholder="搜索">
                     </div>
-                </form>
+                </form>-->
                 <?php if(Yii::$app->user->isGuest) { ?>
 
                    <!-- <li class="">

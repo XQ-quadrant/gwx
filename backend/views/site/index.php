@@ -5,7 +5,7 @@ use yii\helpers\Url;
 
 /* @var $this yii\web\View */
 
-$this->title = '国际教育学院';
+$this->title = '西南交通大学国际教育学院';
 $this->params['index'] = true;//$this->title;
 $this->params['breadcrumbs'] = null;//$this->title;
 $this->blocks['content-header'] = '';
@@ -79,10 +79,10 @@ position: relative;
     </div>
 <hr style="    border-top:1px solid #D9E0E6;margin-top: 0px;margin-bottom: 10px;">
     <div class="row">
-        <div class="col-md-4" style="    height: 320px;">
+        <div class="col-md-4" style="">
             <?= backend\widgets\box\BoxWidget::widget(['cate' => 32, 'title' => '通知公告', 'liNum' => 7,
                 'url' => Url::toRoute(['document/list', 'cate' => 32]),
-                'css'=>['warper'=>'box-widget index-box blue-border','header'=>'with-border bgimg-title1','title'=>'','body'=>'box-profile',]]) ?>
+                'css'=>['warper'=>'box-widget index-box blue-border','title'=>'index-box-title','header'=>'with-border index-box-header','icon'=>'index-box-icon bicon-laba','body'=>'box-profile',]]) ?>
 
             <!-- /.nav-tabs-custom -->
         </div>
@@ -90,7 +90,7 @@ position: relative;
             <?= backend\widgets\box\BoxWidget::widget([
                 'type'=>'pic','cate' => 14, 'pic' => true, 'title' => '新闻中心',
                 'url' => Url::toRoute(['document/list', 'cate' => 14]),
-                'css'=>['warper'=>'box-widget index-box ','header'=>'with-border bgimg-title2','title'=>'bgimg-title2','body'=>'box-profile blue-border',],
+                'css'=>['warper'=>'box-widget index-box ','header'=>'with-border index-box-header','title'=>'index-box-title','icon'=>'index-box-icon bicon-news','body'=>'box-profile blue-border',],
             ]) ?>
 
             <!-- /.nav-tabs-custom -->
@@ -99,7 +99,7 @@ position: relative;
             <?= backend\widgets\box\BoxWidget::widget(['type'=>'products-list','cate' => 31, 'pic' => true,
                 'title' => '专题',
                 'url' => Url::toRoute(['document/list', 'cate' => 31]),
-                'css'=>['warper'=>'box-widget index-box','header'=>'with-border bgimg-title3','title'=>'icon-title','body'=>'box-profile blue-border','icon'=>'box-icon bicon-school'],
+                'css'=>['warper'=>'box-widget index-box','header'=>'with-border index-box-header bgimg-title3','title'=>'index-box-title','body'=>'box-profile blue-border','icon'=>'index-box-icon bicon-news'],
             ]) ?>
 
             <!-- About Me Box -->
