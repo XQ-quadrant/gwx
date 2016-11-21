@@ -148,9 +148,10 @@ class DocumentController extends Controller
      */
     public function actionDelete($id)
     {
+        var_dump('');
         $this->findModel($id)->delete();
 
-        return $this->redirect(['index']);
+        return $this->redirect(Yii::$app->request->referrer);
     }
 
     public function actionStatus($id,$status){

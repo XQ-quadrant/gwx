@@ -15,7 +15,7 @@ use yii\helpers\Url;
 
   <h3 class="box-title <?=$css['title']?>"><?=$title?> </h3>
   <div class="box-tools pull-right">
-   <span data-toggle="tooltip"  class="badge  index-box-more" >更多</span>
+   <span data-toggle="tooltip"  class="badge  index-box-more" ><?= Yii::t('common','more')?></span>
 
   </div>
  </div></a>

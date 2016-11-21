@@ -53,15 +53,12 @@ if (Yii::$app->controller->action->id === 'login') {
                 <div class="container">
                     <div class="row">
                         <a class="col-md-6 normal" href="<?= Yii::$app->homeUrl ?>" style="display: inline-block;">
-                            <img src="/images/top.gif" style="width: 106%;float: left;padding: 0 1em;"/>
-
+                            <img src="/images/top.gif" style="    width: 113%;float: left;padding: 0 1em;"/>
                         </a>
-
                         <div class="col-md-6 normal">
                             <div class="row">
                                 <div class="col-md-2 pull-right normal" style="padding-left: 0">
-
-                                    <a class="btn btn-block  btn-flat navbar-right index-top-tip2" ><!--Apply Now!--><?= Yii::t('common', 'Apply Now') ?>
+                                    <a href="<?= Yii::t('common','http://iso.swjtu.edu.cn/index.php?l=en')?>" class="btn btn-block  btn-flat navbar-right index-top-tip2" ><!--Apply Now!--><?= Yii::t('common', 'Apply Now') ?>
                                     </a>
                                     <form class="navbar-form navbar-right" role="search" style="float: right;display: inline-block;margin-right: -10px;    margin-top: 20px;">
                                         <div class="form-group">
@@ -71,7 +68,7 @@ if (Yii::$app->controller->action->id === 'login') {
                                     </form>
                                 </div>
                                 <div class="col-md-2 pull-right normal" style="padding-right: 0">
-                                    <a href="http://www.xq1024.com/" class="btn btn-block  btn-flat navbar-right index-top-tip"> English</a>
+                                    <a href="<?= Yii::t('common', 'http://www.sdorms.com/') ?>" class="btn btn-block  btn-flat navbar-right index-top-tip"><?= Yii::t('common', '中文') ?></a>
                                 </div>
 
                             </div>

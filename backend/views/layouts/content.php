@@ -55,14 +55,14 @@ use dmstr\widgets\Alert;
                     </div>
                 </div>
 
-                <div class="col-md-4 normal">
+                <div class="col-md-5 normal">
                     <div class="">
 
                         <address >
                             <ul>
-                                <li>地址：中国四川省峨眉山市西南交通大学</li>
-                                <li>电话： 344563</li>
-                                <li>Email : <a class="mail text-white" href="mailto:mail@example.com">info(at)sseet.com</a></li>
+                                <li><?= Yii::t('common','Add.: No.1 Jingqu Road, Emeishan, Sichuan, P. R. China')?></li>
+                                <li><?= Yii::t('common','Tel')?>： 86-0833-5198114  </li>
+                                <li><?= Yii::t('common','PC')?>： 614202</li>
                             </ul>
                         </address>
 
@@ -76,7 +76,7 @@ use dmstr\widgets\Alert;
                         <a href="#"><i class="fa fa-github"></i></a>
                     </div>
                     <br>-->
-                    <p class="text-left">
+                    <!--<p class="text-left">
                         Copyright 2015 西南交通大学 All rights reserved.
                     </p><p class="text-left">
                       蜀ICP备05026985号 查号台：+86-28-87600114
@@ -85,7 +85,7 @@ use dmstr\widgets\Alert;
 
                     </p><p class="text-left">
                         川公网安备 51010602000061号
-                    </p>
+                    </p>-->
                 </div>
             </div>
             <br>

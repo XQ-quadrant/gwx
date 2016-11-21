@@ -5,7 +5,7 @@ use yii\helpers\Url;
 
 /* @var $this yii\web\View */
 
-$this->title = '西南交通大学国际教育学院';
+$this->title = Yii::t('common','School of International Education');
 $this->params['index'] = true;//$this->title;
 $this->params['breadcrumbs'] = null;//$this->title;
 $this->blocks['content-header'] = '';
@@ -17,7 +17,7 @@ $this->registerCss('.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-
     min-height: 1px;
     padding-right: 8px;
     padding-left: 8px;
-    margin-top:2px;
+    /*margin-top:2px;*/
 }
 .normal{
 position: relative;
@@ -30,9 +30,9 @@ position: relative;
 ?>
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" >
     <ol class="carousel-indicators">
-        <li data-target="#carousel-example-generic" data-slide-to="0" class=""></li>
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
         <li data-target="#carousel-example-generic" data-slide-to="1" class=""></li>
-        <li data-target="#carousel-example-generic" data-slide-to="2" class="active"></li>
+
     </ol>
     <div class="carousel-inner slider-items">
         <?php foreach($pic as $k=>$v){
@@ -80,7 +80,7 @@ position: relative;
 <hr style="    border-top:1px solid #D9E0E6;margin-top: 0px;margin-bottom: 10px;">
     <div class="row">
         <div class="col-md-4" style="">
-            <?= backend\widgets\box\BoxWidget::widget(['cate' => 32, 'title' => '通知公告', 'liNum' => 7,
+            <?= backend\widgets\box\BoxWidget::widget(['cate' => 32, 'title' => Yii::t('common','Notices'), 'liNum' => 7,
                 'url' => Url::toRoute(['document/list', 'cate' => 32]),
                 'css'=>['warper'=>'box-widget index-box blue-border','title'=>'index-box-title','header'=>'with-border index-box-header','icon'=>'index-box-icon bicon-laba','body'=>'box-profile',]]) ?>
 
@@ -88,7 +88,7 @@ position: relative;
         </div>
         <div class="col-md-5 wbox">
             <?= backend\widgets\box\BoxWidget::widget([
-                'type'=>'pic','cate' => 14, 'pic' => true, 'title' => '新闻中心',
+                'type'=>'pic','cate' => 14, 'pic' => true, 'title' => Yii::t('common','News'),
                 'url' => Url::toRoute(['document/list', 'cate' => 14]),
                 'css'=>['warper'=>'box-widget index-box ','header'=>'with-border index-box-header','title'=>'index-box-title','icon'=>'index-box-icon bicon-news','body'=>'box-profile blue-border',],
             ]) ?>

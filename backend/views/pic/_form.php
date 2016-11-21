@@ -9,7 +9,7 @@ use yii\widgets\ActiveForm;
 $cate = new \common\models\Cate();
 $cates = $cate->find()
     ->select(['id','name'])
-    ->where(['status'=>\common\models\Cate::STATUS_pic])->asArray()->all();
+    ->where(['status'=>\common\models\Cate::STATUS_AOLLOW])->asArray()->all();
 $list = [];
 foreach($cates as $k=>$v){
     $list[$v['id']] = $v['name'];

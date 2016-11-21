@@ -12,7 +12,7 @@ use yii\helpers\Url;
     <div class="box-header <?=$css['header']?> " style="">
         <h3 class="box-title <?=$css['title']?>"> </h3>
         <div class="box-tools pull-right">
-            <span data-toggle="tooltip"  class="badge  index-box-more" >更多</span>
+            <span data-toggle="tooltip"  class="badge  index-box-more" ><?= Yii::t('common','more')?></span>
         </div>
     </div></a>
     <div class="box-body <?=$css['body']?>">
