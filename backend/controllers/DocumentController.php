@@ -6,6 +6,8 @@ use common\models\Cate;
 use Yii;
 use common\models\Document;
 use common\models\DocumentSearch;
+use yii\filters\AccessControl;
+use yii\helpers\Url;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -25,9 +27,19 @@ class DocumentController extends Controller
                 'config' => [
                     'imagePathFormat' => "/images/upload/{yyyy}{mm}{dd}/{time}{rand:6}",
                 ]
+            ],
+            'ueditor'=>[
+                'class' => 'common\widgets\ueditor\UeditorAction',
+                'config'=>[
+                    //上传图片配置
+                    'imageUrlPrefix' => "", /* 图片访问路径前缀 */
+                    'imagePathFormat' => "/images/upload/{yyyy}{mm}{dd}/{time}{rand:6}", /* 上传保存路径,可以自定义保存路径和文件名格式 */
+                    "imageRoot" => Yii::getAlias("@webroot"),
+                ]
             ]
         ];
     }
+
 
     /**
      * @inheritdoc
@@ -41,6 +53,16 @@ class DocumentController extends Controller
                     'delete' => ['POST'],
                 ],
             ],
+            /*'access' => [
+                'class' => AccessControl::className(),
+                'rules' => [
+                    [
+                        'actions' => ['index','create','view','update','upload','ueditor','delete',],
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],*/
         ];
     }
     /*public function beforeAction($action)
@@ -116,6 +138,66 @@ class DocumentController extends Controller
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [
+                'model' => $model,
+            ]);
+        }
+    }
+
+    public function actionCreateInfo($cate)
+    {
+        $category = Cate::findOne(['id'=>$cate]);   //栏目
+
+        if(isset($category)){
+            if(Cate::TYPE_document!= $category->type){  //禁止访问
+                die('forbbiden');
+            }
+        }else{
+            die('栏目不存在');
+        }
+
+        $model = new Document();
+        $model->cate = $cate;
+
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+
+
+            $category->uri = Url::to(['view',  'id' => $model->id]);  //修改栏目url
+            $category->save();
+
+            return $this->redirect(['/cate/view', 'id' => $cate]);
+
+        } else {
+            return $this->render('create', [
+                'model' => $model,
+            ]);
+        }
+    }
+
+    public function actionUpdateInfo($cate)
+    {
+        $category = Cate::findOne(['id'=>$cate]);  //栏目
+        if(isset($category)){
+            if(Cate::TYPE_document!= $category->type){  //禁止访问
+                die('forbbiden');
+            }
+        }else{
+            die('栏目不存在');
+        }
+
+        $d = new Document();
+        $model = $d->find()->where(['cate'=>$cate])->one();
+        //$model = Document::findOne(['cate'=>$cate]);
+        if(empty($model)){
+            return $this->redirect(['create-info', 'cate' => $cate]);
+        }
+
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+
+            $category->uri = Url::to(['view',  'id' => $model->id]);
+            $category->save();
+            return $this->redirect(['view',  'id' => $model->id]);
+        } else {
+            return $this->render('update', [
                 'model' => $model,
             ]);
         }

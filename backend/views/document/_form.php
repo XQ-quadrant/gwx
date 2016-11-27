@@ -3,7 +3,7 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use common\models\Cate;
-use common\widgets\ueditor\UEditor;
+use common\widgets\ueditor\Ueditor;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Document */
@@ -38,7 +38,8 @@ $label = ['class'=>"col-sm-2 text-c control-label form-label"];
 
     <?= $form->field($model, 'breviary',['template' => $template])->textarea(['rows' => 3,'class'=>'form-control md-input '])->label(null,$label) ?>
 
-    <?= $form->field($model, 'content',['template' => $template])->label(null,$label)->widget(UEditor::className(),['class'=>'col-sm-10 ','id'=>'content','name'=>'content', ])  ?>
+    <?= $form->field($model, 'content',['template' => '{label}<div class="col-sm-8">{input}</div>{error}{hint}'])
+        ->label(null,$label)->widget(Ueditor::className(),['class'=>'col-md-8 ','id'=>'content','name'=>'content', ])  ?>
 
     <?= $form->field($model, 'author',['template' => $template])->textInput(['maxlength' => true,'class'=>'form-control sm-input '])->label(null,$label) ?>
 

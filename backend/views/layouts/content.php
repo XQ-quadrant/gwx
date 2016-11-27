@@ -31,7 +31,7 @@ use dmstr\widgets\Alert;
     </section>
     <?php } ?>
 
-    <section class="content">
+    <section class="content ">
         <?= Alert::widget() ?>
         <?= $content ?>
     </section>
@@ -61,7 +61,7 @@ use dmstr\widgets\Alert;
                         <address >
                             <ul>
                                 <li><?= Yii::t('common','Add.: No.1 Jingqu Road, Emeishan, Sichuan, P. R. China')?></li>
-                                <li><?= Yii::t('common','Tel')?>： 86-0833-5198114  </li>
+                                <li><?= Yii::t('common','Tel')?>： +86-833-5198726  </li>
                                 <li><?= Yii::t('common','PC')?>： 614202</li>
                             </ul>
                         </address>

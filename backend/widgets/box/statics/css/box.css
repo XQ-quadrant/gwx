@@ -11,3 +11,8 @@
 .text-muted {
     color: #a7a7a7;
 }
+.listpic-text{
+    overflow: hidden;
+    width: 100%;
+    /*height: 3em;*/
+}

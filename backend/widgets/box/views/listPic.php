@@ -29,9 +29,11 @@ use yii\helpers\Url;
             <img class="attachment-img" src="<?=$m->pic?>" alt="Attachment Image">
 
             <div class="attachment-pushed">
-                <h4 class="attachment-heading" style="font-size: 15px"><a href="<?=Url::to(['/'.$model->tableName().'/view/','id'=>$m->id])?>"><?=$m->title?></a></h4>
+                <h4 class="attachment-heading listpic-text" style="font-size: 15px; height: 33px;">
+                    <a href="<?=Url::to(['/'.$model->tableName().'/view/','id'=>$m->id])?>"><?=$m->title?></a>
+                </h4>
 
-                <div class="attachment-text">
+                <div class="attachment-text listpic-text" style="height: 40px;">
                     <?=$m->breviary?>
                 </div>
             </div>

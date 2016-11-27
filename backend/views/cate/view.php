@@ -23,8 +23,15 @@ $this->params['breadcrumbs'][] = $this->title;
                 'method' => 'post',
             ],
         ]) ?>
-    </p>
+        <?php if($model->type == \common\models\Cate::TYPE_document){ ?>
+            <?= Html::a('编写内容' ,
+                $model->isNewRecord ? ['/document/create-info', 'cate' => $model->id] : ['/document/update-info', 'cate' => $model->id],
+                ['class' => 'btn btn-primary']) ?>
+        <?php } ?>
 
+
+
+    </p>
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
@@ -37,6 +44,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'pre_cate',
             'level',
             'status',
+            'type',
             'uri:ntext',
             'icon',
         ],

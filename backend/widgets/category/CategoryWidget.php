@@ -10,6 +10,7 @@ namespace backend\widgets\category;
 use common\models\Cate;
 use common\models\Room;
 use yii\base\Widget;
+use yii\web\UrlManager;
 
 /**
  * Class CategoryWidget 左侧菜单的下级菜单
@@ -59,7 +60,7 @@ class CategoryWidget extends Widget
         if ($this->model === null) {
             $this->model = Cate::find()
                 ->select(['icon','id','name'])
-                ->where(['pre_cate'=>$this->precate,'status'=>Cate::$STATUS_AOLLOW])
+                ->where(['status'=>Cate::$STATUS_AOLLOW,'type'=>Cate::TYPE_list])
                 ->orderBy(['level' => SORT_DESC])
                 //->asArray()
                 ->all();//new Room();//'Hello World';
@@ -78,6 +79,7 @@ class CategoryWidget extends Widget
     }
 
     public function getCate(){
+
         $this->model = Cate::find()
             ->select(['uri','id','name'])
             ->where(['pre_cate'=>1,'status'=>Cate::$STATUS_AOLLOW,])
@@ -92,7 +94,6 @@ class CategoryWidget extends Widget
             $item =  [
                 'label' =>$v['name'] ,
                 //'icon' => $v['icon'],
-
                 'url' =>$v['uri'],
                 /*'items' => [
                     ['label' => 'Level 1 - Dropdown A', 'url' => '#'],
@@ -100,6 +101,15 @@ class CategoryWidget extends Widget
               ],*/
 
             ];
+            $flag_active =false;                //是否高亮
+            $uri = \Yii::$app->request->absoluteUrl;  //当前完整url
+
+            $hostinfo = \Yii::$app->request->hostInfo; // 域名
+
+
+            if($uri == $hostinfo.$v['uri']){
+                $flag_active =true;
+            }
 
             $sonCate = Cate::findAll(['pre_cate'=>$v->id]);
             if(isset($sonCate)){
@@ -108,17 +118,19 @@ class CategoryWidget extends Widget
                     $sonitems[] = [
                         'label' =>$v2['name'] ,
                         //'icon' => $v['icon'],
-
+                        //'options' => ['class'=>'cc'],
                         'url' =>$v2['uri'],
                     ];
+                    if($uri == $hostinfo.$v2['uri']){
+                        $flag_active = true;
+                    }
                 }
                 $item['items'] = $sonitems;
 
             }
 
-            if('/'.\Yii::$app->requestedRoute==$v['uri']){
-                $item['active'] = true;
-            }
+            //foreach
+            $item['active'] = $flag_active;
 
             $items[] = $item;
         }

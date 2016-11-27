@@ -116,7 +116,7 @@ position: relative;
 <?php foreach($pic_bottom as $v) { ?>
         <div class="col-lg-3">
             <a href="<?= $v->url ?>">
-            <img class="img-responsive " src="<?= $v->savepath ?>" alt="Photo"></a>
+            <img class="img-responsive bottom-img" src="<?= $v->savepath ?>" alt="Photo"></a>
         </div>
 <?php } ?>
         </div>

@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use common\models\Cate;
 
 /* @var $this yii\web\View */
 /* @var $searchModel common\models\CateSearch */
@@ -57,14 +58,9 @@ $this->registerJsFile('@web/adminlte/plugins/treeview/treeview-demo.js',['depend
                 </div>
                 <div class="box-body ">
                     <div id="jstree1">
-
-
                     </div>
-
                     <div id="treeview12" class="test"></div>
                                 <!--<div id="treeview10" class="test"></div>-->
-
-
                 </div>
             </div>
         </div>
@@ -87,11 +83,50 @@ $this->registerJsFile('@web/adminlte/plugins/treeview/treeview-demo.js',['depend
                     //'create_time',
                     //'model:ntext',
                     // 'view_index:ntext',
-                    'pre_cate',
-                    'level',
-                    'status',
-                     'uri:ntext',
-                    // 'icon',
+                    //'pre_cate',
+                    //'level',
+                    [
+                        "label" => "优先级",
+                        "attribute"=>'level',
+                        'enableSorting' => true,
+                        'filter' => false,
+                        "format" => "raw",
+                        "value" =>'level',
+                    ],
+                   // 'status',
+                    [
+                        "label" => "状态",
+                        //"attribute"=>'status',
+                        "format" => "raw",
+                        "value" => function ($model) {
+                            $status ='非法';
+
+                            switch($model->status){
+                                case Cate::$STATUS_AOLLOW : $status = '显示';break;
+                                case Cate::$STATUS_DELETE : $status = '隐藏';break;
+
+                            }
+                            return $status;
+
+                        }],
+                     //'uri:ntext',
+
+                    [
+                        "label" => "类型",
+                        "attribute"=>'type',
+                        "format" => "raw",
+                        "value" => function ($model) {
+                            $type ='非法';
+
+                            switch($model->type){
+                                case Cate::TYPE_list : $type = '文章列表';break;
+                                case Cate::TYPE_document : $type = '文章';break;
+                                case Cate::TYPE_link : $type = '自定义链接';break;
+                                case Cate::TYPE_precate : $type = '二级菜单';break;
+                            }
+                            return $type;
+
+                        }],
 
                     ['class' => 'yii\grid\ActionColumn',
                         'template' => '

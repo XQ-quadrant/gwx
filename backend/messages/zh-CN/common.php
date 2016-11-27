@@ -17,6 +17,9 @@ return [
     'Reports' =>'报告',
     'Create Report'=>'发布报告',
     'Achievements'=>'科研成果',
+    'Author'=>'作者',
+    'Date'=>'日期',
+    'search'=>'搜索',
 
     'School of International Education'=>'西南交通大学国际教育学院',
     'more'=>'更多',

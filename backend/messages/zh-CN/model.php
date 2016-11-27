@@ -13,7 +13,9 @@ return [
     'Pre Cate'=>'上级栏目',
     'Level'=>'等级',
     'Url'=>'链接',
+    'Uri'=>'链接',
     'Status'=>'状态',
     'Icon'=>'图标',
     'Cindex'=>'备注',
+    'Type'=>'类型',
 ];

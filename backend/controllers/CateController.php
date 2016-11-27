@@ -114,7 +114,12 @@ class CateController extends Controller
         $model = new Cate(['pre_cate'=>$pre_cate]);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+           /* if($model->type==Cate::TYPE_document){
+
+            }else{*/
+                return $this->redirect(['view', 'id' => $model->id]);
+            //}
+
         } else {
             return $this->render('create', [
                 'model' => $model,

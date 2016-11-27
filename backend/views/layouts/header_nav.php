@@ -32,7 +32,7 @@ use backend\widgets\category\CategoryWidget;
         }else{*/
 
         $menu = new CategoryWidget(['precate_name'=>'document']);
-        $menuItemsCenter = $menu->getCate();
+        $menuItemsCenter = $menu->getCate();  //获取树状栏目
 
 
         echo Nav::widget([

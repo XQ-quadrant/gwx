@@ -52,25 +52,26 @@ if (Yii::$app->controller->action->id === 'login') {
             <div id="">
                 <div class="container">
                     <div class="row">
-                        <a class="col-md-6 normal" href="<?= Yii::$app->homeUrl ?>" style="display: inline-block;">
-                            <img src="/images/top.gif" style="    width: 113%;float: left;padding: 0 1em;"/>
+                        <a class="col-md-7 normal" href="<?= Yii::$app->homeUrl ?>" style="display: inline-block;">
+                            <img src="/images/top.jpg" style="    width: 100%;float: left;padding: 0 1em;"/>
                         </a>
-                        <div class="col-md-6 normal">
+                        <div class="col-md-5 normal">
+                            <div class="row" style="margin-top: 1em;">
+                                <div class="col-md-2 pull-right normal" style="padding-left: 0;    padding-right: 0;    margin-right: 11px;">
+                                    <a href="<?= Yii::t('common','http://iso.swjtu.edu.cn/index.php?l=en')?>" class="btn btn-block  btn-flat  index-top-tip2" ><!--Apply Now!--><?= Yii::t('common', 'Apply Now') ?></a>
+                                </div>
+                                <div class="col-md-3 pull-right normal" style="padding-right: 0;border-right: 1px solid #ccc;">
+                                    <a href="<?= Yii::t('common', 'http://www.sdorms.com/') ?>" class="btn btn-block  btn-flat  index-top-tip"><?= Yii::t('common', '中文') ?></a>
+                                </div>
+                            </div>
                             <div class="row">
-                                <div class="col-md-2 pull-right normal" style="padding-left: 0">
-                                    <a href="<?= Yii::t('common','http://iso.swjtu.edu.cn/index.php?l=en')?>" class="btn btn-block  btn-flat navbar-right index-top-tip2" ><!--Apply Now!--><?= Yii::t('common', 'Apply Now') ?>
-                                    </a>
+                                <div class="col-md-6 pull-right">
                                     <form class="navbar-form navbar-right" role="search" style="float: right;display: inline-block;margin-right: -10px;    margin-top: 20px;">
                                         <div class="form-group">
-
-                                            <input type="text" class="form-control" id="navbar-search-input" placeholder="搜索" style="width: 142px;    height: 27px;    background-color: rgba(119, 249, 255, 0.33);color:#fff">
+                                            <input type="text" class="form-control" id="navbar-search-input" placeholder="<?= Yii::t('common', 'search')?>" style="width: 151px;    height: 27px;    background-color: rgba(119, 249, 255, 0.33);color:#fff">
                                         </div>
                                     </form>
                                 </div>
-                                <div class="col-md-2 pull-right normal" style="padding-right: 0">
-                                    <a href="<?= Yii::t('common', 'http://www.sdorms.com/') ?>" class="btn btn-block  btn-flat navbar-right index-top-tip"><?= Yii::t('common', '中文') ?></a>
-                                </div>
-
                             </div>
                             <!--<div class="row">
                                 <div class="col-md-1 pull-right normal" style="padding-left: 0"></div>
