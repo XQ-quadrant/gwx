@@ -10,9 +10,12 @@ use yii\helpers\Url;
 ?>
 <div class="box <?=$css['warper']?>"><a href="<?=$url?>" class="uppercase">
     <div class="box-header <?=$css['header']?>">
-       <h4 class="box-title <?=$css['title']?>"></h4>
+        <i class="<?=$css['icon']?>"></i>
+
+        <h3 class="box-title <?=$css['title']?> text-white"><?=$title?> </h3>
+        <div class="list-news-bg"></div>
         <div class="box-tools pull-right">
-            <!--<span data-toggle="tooltip" title="3 New Messages" class="badge bg-light-blue">3</span>-->
+            <span data-toggle="tooltip"  class="badge  index-box-more" ><?= Yii::t('common','more')?></span>
             <!--<button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
             </button>-->
             <!--<button type="button" class="btn btn-box-tool"  title="" >
@@ -26,9 +29,11 @@ use yii\helpers\Url;
             <img class="attachment-img" src="<?=$m->pic?>" alt="Attachment Image">
 
             <div class="attachment-pushed">
-                <h4 class="attachment-heading" style="font-size: 15px"><a href="<?=Url::to(['/'.$model->tableName().'/view/','id'=>$m->id])?>"><?=$m->title?></a></h4>
+                <h4 class="attachment-heading listpic-text" style="font-size: 15px; height: 33px;">
+                    <a href="<?=Url::to(['/'.$model->tableName().'/view/','id'=>$m->id])?>"><?=$m->title?></a>
+                </h4>
 
-                <div class="attachment-text">
+                <div class="attachment-text listpic-text" style="height: 40px;">
                     <?=$m->breviary?>
                 </div>
             </div>

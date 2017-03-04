@@ -14,7 +14,7 @@ use yii\db\ActiveRecord;
 
 class BoxWidget extends Widget
 {
-    public $css = ['warper'=>'box-widget','title'=>'with-border','body'=>'box-profile','css'=>''];
+    public $css = ['warper'=>'box-widget','title'=>'with-border','body'=>'box-profile','css'=>'','icon'];
     public $model ;
     public $activeRecord ;
     public $cate ;

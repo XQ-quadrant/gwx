@@ -35,6 +35,7 @@ class PicController extends Controller
             'upload'=>[
                 'class' => 'common\widgets\file_upload\UploadAction',     //这里扩展地址别写错
                 'config' => [
+                    "imageMaxSize" => 2048000,
                     'imagePathFormat' => "/images/upload/{yyyy}{mm}{dd}/{time}{rand:6}",
                 ]
             ]

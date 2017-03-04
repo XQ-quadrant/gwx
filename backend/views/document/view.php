@@ -10,7 +10,7 @@ $this->title = $model->title;
 $this->params['breadcrumbs'][] = ['label' => $cate->name, 'url' => ['document/list','cate'=>$cate->id]];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="document-view">
+<div class="document-view container">
 <div class="row">
    <!-- <div class="col-md-3">
     </div>-->

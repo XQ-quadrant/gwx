@@ -27,6 +27,10 @@ class Cate extends  ActiveRecord
 
     const STATUS_AOLLOW = 1;
     //const STATUS_pic = 3;
+    const TYPE_list = 1;    //文章列表 ， 默认文章列表链接
+    const TYPE_precate = 2; //上级菜单， 没有链接
+    const TYPE_link = 3;    //自定义链接
+    const TYPE_document = 4;    //文章
     /**
      * @inheritdoc
      */
@@ -44,7 +48,7 @@ class Cate extends  ActiveRecord
             [['status', 'name'], 'required'],
             [['create_time'], 'safe'],
             [['model', 'view_index', 'uri'], 'string'],
-            [['pre_cate', 'level', 'status'], 'integer'],
+            [['pre_cate', 'level', 'status','type'], 'integer'],
             [['cindex', 'name', 'icon'], 'string', 'max' => 250]
         ];
     }
@@ -66,6 +70,16 @@ class Cate extends  ActiveRecord
             'status' => Yii::t('model','Status'),
             'uri' => Yii::t('model','Uri'),
             'icon' => Yii::t('model','Icon'),
+            'type' => Yii::t('model','Type'),
+        ];
+    }
+    public static function typeLabels(){
+        return [
+
+            self::TYPE_list => '文章列表',
+            self::TYPE_precate =>'多级菜单',
+            self::TYPE_link =>'自定义链接',
+            self::TYPE_document =>'文章',
         ];
     }
 
@@ -80,6 +94,7 @@ class Cate extends  ActiveRecord
     {
         return $this->hasMany(Aindex::className(), ['cate' => 'id']);
     }
+
     public static function getCateName($id)
     {
         return self::findOne(['id'=>$id]);

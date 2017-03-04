@@ -9,18 +9,12 @@ use yii\helpers\Url;
 //use Yii;
 ?>
 <div class="box <?=$css['warper']?>"><a href="<?=$url?>" class="uppercase">
-    <div class="box-header <?=$css['header']?>" >
-        <h4 class="box-title "></h4>
-        <div class="box-tools pull-right">
-            <!--<span data-toggle="tooltip" title="3 New Messages" class="badge bg-light-blue">3</span>-->
-            <!--<button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-            </button>-->
-            <!--<button type="button" class="btn btn-box-tool"  title="" >
-                <i class="fa fa-comments"></i>更多</button>-->
-        </div>
+    <div class="box-header <?=$css['header']?> " style="">
+        <h3 class="box-title <?=$css['title']?>"> </h3>
+
     </div></a>
     <div class="box-body <?=$css['body']?>">
-        <ul class="products-list product-list-in-box">
+        <ul class="products-list product-list-in-box" >
             <?php foreach ( $ac as $m):?>
             <li class="item">
                 <div class="product-img">
@@ -42,5 +36,8 @@ use yii\helpers\Url;
 
     </div>
 
+    <div class="box-footer text-center" style="background: rgba(0,0,0,0);padding: 5px;">
+        <a href="/document/list?cate=32" class="uppercase"> 更 多... </a>
+    </div>
     <!-- /.box-body -->
 </div>

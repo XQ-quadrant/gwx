@@ -1,6 +1,7 @@
 <?php
 use yii\widgets\Breadcrumbs;
 use dmstr\widgets\Alert;
+use yii\helpers\Url;
 
 ?>
 <div class="content-wrapper ">
@@ -31,7 +32,7 @@ use dmstr\widgets\Alert;
     </section>
     <?php } ?>
 
-    <section class="content">
+    <section class="content ">
         <?= Alert::widget() ?>
         <?= $content ?>
     </section>
@@ -40,29 +41,29 @@ use dmstr\widgets\Alert;
 <footer id="footer" >
 
     <div class="footer" style="height: auto;
-    background-color: rgb(57, 154, 231);">
+    background-color: rgb(119, 197, 253)">
         <div class="container">
             <div class="row " style="color:white">
-                <div class="col-md-3 normal">
+                <div class="col-md-4 normal">
                     <div class="">
                         <p class="simplenav">
-                            <a class="text-white" href="/site/index">Home</a> |
-                            <a class="text-white" href="/frontend/info">About</a> |
+                            <a class="text-white" href="<?= Url::toRoute('/site/index')?>">Home</a> |
+                            <a class="text-white" href="<?=Url::toRoute('/frontend/info')?>">About</a> |
                             <a class="text-white" href="">Service</a> |
                             <a class="text-white" href="">Connect</a> |
-                            <a class="text-white" href="/user/login">Login</a> |
+                            <a class="text-white" href="<?=Url::toRoute('/user/login')?>">Login</a> |
                         </p>
                     </div>
                 </div>
 
-                <div class="col-md-4 normal">
+                <div class="col-md-8 normal">
                     <div class="">
 
                         <address >
                             <ul>
-                                <li>地址：中国四川省峨眉山市西南交通大学</li>
-                                <li>电话： 344563</li>
-                                <li>Email : <a class="mail text-white" href="mailto:mail@example.com">info(at)sseet.com</a></li>
+                                <li><?= Yii::t('common','Address: No.555,  Liutai Avenue, WENJIANG District, Chengdu, Sichuan, 11130, P.R.China  ')?></li>
+                                <li><?= Yii::t('common','Tel')?>： +86-28-87092963  </li>
+                                <li>Copyright © Research Institute of Economics and Management,Southwestern University of Finance and Economics All Rights Reserved</li>
                             </ul>
                         </address>
 
@@ -76,7 +77,7 @@ use dmstr\widgets\Alert;
                         <a href="#"><i class="fa fa-github"></i></a>
                     </div>
                     <br>-->
-                    <p class="text-left">
+                    <!--<p class="text-left">
                         Copyright 2015 西南交通大学 All rights reserved.
                     </p><p class="text-left">
                       蜀ICP备05026985号 查号台：+86-28-87600114
@@ -85,7 +86,7 @@ use dmstr\widgets\Alert;
 
                     </p><p class="text-left">
                         川公网安备 51010602000061号
-                    </p>
+                    </p>-->
                 </div>
             </div>
             <br>

@@ -12,7 +12,7 @@ return [
     'controllerNamespace' => 'backend\controllers',
     //'bootstrap' => ['log'],
 
-    'name'=>'国际教育学院',
+    'name'=>'学院',
     'language'=>'zh-CN',
     //'debug'=>false,
     'components' => [
@@ -88,15 +88,16 @@ return [
                 'text/json' => 'yii\web\JsonParser',
             ]
         ],
-        /*
+
         'urlManager' => [
             'enablePrettyUrl' => true,
-            'showScriptName' => false,
+            "enableStrictParsing" => false,
+            'showScriptName' => true,
             'rules' => [
             ],
         ],
-        */
-        "urlManager" => [
+
+        /*"urlManager" => [
             //用于表明urlManager是否启用URL美化功能，在Yii1.1中称为path格式URL，
             // Yii2.0中改称美化。
             // 默认不启用。但实际使用中，特别是产品环境，一般都会启用。
@@ -114,7 +115,7 @@ return [
                 "<controller:\w+>/<action:\w+>"=>"<controller>/<action>",
                 //['class' => 'yii\rest\UrlRule', 'controller' => 'backend\modules\rest\controllers\UserController'],
             ],
-        ],
+        ],*/
 
         "view" => [
             "theme" => [

@@ -9,23 +9,25 @@ use yii\widgets\ActiveForm;
 $cate = new \common\models\Cate();
 $cates = $cate->find()
     ->select(['id','name'])
-    ->where(['status'=>\common\models\Cate::STATUS_pic])->asArray()->all();
+    ->where(['status'=>\common\models\Cate::STATUS_AOLLOW])->asArray()->all();
 $list = [];
+
 foreach($cates as $k=>$v){
     $list[$v['id']] = $v['name'];
 }
+
 ?>
 
 <div class="pic-form">
 
     <?php $form = ActiveForm::begin(); ?>
     <?= $form->field($model, 'savepath')->widget('common\widgets\file_upload\FileUpload',[
-        'config'=>[]
+        'config'=>["imageMaxSize" => 2048000,]
     ]) ?>
     <?= $form->field($model, 'content')->textarea(['rows' => 2]) ?>
     <?= $form->field($model, 'category')->dropDownList($list) ?>
     <?= $form->field($model, 'url')->textarea(['rows' => 1]) ?>
-    <?= $form->field($model, 'status')->dropDownList(['1'=>'发布','独栋'=>'隐藏',]) ?>
+    <?= $form->field($model, 'status')->dropDownList(['1'=>'发布','2'=>'隐藏',]) ?>
     <?php
 
     ?>

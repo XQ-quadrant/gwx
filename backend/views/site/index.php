@@ -5,7 +5,7 @@ use yii\helpers\Url;
 
 /* @var $this yii\web\View */
 
-$this->title = '国际教育学院';
+$this->title = Yii::t('common','School of International Education');
 $this->params['index'] = true;//$this->title;
 $this->params['breadcrumbs'] = null;//$this->title;
 $this->blocks['content-header'] = '';
@@ -17,7 +17,7 @@ $this->registerCss('.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-
     min-height: 1px;
     padding-right: 8px;
     padding-left: 8px;
-    margin-top:2px;
+    /*margin-top:2px;*/
 }
 .normal{
 position: relative;
@@ -28,117 +28,98 @@ position: relative;
 ');
 
 ?>
-<div id="carousel-example-generic" class="carousel slide" data-ride="carousel" >
-    <ol class="carousel-indicators">
-        <li data-target="#carousel-example-generic" data-slide-to="0" class=""></li>
-        <li data-target="#carousel-example-generic" data-slide-to="1" class=""></li>
-        <li data-target="#carousel-example-generic" data-slide-to="2" class="active"></li>
-    </ol>
-    <div class="carousel-inner slider-items">
-        <?php foreach($pic as $k=>$v){
-            if($k==0){
-                ?>
-                <div class="item active">
-                    <a href="<?= $v->url?>">
-                        <img src="<?= $v->savepath?>" alt="<?= $v->content?>">
-                    </a>
-                </div>
-            <?php   }else{ ?>
-                <div class="item">
-                    <a href="<?= $v->url?>">
-                        <img src="<?= $v->savepath?>" alt="<?= $v->content?>">
-                    </a>
-                </div>
-            <?php }
-        }?>
 
-    </div>
-    <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-        <span class="fa fa-angle-left"></span>
-    </a>
-    <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-        <span class="fa fa-angle-right"></span>
-    </a>
-</div>
 
 <!-- Start Presentation -->
 <div class="container" style="padding-left: 0px;padding-right: 0px">
     <div class="row">
-        <div class="col-md-12" style="margin-top: 0px">
-            <div class="box  box-solid" style="box-shadow: none;background: none">
+        <div class="col-md-9" style="margin-top: 0px">
+            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" >
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="1" class=""></li>
 
-                <!-- /.box-header -->
-                <div class="box-body no-padding">
+                </ol>
+                <div class="carousel-inner slider-items">
+                    <?php foreach($pic as $k=>$v){
+                        if($k==0){
+                            ?>
+                            <div class="item active">
+                                <a href="<?= $v->url?>">
+                                    <img src="<?= $v->savepath?>" alt="<?= $v->content?>">
+                                </a>
+                            </div>
+                        <?php   }else{ ?>
+                            <div class="item">
+                                <a href="<?= $v->url?>">
+                                    <img src="<?= $v->savepath?>" alt="<?= $v->content?>">
+                                </a>
+                            </div>
+                        <?php }
+                    }?>
 
                 </div>
-
+                <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                    <span class="fa fa-angle-left"></span>
+                </a>
+                <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                    <span class="fa fa-angle-right"></span>
+                </a>
             </div>
 
-        </div>
-
-    </div>
-<hr style="    border-top:1px solid #D9E0E6;margin-top: 0px;margin-bottom: 10px;">
-    <div class="row">
-        <div class="col-md-4" style="    height: 320px;">
-            <?= backend\widgets\box\BoxWidget::widget(['cate' => 32, 'title' => '通知公告', 'liNum' => 7,
-                'url' => Url::toRoute(['document/list', 'cate' => 32]),
-                'css'=>['warper'=>'box-widget index-box blue-border','header'=>'with-border bgimg-title1','title'=>'','body'=>'box-profile',]]) ?>
-
-            <!-- /.nav-tabs-custom -->
-        </div>
-        <div class="col-md-5 wbox">
-            <?= backend\widgets\box\BoxWidget::widget([
-                'type'=>'pic','cate' => 14, 'pic' => true, 'title' => '新闻中心',
-                'url' => Url::toRoute(['document/list', 'cate' => 14]),
-                'css'=>['warper'=>'box-widget index-box ','header'=>'with-border bgimg-title2','title'=>'bgimg-title2','body'=>'box-profile blue-border',],
-            ]) ?>
-
-            <!-- /.nav-tabs-custom -->
         </div>
         <div class="col-md-3 wbox">
             <?= backend\widgets\box\BoxWidget::widget(['type'=>'products-list','cate' => 31, 'pic' => true,
                 'title' => '专题',
+                'liNum' => 5,
                 'url' => Url::toRoute(['document/list', 'cate' => 31]),
-                'css'=>['warper'=>'box-widget index-box','header'=>'with-border bgimg-title3','title'=>'icon-title','body'=>'box-profile blue-border','icon'=>'box-icon bicon-school'],
+                'css'=>['warper'=>'box-widget index-box','header'=>'with-border index-box-header bgimg-title3','title'=>'index-box-title','body'=>'box-profile blue-border','icon'=>'index-box-icon bicon-news'],
             ]) ?>
 
-            <!-- About Me Box -->
-
-            <!-- /.box -->
         </div>
+
+    </div>
+<hr style="border-top:1px solid #D9E0E6;margin-top: 0px;margin-bottom: 10px;">
+    <div class="row">
+        <div class="col-md-6" style="">
+            <?= backend\widgets\box\BoxWidget::widget(['cate' => 32, 'title' => Yii::t('common','Notices'), 'liNum' => 7,
+                'url' => Url::toRoute(['document/list', 'cate' => 32]),
+                'css'=>['warper'=>'box-widget index-box blue-border','title'=>'index-box-title','header'=>'with-border index-box-header','icon'=>'index-box-icon bicon-laba','body'=>'box-profile',]]) ?>
+
+            <!-- /.nav-tabs-custom -->
+        </div>
+        <div class="col-md-6 wbox">
+            <?= backend\widgets\box\BoxWidget::widget([
+                'type'=>'pic','cate' => 14, 'pic' => true, 'title' => Yii::t('common','News'),
+                'url' => Url::toRoute(['document/list', 'cate' => 14]),
+                'css'=>['warper'=>'box-widget index-box ','header'=>'with-border index-box-header','title'=>'index-box-title','icon'=>'index-box-icon bicon-news','body'=>'box-profile blue-border',],
+            ]) ?>
+
+            <!-- /.nav-tabs-custom -->
+        </div>
+
         <!-- /.col -->
 
 
 
     </div>
-    <div class="row">
 
-<?php foreach($pic_bottom as $v) { ?>
-        <div class="col-lg-3">
-            <a href="<?= $v->url ?>">
-            <img class="img-responsive " src="<?= $v->savepath ?>" alt="Photo"></a>
-        </div>
-<?php } ?>
-        </div>
     <div class="row">
-        <div class="col-md-12">
-            <div class="box" style="background-image: url('/adminlte/dist/img/bg_header2.png');background-size:100%;" >
+        <div class="col-md-12 " style="margin-top: 1.5em">
+            <div class="box box-widget" style="background-size:100%;" >
                 <div class="box-header" >
-                    <h3 class="box-title">相关链接</h3>
+                    <h3 class="box-title"><?= Yii::t('common','相关链接')?></h3>
                 </div>
 
                 <div class="box-body no-padding index-link">
                     <div class="row normal">
-
-                                <?php for($i=0; $i<count($link_bottom); $i++){ ?>
+                        <?php for($i=0; $i<count($link_bottom); $i++){ ?>
                         <div class="col-sm-3 normal">
                             <address>
-
-                                <a href="http://www.swjtu.edu.cn/"><?= $link_bottom[$i]->name?></a><br>
-
+                                <a href="<?= $link_bottom[$i]->uri?>"><?= $link_bottom[$i]->name?></a><br>
                             </address>
                         </div>
-                                <?php } ?>
+                        <?php } ?>
 
                         <!--
                         <div class="col-sm-4 normal">
@@ -166,7 +147,6 @@ position: relative;
 
     </div>
 </div>
-
 <!-- End Presentation -->
 
 <!-- //////////////////////////////////////////////////////////////////////////// -->

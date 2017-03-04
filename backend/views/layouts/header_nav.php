@@ -15,7 +15,7 @@ use backend\widgets\category\CategoryWidget;
         <div class="container" style="padding-right: 15px;padding-left: 15px;">
         <div class="navbar-header">
 
-            <a href="<?=Url::home()?>" class="navbar-brand" >国际教育学院</a>
+
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
                 <i class="fa fa-bars"></i>
             </button>
@@ -31,9 +31,8 @@ use backend\widgets\category\CategoryWidget;
             ];
         }else{*/
 
-
         $menu = new CategoryWidget(['precate_name'=>'document']);
-        $menuItemsCenter = $menu->getCate();
+        $menuItemsCenter = $menu->getCate();  //获取树状栏目
 
 
         echo Nav::widget([
@@ -47,12 +46,12 @@ use backend\widgets\category\CategoryWidget;
         <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">
                 <!-- Messages: style can be found in dropdown.less-->
-                <form class="navbar-form navbar-right" role="search" style="float: right;display: inline-block">
+                <!--<form class="navbar-form navbar-right" role="search" style="float: right;display: inline-block">
                     <div class="form-group">
 
                         <input type="text" class="form-control" id="navbar-search-input" placeholder="搜索">
                     </div>
-                </form>
+                </form>-->
                 <?php if(Yii::$app->user->isGuest) { ?>
 
                    <!-- <li class="">

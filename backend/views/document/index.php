@@ -23,7 +23,6 @@ $this->params['search'] = $this->render('_search', ['model' => $searchModel]);
                 <div class="box-header with-border">
                     <h2 class="box-title"><?= Html::encode($this->title) ?></h2>
 
-
                     <div class="box-tools pull-right">
                         <div class="has-feedback">
                             <input type="text" class="form-control input-sm" placeholder="Search Mail">

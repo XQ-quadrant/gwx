@@ -30,7 +30,7 @@ if (Yii::$app->controller->action->id === 'login') {
     <!DOCTYPE html>
     <html lang="<?= Yii::$app->language ?>">
     <head>
-        <meta name="renderer" content="webkit">
+        <meta name="renderer" content="webkit|ie-comp|ie-stand">
         <meta charset="<?= Yii::$app->charset ?>"/>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <?= Html::csrfMetaTags() ?>

@@ -11,12 +11,12 @@ $this->params['breadcrumbs'][] = ['label' => $model->name, 'url' => ['view', 'id
 $this->params['breadcrumbs'][] = 'Update';
 
 //$cur_cate = Yii::$app->request->get('pre_cate');
-$cates = \common\models\Cate::findAll(['status'=>1]);
+$cates = \common\models\Cate::findAll(['status'=>1]); //所有栏目
 $list =[];
 foreach($cates as $v){
     $list[$v->id]=$v->name;
 }
-
+$list[0]= '基础';
 ?>
 <div class="cate-update">
 
