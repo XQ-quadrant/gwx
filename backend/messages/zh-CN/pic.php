@@ -19,4 +19,5 @@ return [
     'Create'=>'发布',
     'Update'=>'修改',
     'Create Pic'=>'生成宣传图',
+    'clickNum' => "链接点击数",
 ];

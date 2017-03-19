@@ -64,4 +64,32 @@ class Pic extends \yii\db\ActiveRecord
             'category' => Yii::t('model/pic','Category'),
         ];
     }
+    
+    /*
+     * 将用户点击链接次数加一
+     */
+    public function upCounter()
+    {
+        //$this->clickNUum = $this->clickNUum + 1;
+        $this->updateCounters(['clickNum' => '1']);
+    }
+    
+    /*
+     *
+     */
+    public function getPicData($category)
+    {
+        $data = $this->find()->where(['category' => $category])->asArray()->all();
+         
+        foreach ($data as $list)
+        {
+            $result['url'][] = $list['url'];
+            $result['imgpath'][] = $list['savepath'];
+            $result['content'][] = $list['content'];
+            $result['id'][] = $list['id'];
+        }
+        $result['count'] = $this->find()->where(['category' => $category])->count();
+        //	print_r($result);exit();
+        return $result;
+    }
 }
