@@ -151,6 +151,10 @@ return [
         ]
     ],*/
     'modules' => [
+        'pic' =>[
+          'class' => 'backend\modules\pic\Pic',//not finished  
+        ],
+        
         'user' => [
             'class' => 'dektrium\user\Module',
             'confirmWithin' => 21600,
