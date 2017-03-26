@@ -12,12 +12,12 @@ $this->blocks['content-header'] = '';
 //$this->registerCssFile('@web/css/pluging.css',['depends'=>['backend\assets\KodeAsset']]);
 
 //$this->registerJsFile('@web/js/jquery.cslider.js',['depends'=>['backend\assets\KodeAsset']]);
-$this->registerCss('.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12  .wbox{
+/*$this->registerCss('.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12  .wbox{
     position: relative;
     min-height: 1px;
     padding-right: 8px;
     padding-left: 8px;
-    /*margin-top:2px;*/
+
 }
 .normal{
 position: relative;
@@ -25,15 +25,15 @@ position: relative;
     padding-right: 15px;
     padding-left: 15px;
 }
-');
+');*/
 
 ?>
 
 
 <!-- Start Presentation -->
 <div class="container" style="padding-left: 0px;padding-right: 0px">
-    <div class="row">
-        <div class="col-md-9" style="margin-top: 0px">
+    <div class="row" style="margin-top: 30px">
+        <div class="col-md-8" style="margin-top: 0px">
             <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" >
                 <ol class="carousel-indicators">
                     <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
@@ -68,25 +68,23 @@ position: relative;
             </div>
 
         </div>
-        <div class="col-md-3 wbox">
+        <div class="col-md-4 wbox" style="">
             <?= backend\widgets\box\BoxWidget::widget(['type'=>'products-list','cate' => 31, 'pic' => true,
                 'title' => '专题',
                 'liNum' => 5,
                 'url' => Url::toRoute(['document/list', 'cate' => 31]),
-                'css'=>['warper'=>'box-widget index-box','header'=>'with-border index-box-header bgimg-title3','title'=>'index-box-title','body'=>'box-profile blue-border','icon'=>'index-box-icon bicon-news'],
+                'css'=>['warper'=>'box-widget index-box','header'=>'with-border index-box-header ','title'=>'index-box-title','body'=>'box-profile blue-border','icon'=>'index-box-icon bicon-news'],
             ]) ?>
 
         </div>
-
     </div>
-<hr style="border-top:1px solid #D9E0E6;margin-top: 0px;margin-bottom: 10px;">
-    <div class="row">
+<!--<hr style="border-top:1px solid #D9E0E6;margin-top: 10px;margin-bottom: 20px;">-->
+    <div class="row" style="margin-top: 30px;">
         <div class="col-md-6" style="">
             <?= backend\widgets\box\BoxWidget::widget(['cate' => 32, 'title' => Yii::t('common','Notices'), 'liNum' => 7,
                 'url' => Url::toRoute(['document/list', 'cate' => 32]),
                 'css'=>['warper'=>'box-widget index-box blue-border','title'=>'index-box-title','header'=>'with-border index-box-header','icon'=>'index-box-icon bicon-laba','body'=>'box-profile',]]) ?>
 
-            <!-- /.nav-tabs-custom -->
         </div>
         <div class="col-md-6 wbox">
             <?= backend\widgets\box\BoxWidget::widget([
@@ -95,12 +93,7 @@ position: relative;
                 'css'=>['warper'=>'box-widget index-box ','header'=>'with-border index-box-header','title'=>'index-box-title','icon'=>'index-box-icon bicon-news','body'=>'box-profile blue-border',],
             ]) ?>
 
-            <!-- /.nav-tabs-custom -->
         </div>
-
-        <!-- /.col -->
-
-
 
     </div>
 
@@ -138,11 +131,8 @@ position: relative;
                         </div>
                          -->
                     </div>
-
                 </div>
-                <!-- /.box-body -->
             </div>
-            <!-- /.box -->
         </div>
 
     </div>

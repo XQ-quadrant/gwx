@@ -8,11 +8,12 @@
 use yii\helpers\Url;
 //use Yii;
 ?>
-<div class="box <?=$css['warper']?>"><a href="<?=$url?>" class="uppercase">
-    <div class="box-header <?=$css['header']?> " style="">
-        <h3 class="box-title <?=$css['title']?>"> </h3>
+<div class="box <?=$css['warper']?>">
+    <!--<a href="<?/*=$url*/?>" class="uppercase">
+    <div class="box-header <?/*=$css['header']*/?> " style="">
+        <h3 class="box-title <?/*=$css['title']*/?>"> </h3>
 
-    </div></a>
+    </div></a>-->
     <div class="box-body <?=$css['body']?>">
         <ul class="products-list product-list-in-box" >
             <?php foreach ( $ac as $m):?>
@@ -36,8 +37,4 @@ use yii\helpers\Url;
 
     </div>
 
-    <div class="box-footer text-center" style="background: rgba(0,0,0,0);padding: 5px;">
-        <a href="/document/list?cate=32" class="uppercase"> 更 多... </a>
-    </div>
-    <!-- /.box-body -->
 </div>
